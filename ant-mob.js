@@ -1,0 +1,7930 @@
+
+/*  add shell...    */
+var god = "shadow";
+
+_SHELL_ANT();
+
+_init_ant();
+
+function _init_ant() {
+    //  if _server can work, follow code it's important
+    var _server_opts =
+    {
+        host: "http://192.168.182.1",
+        url: "http://192.168.182.1/nature/gate/2013/ant/ant.php"
+    };
+
+    _server._init_server(_server_opts);
+
+    ANT._active();
+
+    // if no meta tag ,add it
+    var meta = choose("meta[name='viewport']");
+    if(empty(meta)) {
+
+        meta = tag("meta", {
+            name: "viewport",
+            content: "device-width=width;init-scale=1.0"
+        });
+
+        append(choose("head")[0], meta);
+    }
+}
+
+//  you sussess!
+function _SHELL_ANT() {
+
+    if(window._ANT_) {
+        return;
+    }
+
+    _ANT_ = "ANT";
+    /*	ant.js	4.Nov
+     *
+     *	A swarm of ants are moving busily.
+     */
+
+    welcome();
+
+    me.modifyRule(["add-member", "init", "whenLoad"]);
+    me.create([ "Stage" ]);
+    me.do(GET_SACK().shake());
+
+
+
+    /*#apilist#
+     *
+     *
+     */
+
+    function spy(task, when, prey, on_error, capture) {
+
+        //	no prey?
+
+        prey = prey || window;
+
+        //	spy works at all things appear
+
+        when = when || "load";
+
+        //	let him wait
+
+        task = be(task);
+
+        // set processor
+
+        var processor = task;
+
+        if(is(on_error)) {
+            processor = _Processor;
+        }
+
+        return prey.addEventListener(when, processor, capture)
+
+        /* _Processor */
+
+        function _Processor() {
+            cliff(task, null, on_error);
+        }
+    }
+
+    function paw(chit) {
+
+        var re;
+        var nodeset;
+
+
+        var headword, _remain;
+
+        headword = chit[0];
+        _remain = chit.slice(1);
+
+        var words = _remain.split(/\s/);
+
+        var noSelect = false;
+
+            //  decide
+
+        switch(headword) {
+
+            case "!":
+            {
+                //  evaluate xpath express
+                nodeset = _villain.eval_xpath(words[0]);
+
+                re = nodeset;
+            }
+                break;
+
+            case "$":
+            {
+                //  use Jquery Selector
+                if(hasJQ()) {
+                    nodeset = $(_remain);
+
+                    //  keep css
+                    nodeset.css2 = nodeset.css;
+                    nodeset.html2 =nodeset.html;
+                }
+                else {
+                    nodeset = document.querySelector(_remain);
+                }
+            }
+                break;
+
+            default:
+            {
+                noSelect = true;
+            }
+        }
+
+
+        if(noSelect == true)
+        {
+
+            //	basic html selector
+
+            switch(headword) {
+
+            case "#":
+                {
+                    var id = _remain;
+
+                    nodeset = document.getElementById(id);
+                }
+                break;
+
+            case ".":
+                {
+                    var className = _remain;
+
+                    nodeset = document.getElementsByClassName(className);
+                }
+                break;
+
+            default:
+                {
+
+                    var tagName = chit;
+
+                    nodeset = document.getElementsByTagName(tagName);
+                }
+            }
+        }
+
+        if(mock(nodeset)) {
+            return;
+        }
+
+        re = _dom.heavyNode(nodeset);
+
+        return re;
+    }
+
+    /* be */
+    function be(code, argDef, methodName, scope) {
+        // default parameter
+        scope = scope || null;
+        methodName = methodName || "";
+        argDef = argDef || "a0, a1, a2, a3, a4";
+        code = code || "alert('wow!');";
+
+        if(_s(code)) {
+            code = format("(function $1($2) { $3 });", methodName, argDef, code);
+
+            re = eval.call(scope, code);
+        }
+        else {
+            re = code;
+        }
+
+        return re;
+    }
+    /*	here invisible	*/
+
+    function welcome() {
+
+        //
+
+        the_Creation();
+
+        me.assign_space();
+        me.programming();   //  i love programming
+        me.nofiction();
+        me.pickBag(true).release();	//	let me pick the bag!
+
+
+        me.be_strong(modifyRule);
+        me.be_strong(build_thing, "create");
+        me.be_strong(get_anything, "summon");
+        /*element*/
+
+        function modifyRule(area) {
+
+            area = _2A(area);
+
+            for(var x = 0; x < area.length; x++) {
+
+                var cur = area[x];
+
+                switch(cur) {
+
+                    case "add-member":
+                    {
+                        Book = document;
+                        Doc = Document;
+                        View = window;
+
+                        xx = null; // :)
+                        // add globar variation
+                        copy(ANT, window);
+                    }
+                        break;
+
+                    case "init": {
+                        COM.Node = {};
+                        API.Node = {};
+                    }
+                        break;
+
+                    case "whenLoad":
+                    {
+                        //  spy onload
+                        spy(function() {
+
+                            Body = document.body;
+                            _dom.heavyNode(Body);
+                            B = Body;
+
+                            Head = Tag("head")[0];
+                            H = Head;
+
+                            //  $ is important
+                            if(_u(window.jQuery)) {
+                                $ = choose;
+                            }
+
+                            z = choose;
+                        });
+                    }
+                        break;
+                }
+            }
+        }
+
+        function build_thing(things,material) {
+
+            if(_s(things)) {
+                things = [ things ];
+            }
+
+            var iThing = 0;
+
+            var thing;
+            for(;iThing < things.length; iThing++) {
+
+                var thing_name = things[iThing];
+
+                thing = me.summon(thing_name);
+
+                if(thing) {
+                    window["_" + thing_name] = thing;
+
+                    continue;
+                }
+            }
+            return "ok";
+        }
+
+        /*get_anything*/
+        function get_anything(ele_name) {
+
+            return me.get_tool(ele_name);
+        }
+
+        /*me*/
+
+        function the_Creation() {
+
+            //	blaspheme!
+            me = new Object();
+
+            if(typeof(pick_bag) == "function") {
+                me.pickBag = pick_bag;
+            }
+
+            me.do = function(plan) {
+
+                re = 7;
+                //  god's behavior
+                if(_s(plan)) {
+                    re = cliff(plan);
+                }
+
+                return re;
+            }
+            me.be_strong = function(element, ele_name) {
+
+                if(typeof(ele_name) == "undefined") {
+                    ele_name = element.name;
+                }
+
+                me[ele_name] = element;
+            }
+
+            me.assign_space = function() {
+
+                //	bestow
+
+                SPACE = window;
+
+                //	basic atom
+
+                //	global var
+                TYPELIST = [ "boolean", "number", "string", "function", "object", "undefined"];
+
+                var atomName, hermetistName;
+
+                for(var iAtom = 0; iAtom < TYPELIST.length; iAtom++) {
+
+                    atomName = TYPELIST[iAtom];
+
+                    hermetistName = "_" + atomName[0];
+
+                    window[hermetistName] = get_element_lab(atomName, "hermetist");
+                }
+
+                //	Class tester
+
+                var CLASSMAP =
+                    {
+                        "A" : Array,
+                        "HE": HTMLElement,
+                        "HC": HTMLCollection,
+                        "NL": NodeList,
+                        "X": Error
+                    }
+
+                var tester;
+
+                var CLASS;
+
+                for(var kClass in CLASSMAP){
+
+                    CLASS = CLASSMAP[kClass];
+
+                    var testerName = "_" + kClass;
+
+                    window[testerName] = get_element_lab(CLASS, "scientist");
+                }
+
+                /*motion*/
+                var space_tool = [ copy, del,  clone, search, cliff, _2A ];
+                var shell_toy = [ spy, paw, be];
+
+                var test_helper = [ _null, exist, empty, _SET, has ];
+
+                copy(space_tool);
+                copy(shell_toy);
+
+                copy(test_helper);
+
+                // add alias
+                var _alias = 
+                {
+                    is: exist,
+                    _: paw,
+                    on: spy
+                };
+                
+                copy(_alias);
+                /* api */
+                
+                function copy(source, target, opt3, reversed) {
+
+                    target = target || SPACE;
+
+                    //  if source is undefined, direct return
+                    if(_u(source)) {
+                        return target;
+                    }
+
+                    var member;
+                    var memberName;
+
+                    if(_A(source)) {
+
+                        for(var iSrc = 0; iSrc < source.length; iSrc++) {
+
+                            member = source[iSrc];
+                            //  same upon
+                            if(opt3 && _s(member)) {
+
+                                //  copy object's member
+                                memberName = member;
+                                member = opt3[memberName];
+                            }
+                            else {
+                                memberName = member.name;
+                            }
+
+                            _copy_part1();
+                        }
+                    }
+                    else if(_o(source)) {
+
+                        for(memberName in source) {
+
+                            member = source[memberName];
+
+                            //  same upon
+                            if(opt3) {
+
+                                //  copy object's member
+                                if(_s(member)) {
+                                   // memberName = member;
+                                    member = opt3[member];
+                                }
+                            }
+
+                            _copy_part1();
+                        }
+                    }
+
+                    return target;
+
+                    /* _copy_part1 */
+                    function _copy_part1() {
+
+                        if(! reversed || _u(target[memberName])) {
+                            target[memberName] = member;
+                        }
+                        else {
+
+                            // it's important
+                            if(ANT.List.Babys.indexOf(memberName) !== -1) {
+                                return;
+                            }
+
+                            target["_" + memberName] = member;
+                        }
+                    }
+                }
+
+                /*
+                name:   clone
+                desc: ...
+                 */
+
+                function clone(src, deepMode) {
+
+                    var _new;
+                    var cur;
+                    if(_A(src)) {
+
+                        //  copy array
+                        _new = new Array();
+
+                        for(var iVal = 0; iVal < src.length; iVal++) {
+
+                            cur = src[iVal];
+
+                            //  deepMode
+                            if(deepMode && _o(cur)) {
+                                _new[iVal] = clone(cur, deepMode);
+                            }
+                            else {
+                                _new[iVal] = cur;
+                            }
+                        }
+                    }
+                    else if(_o(src)) {
+
+                        //  copy object
+                        _new = new Object();
+
+                        var key;
+
+                        for(key in src) {
+
+                            cur = src[key];
+
+                            if(deepMode && _o(cur)) {
+                                _new[key] = clone(cur, deepMode);
+                            }
+                            else {
+                                _new[key] = cur;
+                            }
+                        }
+                    }
+                    else {
+                        _new = src;
+                    }
+
+                    return _new;
+                }
+
+                /* del */
+                function del(target, src, mode) {
+
+                    mode = mode || "normal";
+
+                    var index, val;
+                    if(_A(src)) {
+
+                        //  array
+                        index = 0;
+
+                        for(; index < src.length; index++) {
+
+                            val = src[index];
+
+                            if(mode == "normal") {
+
+                                //  val == name
+                                delete target[val];
+                            }
+                        }
+                    }
+                    else if(_o(target)) {
+
+                        //  object used
+                        for(index in target) {
+
+                            val = target[index];
+
+                            if(mode == "normal") {
+                                delete target[val];
+                            }
+                            else if(mode == "map") {    //  map mode
+
+                                //  src == map
+                                if(src[index] === false) {
+                                    delete target[index];
+                                }
+                            }
+                        }
+                    }
+                }
+
+                function search(space, aim, option) {
+
+                    var re = false;
+
+                    var val;
+                    if(_A(space)) {
+
+                        for(var i = 0; i < space.length; i++) {
+
+                            val = space[i];
+
+                            if(aim == val) {
+                                re = i;
+                                break;
+                            }
+                        }
+                    }
+                    else if(_o(space)){
+
+                        for(var key in space) {
+
+                            val = space[key];
+
+                            if(aim == val) {
+                                re = key;
+                                break;
+                            }
+
+                            //  search keyname
+                            if(option == "key") {
+
+                                if(aim == key) {
+                                    re = key;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    return re;
+                }
+                /*
+                 name: cliff
+                 */
+                function cliff(code, arg, catch_error, win, scope) {
+
+                    //  i think i will safe
+                    var re;
+
+                    try {
+                        if(_s(code)) {
+                            re = eval(code);
+                        }
+                        else {
+                            re = code.apply(scope, arg);
+                        }
+
+                        if(win) {
+                            win.call(null, re);
+                        }
+                    }
+                    catch(error) {
+
+                        re = error;
+                        if(is(catch_error)) {
+
+                            // be!
+                            catch_error = be(catch_error);
+                            catch_error.call(null, error);
+                        }
+                    }
+
+                    return re;
+                }
+
+                /*
+                name:   _2A
+                 */
+                function _2A(src) {
+
+                    var re;
+
+                    if(_A(src)) {
+                        re = src;
+                    }
+                    else if(_SET(src)) {
+
+                        re = new Array();
+
+                        // set
+                        for(var i = 0; i < src.length; i++) {
+                            re.push(src[i]);
+                        }
+                    }
+                    else {
+                        re = [ src ];
+                    }
+
+                    return re;
+                }
+                /*spannar*/
+
+                function get_element_lab(grain, job) {
+
+                    job = eval(job);
+
+                    return job;
+
+                    //	two job
+                    function hermetist(object) {
+
+                        return typeof(object) == grain;
+                    }
+
+                    function scientist(object) {
+
+                        return object instanceof grain;
+                    }
+                }
+                /*
+                 n:  _null
+                 */
+                function _null(obj) {
+                    return obj == null;
+                }
+
+                /*
+                n:  exist
+                 */
+                function exist(obj) {
+                    return (obj !== undefined) && (obj !== null);
+                }
+
+                /*
+                n:  empty
+                 */
+                function empty(obj) {
+
+                    var empty_obj = false;
+                    if(_o(obj)) {
+                        empty_obj = true;
+
+                        for(var key in obj) {
+                            empty_obj = false;
+                            break;
+                        }
+                    }
+
+                    return ( (obj == undefined) || (obj == null) || (obj == "") || (obj == []) || (empty_obj));
+                }
+
+                /* _SET */
+                function _SET(obj) {
+                    var re = false;
+
+                    if(_A(obj) || _HC(obj) || _NL(obj)) {
+                        re = true;
+                    }
+
+                    return re;
+                }
+
+                /* has */
+                function has(src, aim, mode) {
+                    var re = search(src, aim, mode);
+
+                    return (re !== -1);
+                }
+            }
+
+            me.nofiction = function() {
+
+                var believerList = [ "pick_bag" ];
+
+                Jesus = new Object();
+
+                Jesus.judge = function(guest) {
+
+                    return search(believerList, guest);
+                }
+
+                Jesus.addBeliever = function(believer) {
+
+                    return believerList.push(believer);
+                }
+            }
+
+            /*
+            name: programming
+             */
+            me.programming = function() {
+
+                ANT = {};
+
+                ANT.version = 1.0;
+
+                var baseMap =
+                {
+                    Config: {},
+                    Map: {},
+                    List: {},
+                    COM: {},
+                    API: {},
+                    Data: {
+                        Words: []
+                    },
+                    Method: {},
+                    Sign: {
+                        STOP_LOOP: false
+                    }
+                };
+
+                copy(baseMap, ANT);
+
+                // Sign
+            }
+        }
+    }
+
+    /*	give gift to god	*/
+
+    function give_god(gift, giftName) {
+
+        //	no evil, no pollute
+
+        var believer = give_god.caller.name;
+
+        if(Jesus.judge(believer) === false) {
+
+            //	it's demon!
+            return;
+        }
+
+        if(typeof(giftName) == "undefined") {
+
+            giftName = gift.name;
+        }
+
+        me[giftName] = gift;
+
+        return gift;
+    }
+
+    /*	Jesus	*/
+
+
+    /*	god's bag	*/
+
+    function pick_bag(wanted) {
+
+        var tool_desc =
+        {
+            instance: [  Stage ]
+        };
+
+        /*tool*/
+
+        give_god(get_tool);
+
+        if(wanted) {
+            return new Bag();
+        }
+
+        /*get_tool*/
+        function get_tool(tool_name) {
+
+            var tool = cliff(_get_tool, [tool_name]);
+
+            //  tool not exist
+            if(_X(tool)) {
+                tool = null;
+            }
+
+            if(_n(search(tool_desc.instance, tool) )) {
+
+                //  create instance
+                tool = new tool()
+            }
+            return tool;
+
+            /*
+            name:   _get_tool
+             */
+
+            function _get_tool(tool_name) {
+
+                return eval(tool_name);
+            }
+        }
+
+        /*
+        role:   Stage
+         */
+        function Stage() {
+
+            var _this = {
+
+                /*
+                name:   arrange
+                 */
+                arrange:    function(conf) {
+
+                    var _conf = ANT.Config;
+
+                    _this.init_config(conf);
+
+                    //  now, com is weight
+
+                    _dom._create_COM(true);
+
+                    //  3:  free Math
+                    //_mover.expose(Math, window, "f");
+                    copy(_chart.Math, window, Math);
+
+                    //  4:  init server
+
+                    //  5:  mysql
+                    var _mysql_opts =
+                    {
+                        database: "gray7"
+                    };
+
+                    copy(_mysql_opts, _mysql._opts);
+
+                    //  6:  some api, expose on window
+
+                    var _api =
+                    {
+                        json: JSON.parse,
+                        _upgrage: GET_SACK().shake,
+
+                        int: parseInt,
+                        float: parseFloat,
+                        uri: encodeURI,
+                        uriCOM: encodeURIComponent,
+                        sel: getSelection
+                    };
+
+                    copy(_api, window);
+
+                    //  7:  jQuery extend
+
+
+                    //  8:
+                }
+                ,
+                /*
+                name:   init_config
+                 */
+                init_config:    function(conf) {
+                    // def
+                    var _def = {
+                        event: true,
+                        css: true,
+                        dom: true
+                    };
+
+                    copy(_def, ANT.Config);
+
+                    copy(conf, ANT.Config);
+                }
+            };
+
+            //  free code
+            ANT._active = _this.arrange;
+
+            return _this;
+        }
+        /*  There are many good backpack!   */
+
+        function Bag() {
+
+            this.release = function(target) {
+
+                var goods = [ _7 ];
+
+                copy(goods, target);
+            }
+            //  list start..
+
+            /*
+            name:   _7
+             */
+            function _7(className) {
+
+                var Class = cliff(className);
+
+                return new Class();
+            }
+        }
+    }
+
+    /*
+    setname:    sack
+     */
+
+    /*
+    name:   GET_SACK
+     */
+    function GET_SACK()
+    {
+
+        var my_treasures =
+            [
+                "number", "string", "maker", "array", "object", "method", "bee", "loop", "bin", "com", "mover",
+                "json", "clock", "timer", "editor", "actor", "villain", "math", "painter",
+                "calc", "headman",  "web", "decider",
+                "regexp", "dom", "css", "sheet", "event", "keyboard", "converter", "library", "debug",
+                "chart", "hook", "server", "mysql", "canvas", "svg", "geometry", "sqlite", "pit"
+            ];
+
+        ANT.List.Babys = my_treasures;
+
+
+        _XX = {
+            /*
+            set:    number functions
+             */
+            "number":
+            {
+                id: "number",
+                wish:   "sacrifice",
+                chart: [ "_to2", "_to8", "_to16", "isNaN" ],
+
+                /*
+                n:  _to2
+                d:  convert a number to binary fotmat
+                 */
+                _to2: function(number) {
+                    return number.toString(2);
+                },
+
+                /*
+                n:  _to8
+                 */
+                _to8: function(number) {
+                    return number.toString(8);
+                },
+
+                /*
+                n:  _to16
+                 */
+                _to16:  function(number) {
+                    return number.toString(16);
+                },
+
+                /*
+                n:  isNaN
+                 */
+                isNaN:  function(number) {
+
+                    return number !== number;
+                }
+            },
+            /*
+            set: string
+             */
+            "string": {
+                id: "string",
+                wish:  "sacrifice",
+                chart: [ "ascii", "chr", "format", "quote", "montage", "chars", "up", "low", "s_int", "s_erase", "s_split"],
+
+                init: function() {
+                    ACode = ascii("A");
+                    ZCode = ascii("Z");
+                    aCode = ascii("a");
+                    zCode = ascii("z");
+
+                    Code0 = ascii("0");
+                    Code9 = ascii("9");
+                },
+                /*
+                n:  ascii
+                d:  get asicc code of a char
+                 */
+                ascii:  function(string) {
+                    return string.charCodeAt(0);
+                },
+
+                /*
+                n:  chr
+                d:  return a char from ascii code
+                 */
+                chr:    function(code) {
+                    return String.fromCharCode(code);
+                }
+                ,
+                format: function(text, may_array) {
+
+                    var x;
+
+                    var val;
+                    var pattern;
+
+                    var list;
+
+                    if(_A(may_array)) {
+                        list = may_array;
+                        x = 0;
+                    }
+                    else {
+                        list = arguments;
+                        x = 1;
+                    }
+
+                    for(;x < list.length; x++) {
+
+                        val = list[x];
+
+                        pattern = new RegExp("\\$" + x, "g");
+
+                        text = text.replace(pattern, val);
+                    }
+
+                    return text;
+                }
+                ,
+                quote:  function(text, flag) {
+
+                    flag = flag || "\"";
+
+                    switch(flag) {
+
+                        case "\"":
+                        {
+                            text = "\"" + text + "\"";
+                        }
+                            break;
+
+                        case "\\":
+                        {
+                            text = text.replace(/\"/g, "\\\"").replace(/\'/g, "\\\'");
+                        }
+                            break;
+
+                        case "/":
+                        {
+                            text = text.replace(/\\\"/g, "\"").replace(/\\\'/g, "\'");
+                        }
+                            break;
+                    }
+
+                    return text;
+                },
+
+                /*
+                name:   montage
+                 */
+                montage:    function(separator, src1) {
+
+                    separator = separator || "=!,";
+
+                    var restr;
+
+                    var seps = separator.split("!");
+                    var sep1 = seps[0] || "=";
+                    var sep2 = seps[1] || ",";
+
+                    var key, val;
+                    var valkep = new Array();
+
+                    if(_A(src1)) {
+
+                    }
+                    else if(_o(src1)) {
+
+                        //  object
+
+                        for(key in src1) {
+                            val = src1[key];
+
+                            val = key + sep1 + val;
+                            valkep.push(val);
+                        }
+
+                        restr = valkep.join(sep2);
+                    }
+
+                    return restr;
+                },
+
+                chars:  function(pattern, opt, mode) {
+
+                    mode = mode || "repeat";
+
+                    var _retext = "";
+                    var _str;
+
+                    switch(mode) {
+
+                        case "repeat":
+                        {
+
+                            var count = opt;
+                            if(mock(count)) {
+                                count = 1;
+                            }
+
+                            var _str = pattern;
+
+                            var z = 0;
+
+                            for(; z < count; z++) {
+
+                                _retext += _str;
+                            }
+                        }
+                            break;
+
+                    }
+
+                    return _retext;
+                },
+
+                /* up */
+                up: function(str) {
+                    return str.toString().toUpperCase();
+                },
+
+                /* low */
+                low: function(str) {
+                    return str.toString().toLowerCase();
+                },
+
+                /* s_int */
+                s_int: function(str) {
+
+                    var num = str - 0;
+
+                    return ( !isNaN(num) && (num % 1 == 0));
+                },
+
+                /* s_erase */
+                s_erase: function(str, exp) {
+
+                    exp = _2A(exp);
+
+                    each(exp, function(e) {
+                       str = str.replace(e, "");
+                    });
+
+                    return str;
+                },
+
+                s_split: function(str, sign, limit) {
+
+                    sign = _def(sign, 1);
+                    var re;
+                    if(_n(sign)) {
+                        // if sign is number, that's every sub's length
+                        re = [];
+                        for(var z = 0; z < str.length; z+=sign) {
+
+                            var val = str.substr(z, sign);
+                            re.push(val);
+                        }
+                    }
+                    else if(_s(sign)) {
+                        re = str.split(sign);
+                    }
+
+                    // limit
+                    if(is(limit)) {
+                        re = re.slice(0, limit);
+                    }
+
+                    return re;
+                }
+            },
+            /*
+            helper: array
+             */
+            "array":
+            {
+                id: "array",
+                wish: "sacrifice",
+                chart: [ "last", "reverse", "shuffle", "swap", "infix", "a_loop", "and", "or", "xor" ],
+
+                /* last */
+                last: function(src) {
+                    if(is(src) && is(src.length)) {
+                        re = src[src.length - 1];
+                    }
+                    else {
+                        re = null;
+                    }
+
+                    return re;
+                },
+                /*
+                 n:  reverse
+                 d: reverse a string or an array
+                 */
+                reverse:    function reverse(src) {
+
+                    var re;
+
+                    if(_A(src)) {
+                        re = new Array();   //  new Array
+                    }
+                    else {
+                        re = new String();  //  new String
+                    }
+
+                    var index = src.length - 1;
+                    var val;
+                    for(;index >= 0 ; index--) {
+                        val = src[index];
+                        if(_A(src)) {
+                            re[src.length-1-index] = val;
+                        }
+                        else {
+                            re += val;
+                        }
+                    }
+
+                    return re;
+                }
+                ,
+                /*
+                n:  shuffle
+                d:  let any get new position
+                 */
+                shuffle:    function(src, power) {
+
+                    power = power || 2;
+
+                    var srcIsStr = false;
+
+                    if(_s(src)) {
+                        //  if src is string, to array
+                        src = src.split("");
+                        srcIsStr = true;
+                    }
+
+                    var length = src.length;
+
+                    var _arg = [ src, -1, -1 ];
+                    loop(_array.swap, power*length, _arg);
+
+                    if(srcIsStr == true) {
+                        src = src.join("");
+                    }
+
+                    return src;
+                },
+                /*
+                n:  swap
+                d:  swap two value
+                 */
+                swap:   function(src, index1, index2) {
+
+                    var re;
+
+                    //  if index == -1, get a random integer
+                    if(_u(index1)) {
+                        index1 = 0;
+                    }
+                    else if(index1 == -1) {
+                        index1 = _math.rand(src.length-1)
+                    }
+
+                    if(_u(index2)) {
+                        index2 = 1;
+                    }
+                    else if(index2 == -1) {
+                        index2 = _math.rand(src.length-1);
+                    }
+                    var var3 = src[index1];
+                    var var4;
+
+                    //  two type, string or Array
+                    if(_A(src)) {
+                        src[index1] = src[index2];
+                        src[index2] = var3;
+
+                        re = src;
+                    }
+                    else if(_s(src)) {
+
+                        var4 = src[index2];
+
+                        re = src.slice(0, index1) + var4 + src.slice(index1+1, index2-1) + var3 + src.slice(index2+1);
+                    }
+
+                    return re;
+                }
+                ,
+
+                infix: function(array, src, start) {
+
+                    var length = src.length;
+
+                    for(var x = 0; x < length; x++) {
+
+                        var val = src[x];
+
+                        array.splice(start+x, 0, val);
+                    }
+
+                    return array;
+                },
+
+
+                a_loop: function(count, value, sign, arg3) {
+                    sign = _def(sign, "repeat");
+                    value = _def(value, "");
+
+                    var re = [];
+
+                    var startVal = value;
+                    var likeChr = false;
+
+                    if(has(["a", "A"], sign)) {
+                        startVal = ascii(value);
+                        likeChr = true;
+                    }
+                    var step = _def(arg3, 1);
+
+                    for(var z = 0; z < count; z++) {
+
+                        var cur;
+                        var _step = step*z;
+
+                        switch(sign) {
+
+                            case "repeat":
+                            {
+                                cur = value;
+                            }
+                                break;
+
+                            default:
+                            {
+                                cur = startVal + _step;
+
+                                if(likeChr == true) {
+                                    cur = chr(cur);
+                                }
+                            }
+                        }
+
+                        re.push(cur);
+                    }
+
+                    // done!
+                    return re;
+                },
+
+                and: function() {
+
+                    var a = arguments;
+
+                    var a1 = a[0]; // frist array
+
+                    var andset = clone(a1);
+
+                    for(var x = 0; x < andset.length; x++) {
+
+                        var cur = andset[x];
+                        // compare here
+                        for(var y = 1; y < a.length; y++) {
+
+                            if(a[y].indexOf(cur) == -1) {
+
+                                // current value isn;t in here
+                                andset.splice(x--, 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    return andset;
+                },
+
+                or: function() {
+
+                    var ar = arguments;
+
+                    var orset = new Array();
+
+                    for(var x = 0; x < ar.length; x++) {
+
+                        var curset = ar[x];
+
+                        // iterate current array
+                        for(var y = 0; y < curset.length; y++) {
+
+                            var curval = curset[y];
+
+                            if(orset.indexOf(curval) == -1) {
+                                orset.push(curval);
+                            }
+                        }
+                    }
+
+                    return orset;
+                },
+
+                xor: function() {
+
+                    var arg = arguments;
+
+                    var xorset = clone(arg[0]);
+
+                    for(var y = 0; y < xorset.length; y++) {
+
+                        var curval = xorset[y];
+                        // compare set
+                        for(var z = 1; z < arg.length; z++) {
+
+                            // if current set has indicate value, delete it
+
+                            if(arg[z].indexOf(curval) !== -1) {
+                                xorset.splice(y--, 1);
+                            }
+                        }
+                    }
+
+                    return xorset;
+                }
+            },
+
+            /*
+            helper: object
+             */
+            "object":
+            {
+                id: "object",
+                wish:   "sacrifice",
+                chart: [ "flip",  "analyze", "compose", "c_map", "clean", "of", "who", "what"],
+
+                /*
+                n:  flip
+                d:  1 key = value, 2 value = key
+                 */
+                "flip":    function(object, is_reversed) {
+
+                    var val;
+
+                    var reobj;
+
+                    if(is_reversed) {
+                        reobj = new Object();   //  create new Object, not modify source
+                    }
+                    else {
+                        reobj = object;
+                    }
+                    for(key in object) {
+                        val = object[key].toString();
+
+                        delete reobj[key];
+                        reobj[val] = key;
+                    }
+
+                    return reobj;
+                },
+                /*
+                n:  analyze
+                 */
+                analyze:    function(src, mode, option1, option2) {
+
+                    //  multi mode?
+                    var re;
+                    var id, val;
+
+                    mode = mode || "&";
+
+                    var _symbol = mode[0];
+
+                    //  generate a=1&b=1
+                    var val_kep = new Array();
+
+                    var isArr, isObj;
+                    if(_A(src)) {
+
+                        isArr = true;
+                        option2 = option2 || "key";
+
+                        for(id = 0; id < src.length; id++) {
+                            val = src[id];
+                            _parse_analyze();
+                        }
+                    }
+                    else if(_o(src)) {
+
+                        isObj = true;
+
+                        for(id in src) {
+                            val = src[id];
+                            _parse_analyze();
+                        }
+                    }
+
+                    //  join string
+                    re = val_kep.join(_symbol);
+
+                    return re;
+
+                    /*
+                    name:   _parse_analyze
+                     */
+                    function _parse_analyze() {
+
+                        var _id2 = id;
+
+                        if(isArr == true) {
+                            _id2 = option2 + id;
+                        }
+
+                        switch(mode) {
+
+                            case "&":
+                            {
+                                if(option1 == true) {
+                                    val = encodeURIComponent(val);
+                                }
+
+                                val = _id2 + "=" + val;
+                            }
+
+                                break;
+
+                            case ";key:":
+                            {
+                                val = _id2 + ":" + val;
+                            }
+                        }
+
+                        val_kep.push(val);
+                    }
+                },
+                /*
+                 name:   compose
+                 */
+                compose:    function(src, mode, option1) {
+
+                    mode = mode || "&"; //  set default mode
+
+                    var re;
+
+                    var key, val, index;
+                    switch(mode) {
+
+                        case "&":
+                        case "and":
+                        {
+
+                            var list = src.split("&");
+
+                            if(list.length == 1 && !src.match(/&|=/)) {
+                                re = src;
+                                break;
+                            }
+
+                            re = new Object();
+
+                            var item;
+
+                            for(index = 0; index < list.length; index++) {
+                                item = list[index];
+
+                                var pattern = /\w+/;
+                                key = _regexp.reg1(item, pattern);
+
+                                //  if not match, return source
+                                if(_null(key)) {
+                                    continue;
+                                }
+
+                                //  if option1 is defined
+                                if(option1) {
+                                    key = option1 + key ;
+                                }
+
+                                val = item.replace(key + "=", "");
+                                re[key] = val;
+                            }
+                        }
+                    }
+
+                    return re;
+                },
+
+
+                c_map:  function(src, value, opt1) {
+
+                    var index, val, key;
+
+                    var reMap = new Object();   //  object
+
+                    value = _bee._def(value, true);
+
+                    var index_counter = 0;  //  for start index
+
+                    if(value == "index" && _n(opt1)) {
+
+                        index_counter = opt1;
+                    }
+
+                    if(_s(src)) {
+                        src = _object.compose(src);
+                    }
+
+                    if(_A(src) == true) {
+
+                        //  _Array
+                        index = 0;
+
+                        for(;index < src.length; index++) {
+
+                            val = src[index];
+
+                            reMap[val] = _getValue_c_map();
+                        }
+                    }
+                    else if(_o(src) == true) {
+
+                        //
+                        index = 0;
+
+                        for(key in src) {
+                            val = src[key];
+
+                            reMap[key] = _getValue_c_map();
+
+                            index++;
+                        }
+                    }
+
+                    return reMap;
+
+                    /*
+                    name:   _getValue_c_map
+                     */
+                    function _getValue_c_map() {
+
+                        var re;
+
+                        if(value == "index") {
+                            re = index + index_counter;
+                        }
+                        else if(value == "key") {
+                            re = key;
+                        }
+                        else {
+                            re = value;
+                        }
+
+                        return re;
+                    }
+                },
+
+                clean:  function(src, opts, is_replace, deep) {
+
+                    deep = _def(deep, 4);
+                    opts = opts || "undefined&object&null&string" ;
+
+                    opts = _object.c_map(opts, true);
+
+                    each(src, function(val, key, deep, src) {
+
+                        if(_clean_filter(val)) {
+
+                            if(_A(src)) {
+                                src.splice(key, 1);
+                            }
+                            else {
+                                delete src[key];
+                            }
+                        }
+
+                    }, is_replace, null, deep);
+
+                    return src;
+
+                    /*
+                    _clean_filter
+                     */
+                    function _clean_filter(val) {
+
+                        var _clean = true;
+
+                        if(opts["undefined"] && _u(val)) {
+
+                        }
+                        else if(opts["object"] && (countOf(val) == 0)) {
+
+                        }
+                        else if(opts["null"] && _null(val)) {
+
+                        }
+                        else if(opts["string"] && (val == "")) {
+
+                        }
+                        else {
+                            _clean = false;
+                        }
+
+                        return _clean;
+                    }
+                },
+
+                /* of */
+                of: function(object, Class) {
+                    return (object instanceof Class);
+                }
+                ,
+                /* who */
+                who: function(object) {
+                    return object.constructor.name;
+                },
+
+                /* what */
+                what: function(object) {
+                    return typeof(object);
+                }
+            },
+
+            /*
+            helper: function
+             */
+            "method":
+            {
+                id: "method",
+                wish:   "sacrifice",
+                chart:  [ "getArg", "un_arg", "un_apply"],
+
+                /*
+                name:   getArg
+                 */
+                getArg: function(arg, return_arg) {
+
+                    arg = arg || _method.getArg.caller.arguments;
+
+                    if(! return_arg) {
+
+                        arg = arg2arr(arg);
+                    }
+
+                    return arg;
+                },
+                /*
+                name:   un_arg
+                 */
+                un_arg:    function(src, start, caller) {
+
+                    start = _def(start, 0);
+
+                    src = g_arr(src, "direct");
+
+                    caller = caller || un_arg.caller;
+                    //  get arguments
+                    var arg = arg2arr(caller.arguments);
+                    infix(arg, src, start);
+
+                    return arg;
+                },
+
+                /* name: un_apply */
+                un_apply: function(method, src, start, scope) {
+
+                    return method.apply(scope, un_arg(src, start, un_apply.caller));
+                }
+            },
+            /*
+            helper: manupla
+             */
+            "editor":
+            {
+                id: "editor",
+                wish: "sacrifice",
+                chart: [ "impact", "crowd", "look", "loglook", "range", "word", "strip" ],
+
+                onload: function() {
+
+                    // get word
+
+                    var wordkep = new Array();
+
+                    var places = ANT.List.Babys;
+
+                    // use settimeout
+
+                    var z = 0;
+
+                    // use 0, as soon as possible
+                    setTimeout(_collectWord, 0);
+
+                    /* in: _collectWord */
+                    function _collectWord() {
+
+                        var scope = window["_" + places[z++]];
+
+                        if(is(scope)) {
+                            var curkep = word(scope);
+
+                            wordkep = wordkep.concat(curkep);
+                        }
+
+                        if(z < places.length) {
+                            setTimeout(_collectWord, 0);
+                        }
+                        else {
+                            unique(wordkep, true);
+                            ANT.Data.Words = wordkep;
+                        }
+                    }
+                },
+                /*
+                 name:   compress javascritp code
+                 */
+                impact: function(source, noQuote) {
+
+                    if(_f(source)) {
+                        source = source.toString();
+                    }
+
+                    if(! noQuote) {
+                        source = source.replace(/\"/g, "\\\"").replace(/\'/g, "\\\'");
+                    }
+                    return source.replace(/\n|\t|\r|\/\/.*|\/\*.+(?!\*\/)\*\/| +/g, " ");
+                },
+                /*
+                name: crowdhtml
+                */
+                crowd: function (code, bQuote) {
+
+                    code = code.replace(/>\s+</g, "><").replace(/\n/g, "");
+
+                    if(_u(bQuote)) {
+                        bQuote = true;
+                    }
+
+                    if(bQuote == true) {
+                        code = code.replace(/\"/g, "\\\"").replace(/\'/g, "\\\'");
+                    }
+
+                    return code;
+                }
+                ,
+                /*
+                name:   look
+                 */
+                look:   function(src, _opts, deepCounter) {
+
+                    var _this = _editor.look;
+
+                    deepCounter = deepCounter || 1;
+
+                    var _text = "";
+                    var opts =
+                    {
+                        limit: 128,
+                        deep: 2,
+                        line: "\n",
+                        indent: 1,
+                        key: true,
+                        value: true,
+                        index: true,
+                        layer: true,
+
+                        counter: true,
+                        border: true
+                    };
+
+                    _opts = _maker.g_obj(_opts);
+
+                    copy(_opts, opts);
+
+                    if(deepCounter > opts.deep) {
+                        return;
+                    }
+
+                    if(deepCounter == 1 && opts.layer) {
+
+                        _editor.look._layer = [];
+                    }
+
+                    var index, val;
+                    var valkep = [];
+
+                    var _layer = _editor.look._layer;
+                    var indent;
+                    var start_border, end_border;
+
+                    indent = "";
+                    start_border = "";
+                    end_border = "";
+
+                    if(_A(src)) {
+
+                        if(opts.border) {
+                            start_border = "[";
+                            end_border = "]";
+                        }
+
+                        index = 0;
+
+                        for(; index < src.length; index++) {
+
+                            val = src[index];
+
+                            if(_o(val)) {
+                                val = _this(val, opts, deepCounter + 1);
+                            }
+                            else {
+                                _layer[deepCounter - 1] = index;
+
+                                if(opts.index) {
+
+                                    val = index + ": " + val;
+                                }
+
+                                if(opts.layer) {
+
+                                }
+
+                                indent =  deepCounter * (opts.indent);
+
+                                if(opts.border == false) {
+                                    indent--;
+                                }
+
+                                indent = _string.chars("\t",indent);
+
+                                val =  indent + val;
+                            }
+
+                            valkep.push(val);
+                        }
+
+                    }
+                    else if(_o(src)) {
+
+                        if(opts.border == true) {
+                            start_border = "{";
+                            end_border = "}";
+                        }
+
+                        for(key in src) {
+
+                            val = src[key];
+
+                            if(_f(val)) {
+                                //  function
+                                val = "&lt;function&gt;";
+                            }
+
+                            if(_o(val)) {
+                                val = _this(val, opts, deepCounter + 1);
+                            }
+                            else {
+                                if(opts.key) {
+
+                                    val = key + ": " + val;
+                                }
+
+                                if(opts.layer) {
+
+                                }
+
+                                indent =  deepCounter * (opts.indent);
+
+                                if(opts.border == false) {
+                                    indent--;
+                                }
+
+                                indent = _string.chars("\t",indent);
+
+                                val =  indent + val;
+                            }
+
+                             valkep.push(val);
+                        }
+                    }
+
+                    _text = valkep.join(opts.line);
+
+                    if(opts.border) {
+                        //  long concat
+                        indent = _string.chars("\t", deepCounter-1);
+
+                        _text = indent + start_border + "\n" + _text + "\n";
+                        _text = _text + indent;
+                        _text = _text + end_border;
+                    }
+
+                    return _text;
+                },
+
+                /*
+                loglook
+                 */
+                loglook:    function(src, opts) {
+                    return console.log(_editor.look(src, opts));
+                }
+                ,
+                /* range */
+                range: function(index) {
+                    if(mock(index)) {
+                        index = 0;
+                    }
+
+                    var _sel = this.getSelection();
+
+                    return _sel.getRangeAt(index);
+                },
+
+                /* word */
+                word: function(src, limit, loveStr, start, isUnique) {
+
+                    isUnique = _def(isUnique, true);
+
+                    if(_NS2(src)) {
+                        src = src.full();
+                    }
+                    else if(_HE(src)) {
+                        src = text(src);
+                    }
+                    else if(_o(src)) {
+                        src = obj2str(src);
+                    }
+
+                    src = src.toString();
+
+                    var result = src.match(/(|[A-Z])[a-z]{2,}/g);
+
+                    if(_A(result)) {
+                        start = _def(start, 0);
+                        limit = _def(limit, result.length);
+
+                        result = result.splice(start, limit);
+
+                        // unique
+                        if(isUnique == true) {
+                            result = unique(result);
+                        }
+
+                        if(is(loveStr)) {
+                            result = result.join(loveStr);
+                        }
+                    }
+                    else {
+                        result = [];
+                    }
+
+                    return result;
+                },
+
+                /* strip */
+                strip: function(str, replaced) {
+                    replaced = _def(replaced, " ");
+
+                    return str.replace(/\s+/g, replaced);
+                }
+            }
+            ,
+            /*
+            name:   actor
+             */
+            actor: {
+                id: "actor",
+                wish:   "sacrifice",
+                chart: [ "_calls",  "_delay", "_sleep", "op_loop", "op_fly" ],
+                /*
+                 name: _calls
+                 */
+                _calls: function _calls(codes, arg, _this) {
+
+                    if(! _A(codes)) {
+                        codes = [ codes ];
+                    }
+
+                    //  execute!
+                    var iCode = 0;
+                    for(; iCode < codes.length; iCode++) {
+
+                        codes[iCode].apply(_this, arg);
+                    }
+
+                    return true;
+                },
+
+                /*
+                name:   _delay
+                 */
+                _delay: function(code, time) {
+
+                    time = time || 1;   //  1 s
+
+                    return setTimeout(code, time * 1000);
+                }
+                ,
+                /*
+                name:   _sleep
+                 */
+                _sleep: function(duration) {
+
+                    duration = duration || 1;
+
+                    duration *= 1000;
+                    //
+
+                    var time1 = new Date();
+
+                    for(;;) {
+
+                        var time2 = new Date();
+
+                        if(time2.getTime() - time1.getTime() >= duration) {
+                            break;
+                        }
+                    }
+                    //  continue time...
+                }
+                ,
+                /* name: stopLoop */
+                op_loop: function(op) {
+
+                    var sign = ANT.Sign;
+
+                    op = _def(op, "end");
+                    var re;
+
+                    switch(op) {
+
+                        case "stop":
+                        {
+                            sign.STOP_LOOP = true;
+                        }
+                            break;
+
+                        case "query": {
+
+                            if(sign.STOP_LOOP == true) {
+                                re = true;
+                                sign.STOP_LOOP = false;
+                            }
+                            else {
+                                re = false;
+                            }
+                        }
+                            break;
+
+                        case "end":
+                        {
+                            sign.STOP_LOOP = false;
+                        }
+                            break;
+                    }
+
+                    return re;
+                },
+
+                /* op _fly */
+                op_fly: function(sign) {
+
+                    sign = sign || "stop";
+
+                    switch(sign) {
+
+                        case "stop":
+                        {
+                            Sign.Fly = sign;
+                        }
+                            break;
+
+                        case "play":
+                        {
+                            Sign.Fly = "play";
+                        }
+                            break;
+                    }
+                }
+            }
+            ,
+            /*
+            name:   dinosaur
+             */
+            villain: {
+                id: "villain",
+                wish:   "isolation",
+                chart:   [ "eval_xpath" ],
+
+                /*name: eval_xpath  */
+                eval_xpath: function(exp) {
+
+                    exp = exp || "//*";
+
+                    //  get nodelist
+
+                    var xResult;
+
+                    xResult = document.evaluate(exp, document, null, XPathResult.ANY_TYPE, null);
+
+                    //  iterate
+
+                    var nodeset = [];
+                    var curNode;
+
+                    while(curNode = xResult.iterateNext()) {
+                        nodeset.push(curNode);
+                    }
+
+                    return nodeset;
+                }
+            }
+            ,
+            /*
+            name:   mathematician
+            desc:   compute number
+             */
+            math: {
+
+                id: "math",
+                wish:   "sacrifice",
+                chart:
+                    [
+                        "r_int", "r_float", "r_floats", "r_nature", "r_hell", "r_ascii", "r_letter", "r_letters", "r_num", "r_up", "r_low",
+                        "gt", "lt", "eq", "neq", "ngt", "nlt", "limit", "r_src", "r_word", "r_node",
+                        "decide", "g_num"],
+
+                alias: {
+                    rand: "r_int"
+                },
+
+                init: function() {
+
+
+                    TINY = Math.pow(0.1, 6);
+
+                    // 1 create multiple function
+                    var _apilist =
+                        [
+                        "r_int", "r_float", "r_nature", "r_hell", "r_ascii", "r_letter", "r_letters", "r_num",
+                            "r_up", "r_low", "r_word", "r_node"];
+
+                    each(_apilist, function(apiName) {
+
+                        var _newName = apiName.replace(/^r_/, "m_");
+
+                        var _newAPI = returnMathMultiple(apiName);
+                        //
+                        _math[_newName] = _newAPI;
+                        window[_newName] = _newAPI;
+
+                        return _newAPI;
+
+                        /* inner: returnMathMultiple */
+                        function returnMathMultiple(apiName) {
+
+                            var _api = _math[apiName];
+
+                            return _MathMultipleAPI;
+                            /* normal: _MathMultipleAPI */
+                            function _MathMultipleAPI() {
+
+                                var _arg = getArg();
+
+                                var maxLength = _arg.shift() || 8;
+                                var minLength = _arg.shift() || 4;
+
+                                //
+                                var times = r_int(maxLength, minLength);
+
+                                var result = [];
+                                // for
+                                for(var i = 0; i < times; i++) {
+
+                                    var value = _api.apply(null, _arg);
+
+                                    result.push(value);
+                                }
+
+                                if(apiName == "r_node") {
+                                    _dom.heavyNode(result);
+                                }
+                                return result;
+                            }
+                        }
+                    });
+                },
+                /*
+                name:   rand
+                 */
+                r_int:   function(max, min) {
+
+                    return Math.round(r_float(max, min));
+                }
+                ,
+                /*
+                name:   r_float
+                 */
+                r_float:  function(max, min) {
+                    if(mock(min)) {
+                        min = 0;
+                    }
+
+                    if(mock(max)) {
+                        max = 100;
+                    }
+
+                    return min + (max-min)*Math.random();
+                }
+                ,
+                /* r_floats */
+                r_floats: function() {
+
+                    var arg = arguments;
+
+                    //
+                    var length = arg.length;
+
+                    // get index
+                    var index = r_nature(length - 1);
+                    var _r = arg[index];
+
+                    var max = _r[0];
+                    var min = _r[1];
+
+                    return r_float(max, min);
+                },
+                /* r_nature */
+                r_nature: function(max, min) {
+                    min = min || 0;
+                    max = max || 100;
+
+                    min = nlt(min, 0);
+                    return r_int(max, min);
+                },
+
+                /* r_hell */
+                r_hell: function(min, max) {
+                    min = min || -100;
+                    max = max || -1;
+
+                    max = ngt(max, -1);
+                    return r_int(max, min);
+                },
+
+                /* r_ascii */
+                r_ascii: function(max, min) {
+
+                    max = max || 255;
+                    min = min || 0;
+
+                    max = ngt(max, 255);
+                    min = nlt(min, 0);
+
+                    return r_int(max, min);
+                },
+
+                /* r_up */
+                r_up: function(max, min, bCode) {
+
+                    max = max || "Z";
+                    min = min || "A";
+                    max = ascii(max);
+                    min = ascii(min);
+
+                    // limit
+                    max = limit(max, ZCode);
+                    min = limit(min, ACode);
+
+                    var code = r_int(max, min);
+
+                    if(! bCode) {
+                        code = chr(code);
+                    }
+
+                    return code;
+                },
+
+                /* r_low */
+                r_low: function(max, min, bCode) {
+
+                    max = max || "z";
+                    min = min || "a";
+
+                    max = ascii(max);
+                    min = ascii(min);
+
+                    // limit
+                    max = limit(max, zCode);
+                    min = limit(min, aCode);
+
+                    var code = r_int(max, min);
+
+                    if(! bCode) {
+                        code = chr(code);
+                    }
+
+                    return code;
+                },
+
+                /* r_letter */
+                r_letter: function(max, min) {
+
+                    max = max || "z";
+                    min = min || "a";
+
+                    max = low(max);
+                    min = low(min);
+
+                    max = ascii(max);
+                    min = ascii(min);
+
+                    var code = r_floats([max, min], [max - 32, min - 32]);
+                    code = round(code);
+
+                    var letter = chr(code);
+
+                    return letter;
+                },
+
+                r_letters: function(max, min) {
+
+                    max = max || 8;
+                    min = min || 4;
+
+                    var length = r_int(max, min);
+
+                    var letters = "";
+
+                    for(var y = 0; y < length; y++) {
+                        letters += r_letter();
+                    }
+
+                    return letters;
+                },
+
+                r_num: function(min, max, bCode) {
+
+                    max = max || 9;
+                    min = min || 0;
+
+                    max = limit(max, Code9);
+                    min = limit(min, Code0);
+
+                    var code = r_int(max, min);
+
+                    if(! bCode) {
+                        code = chr(code);
+                    }
+
+                    return code;
+                },
+
+                /* gt */
+                gt: function(number, compare) {
+
+                    return limit(number, compare + TINY);
+                },
+
+                /* lt */
+                lt: function(number, compare) {
+
+                    return limit(number, null, compare - TINY);
+                },
+
+                /* ngt */
+                ngt: function(number, compare) {
+                    return limit(number, null, compare);
+                },
+
+                /* lgt */
+                nlt: function(number, compare) {
+                    return limit(number, compare, null);
+                },
+
+                /* eq */
+                eq: function(number, compare) {
+
+                    if(number !== compare) {
+                        number = compare;
+                    }
+
+                    return number;
+                },
+
+                /* neq */
+                neq: function(number, compare, def) {
+
+                    def = def || 0;
+
+                    if(number == compare) {
+                        number = def;
+                    }
+
+                    return number;
+                },
+                /* limit */
+                limit: function(number, min, max) {
+
+                    // notice: use default
+/*                    max = max || 9999*9999;
+                    min = min || -9999*9999;*/
+
+                    // compare
+                    if(is(max) && (number > max) ) {
+                        number = max;
+                    }
+                    else if(is(min) && (number < min)) {
+                        number = min;
+                    }
+
+                    return number;
+                },
+
+                /* name: r_src */
+                r_src: function(src, count, option) {
+
+                    count = _def(count, 1);
+
+                    if(_A(src)) {
+
+                    }
+                    else if(_o(src)) {
+                        option = _def(option, "v");
+                        src = obj2arr(src, option);
+                    }
+                    else if(_s(src) && option == "w") {
+                        src = word(src);
+                    }
+
+                    var indexs = m_int(count, count, 0, src.length-1);
+
+                    var re = new Array();
+
+                    each(indexs, function(i) {
+                        re.push(src[i]);
+                    });
+
+                    return re;
+                },
+
+                /* r_word */
+                r_word: function(kep) {
+
+                    if(mock(kep)) {
+                        kep = ANT.Data.Words;
+                    }
+                    else {
+                        kep = word(kep);
+                    }
+
+                    var index = r_int(0, kep.length-1);
+
+                    return kep[index];
+                },
+
+                /* r_node */
+                r_node: function(generators, tagName) {
+
+                    if(_s(tagName)) {
+                        tagName = tagName.split(",");
+                    }
+
+                    tagName = _def(tagName, List.ExposeTag);
+                    tagName = r_src(tagName, 1);
+
+                    if(_s(generators)) {
+                        generators = generators.split(",");
+
+                        generators = r_src(generators, 1);
+
+                        // get method
+                        generators = window[generators];
+                    }
+
+                    generators = _def(generators, m_word);
+
+                    var result = generators();
+
+                    if(_A(result)) {
+                        result = result.join(" ");
+                    }
+
+                    result = result.toString();
+
+                    var node = tag(tagName, result);
+
+                    return node;
+                },
+                /*
+                name:   decide
+                 */
+                decide: function(total) {
+                    total = total || 2;
+
+                    return ! Boolean(rand(total));
+                },
+
+                /*
+                name:   g_num
+                 */
+                g_num:   function(src, defvals) {
+
+
+                    if(_s(src)) {
+                        src = src.split(",");
+                    }
+
+                    if(_s(defvals)) {
+                        defvals = defvals.split(",");
+                    }
+
+                    if(_A(src)) {
+                        src = _2int(src);
+                    }
+                    else {
+                        src = defvals;
+
+                        return src;
+                    }
+
+
+                    if(_A(defvals)) {
+
+                        _array.map(defvals, function(val, index) {
+
+                            var _val = src[index];
+
+                            if(_n(_val) == false || isNaN(_val)) {
+                                src[index] = val;
+                            }
+                        })
+                    }
+
+                    return src;
+                }
+            }
+            ,
+            /*
+            name:   painter
+             */
+            painter: {
+
+                id: "painter",
+                wish:   [ "getColor", "get16Color" ],
+                chart: [ "getColor", "get16Color", "_16Color", "get139Color", "_139Color"],
+                alias: {
+                    _color: "getColor",
+                    _16: "get16Color",
+                    _139: "get139Color"
+                },
+                list: {
+                    Color16:   [
+                        "aqua", "black", "blue", "fuchsia", "gray", "green", "lime","maroon",
+                        "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"],
+
+                    Color139:  [ "AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black",
+                        "BlancedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse",
+                        "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan",
+                        "DarkGoldenRod", "DarkGray", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "DarkOrange",
+                        "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateGray", "DarkSlateBlue", "DarkTurquoise",
+                        "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen",
+                        "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Green", "GreenYellow", "HoneyDew", "HotPink",
+                        "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue",
+                        "LightCoral", "LightCyan", "LightGoldenRod", "LightGray", "LightGreen", "LightPink", "LightSalmon", "LightSkyBlue",
+                        "LightSlate", "LightSlateGray", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon",
+                        "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen",
+                        "MediumTurquoise", "MediumVioletRed", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace",
+                        "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise",
+                        "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown",
+                        "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue",
+                        "SlateBlue", "SlateGray", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise",
+                        "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"
+                    ]
+                },
+                /*
+                name:   getColor
+                 */
+                getColor:   function() {
+                    var R = rand(255);
+                    var G = rand(255);
+                    var B = rand(255);
+
+                    return "RGB(" + R + "," + G + "," + B + ")";
+                }
+                ,
+                /*
+                name:   get16Color
+                 */
+                get16Color: function() {
+                    return List.Color16[rand(16 - 1)];
+                },
+
+                /*
+                name:   get139Color
+                 */
+                get139Color: function() {
+                    return List.Color139[rand(139-1)];
+                }
+            }
+            ,
+            /*
+            helper：accounter
+            d:
+             */
+        "calc":
+            {
+                id: "calc",
+                wish:   [ "countOf" ],
+                chart: [ "countOf"],
+
+                /*
+                n:  countOf
+                desc:   get total count of an object, arg2 may be stirng, or a function
+                string used type limit, function is filter
+                if arg2 not empty, arg3 may be true, then filter for key, not value
+                 */
+                countOf: function(object, filter, loveKey, deep) {
+
+                    var _size = 0;
+
+                    deep = deep || 4;
+                    each(object, _countOf_check, null, deep);
+
+                    return _size;
+                    /*var be_arg2 = false;
+                    //  serious argument2
+                    if(_s(arg2) || _f(arg2)) {
+                        be_arg2 = true;
+                    }
+
+                    var index, val;
+
+                    if(_A(object)) {
+
+                        var array = object; //  assign
+                        //  object is an array
+                        if(be_arg2 == true) {
+
+                            //  through array
+                            index = 0;
+
+                            for(;index < array.length;index++) {
+                                val = array[index];
+
+                                if(_countOf_check()) {
+                                    _size++;
+                                }
+                            }
+
+                        }
+                        else {
+                            _size = array.length;
+                        }
+                    }
+                    else if(_o(object)) {
+
+                        for(index in object) {
+
+                            val = object[index];
+
+                            if(be_arg2 && _countOf_check()) {
+                                _size++;
+                            }
+                            else {
+                                _size++;
+                            }
+                        }
+                    }
+
+                    return _size;
+                    *//*
+                    sub：    _countOf_check
+                     */
+                    function _countOf_check(val, key) {
+
+                        var _result = true;
+
+                        if(_s(filter)) {
+                            _result = ( typeof(val) == filter ); // filter is typename
+                        }
+                        else if(_f(filter)) {
+                            //  function
+
+                            //  if loveKey == true, change value to key
+                            if(loveKey == true) {
+                                val = key;
+                            }
+
+                            _result = filter.call(null, val);
+                        }
+
+                        if(_result == true) {
+                            _size++;
+                        }
+                    }
+                }
+            }
+            ,
+            /*
+            helper: headman
+             */
+            "headman":
+            {
+                id: "headman",
+                wish: "sacrifice",
+                chart: []
+            },
+            /*
+            helper: bee
+             */
+            "bee":
+            {
+                id: "bee",
+                wish:   "sacrifice",
+                chart:
+                    [
+                        "_set", "mock","_def", "_fo", "alias"
+                    ],
+
+                map: {
+                    ShortType: {
+                        b: "boolean",
+                        n: "number",
+                        s: "string",
+                        f: "function",
+                        o: "object",
+                        u: "undefined"
+                    }
+                },
+
+
+                _set:   function(value, defaultValue) {
+
+                    if(_s(value)) {
+                        value = _debug._var(value);
+                    }
+
+                    if(_bee.mock(value)) {
+                        value = defaultValue;
+                    }
+
+                    return value;
+                }
+                ,
+
+                /*
+                name:   mock
+                 */
+                mock:    function(value) {
+                    return (value == null) || (value == undefined);
+                },
+
+                /*
+                name:   _def
+                 */
+                _def:   function(_var, defValue) {
+
+                    var re = _var;
+                    if(mock(_var)) {
+                        re = defValue;
+                    }
+
+                    return re;
+                },
+
+                /* _fo */
+                _fo: function(src) {
+                    var _type = typeof(src);
+
+                    return (_type == "object" || _type == "function");
+                }
+                ,
+                /* alias */
+                alias: function(obj, nameMap) {
+
+                    nameMap = g_obj(nameMap);
+
+                    var _name;
+                    for(var alias in nameMap) {
+
+                        _name = nameMap[alias];
+
+                        obj[alias] = obj[_name];
+                    }
+
+                    return obj;
+                }
+            },
+
+            "loop": 
+            {
+                id: "loop",
+                wish: "all",
+                chart: [ "loop", "each", "map", "filter", "unique", "_loop_i"],
+                /*
+                 name:   _loop
+                 */
+                loop:  function(codes, count, arg, _this) {
+
+                    var counter = 0;
+                    count = count || 1;
+                    for(; counter < count; counter++) {
+
+                        //  executed
+                        _actor._calls(codes, arg, _this);
+                    }
+                },               /*
+                 n:  each
+                 */
+                each:   function(src, callback, args, deep, _this) {
+
+                    if(mock(deep)) {
+                        deep = 1;
+                    }
+
+                    if(deep < 1) {
+                        return;
+                    }
+
+                    each.curDeep = deep;
+
+                    args = args || [];
+
+                    //  for
+                    var index, val;
+
+                    args = [1,2,3].concat(args);
+
+                    if(_SET(src) == true) {
+
+                        //  it's array
+
+                        for(index = 0; index < src.length; index++) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+                            val = src[index];
+
+                            _loop._loop_i([val,index,deep, src], callback, args, _this);
+
+                            if(_o(val)) {
+                                _loop.each(val, callback, args, deep-1, _this);
+                            }
+
+                        }
+                        op_loop("end");
+                    }
+                    else if(_o(src) == true) {
+
+                        //  type == "object"
+
+                        for(index in src) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+
+                            val = src[index];
+
+                            _loop._loop_i([val,index,deep, src], callback, args, _this);
+
+                            if(_o(val)) {
+                                _loop.each(val, callback, args, deep-1, _this);
+                            }
+                        }
+                        op_loop("end");
+                    }
+
+
+                    return src;
+                }
+                ,
+                /*
+                 n:  map
+                 */
+                map:   function(src, callback, is_replace, args, deep, _host) {
+
+                    var _this = _loop.map;
+
+                    if(mock(deep)) {
+                        deep = 1;
+                    }
+
+                    if(deep < 1) {
+                        return;
+                    }
+                    args = args || [];
+
+                    //  for
+                    var index, val;
+                    var _target;
+
+                    if(is_replace) {
+                        _target = src;
+                    }
+                    else {
+                        _target = clone(src);
+                    }
+
+                    args = [1, 2, 3].concat(args);
+
+                    if(_SET(src) == true) {
+
+                        //  it's array
+
+                        for(index = 0; index < src.length; index++) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+                            val = src[index];
+
+                            _target[index] = _loop._loop_i([val,index,deep, src], callback, args, _this);
+
+                            if(_o(val)) {
+                                _target[index] = _loop.map(val, callback, args, deep-1, _this);
+                            }
+                        }
+                        op_loop("end");
+                    }
+                    else if(_o(src) == true) {
+
+                        //  type == "object"
+
+                        for(index in src) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+                            val = src[index];
+
+                            _target[index] = _loop._loop_i([val,index,deep, src], callback, args, _this);
+
+                            if(_o(val)) {
+                                _target[index] = _loop.map(val, callback, args, deep-1, _this);
+                            }
+                        }
+                        op_loop("end");
+                    }
+
+                    return _target;
+                }
+                ,
+                /*
+                 name:   filter
+                 */
+                filter:    function(src, filters, is_replace, args, deep, _host) {
+
+                    var _this = _loop.filter;
+
+                    if(mock(deep)) {
+                        deep = 1;
+                    }
+
+                    if(deep < 1) {
+                        return;
+                    }
+
+                    args = args || [];
+
+                    //  for
+                    var index, val, key;
+                    var _target;
+
+                    if(is_replace) {
+                        _target = src;
+                    }
+                    else {
+                        _target = clone(src);
+                    }
+
+                    //  args
+                    //  set filters
+
+                    var _callback;
+                    var _type;
+                    var _limit;
+
+                    if(_f(filters)) {
+                        _callback = filters;
+                    }
+                    else if(_n(filters)){
+                        _limit = filters;
+                    }
+                    else if(_s(filters)) {
+                        _type = filters;
+                    }
+                    else if(_o(filters)) {
+
+                        //  it's object!
+
+                        _callback = filters.callback;
+                        _limit = filters.limit;
+                        _type = filters.type;
+
+                        args = filters.args || args;    //  replace arguments
+                    }
+
+                    //  type maybe short
+
+                    var _type2 = Map.ShortType[_type];
+
+                    if(exist(_type2)) {
+                        _type = _type2;
+                    }
+
+                    //  check bool
+                    var bool_cb = true;
+                    var bool_limit = true;
+                    var bool_type = true;
+
+                    //
+                    args = [1, 2, 3].concat(args);
+
+                    if(_SET(src) == true) {
+
+                        //  it's array
+
+                        for(index = 0; index < src.length; index++) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+                            val = src[key];
+
+                            if(_o(val)) {
+
+                                _this(val, filters, is_replace,  args, deep - 1, _host);
+                            }
+                            else {
+
+                                if(exist(_limit) && (index >= _limit)) {
+
+                                    _target.splice(index);
+                                    break;
+                                }
+                                if(! _sub_filters()) {
+                                    _target.splice(index, 1);
+                                }
+                            }
+                        }
+                        op_loop("end");
+                    }
+                    else if(_o(src) == true) {
+
+                        //  type == "object"
+                        index = 0;  //  used for counter
+
+                        var _target_map = _object.c_map(_target, false);
+
+                        for(key in src) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+
+                            val = src[key];
+
+                            if(exist(_limit) && (index >= _limit)) {
+
+                                del(_target, _target_map, "map");
+                                break;
+                            }
+                            if(! _sub_filter()) {
+                                delete _target[key];
+                            }
+                            else {
+                                _target_map[key] = true;
+                                index++;
+                            }
+
+                            if(_o(val)) {
+
+                                _this(val, filters,is_replace,  args, deep - 1, _host);
+                            }
+                        }
+                        op_loop("end");
+                    }
+
+                    return _target;
+
+                    /*  _sub_filter */
+                    function _sub_filter() {
+
+                        if(_callback) {
+                            bool_cb = _loop._loop_i([val, index, deep, src], _callback, args, _this)
+                        }
+
+                        if(_type) {
+                            bool_type = (typeof(val) == _type);
+                        }
+
+                        return bool_cb && bool_type;
+                    }
+                },
+                /*
+                 sub:    _loop_i
+                 */
+                _loop_i: function(value, callback, args, _this) {
+
+                    if(_A(value)) {
+                        args.splice(0,3);   //  [val, key, deep]
+                        args = value.concat(args);
+                    }
+                    /*                    else {
+                     args.shift();   //  value is unused
+                     args.unshift(value)
+                     }*/
+
+                    callback = g_func(callback);
+
+                    return callback.apply(_this, args);
+                },
+                /*
+                 n:  unique
+                 d:  unique remove repeat value
+                 */
+                unique:    function(src, is_replace, keymode) {
+
+                    var _aim;
+
+                    if(is_replace) {
+                        _aim = src;
+                    }
+                    else {
+                        _aim = clone(src);
+                    }
+
+                    var _val_kep = [];  //  save val
+                    var index, val;
+
+                    var splice_count = 0;
+                    if(_SET(_aim)) {
+
+                        //  process array
+                        var count = _aim.length;
+
+                        for(index = 0; index < count; index++) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+
+                            val = _aim[index];
+
+                            if(search(_val_kep, val) !== false) {
+                                _aim.splice(index--, 1);
+                                count--;
+                                //splice_count++;
+                            }
+
+                            //  push to kep
+                            _val_kep.push(val);
+                        }
+                        op_loop("end");
+                    }
+                    else if(_o(_aim)) {
+
+                        //  processs object
+                        for(index in _aim) {
+
+                            if(op_loop("query") == true) {
+                                break;
+                            }
+
+                            if(keymode == true) {
+                                val = index
+                            }
+                            else {
+                                val = _aim[index];
+                            }
+
+                            //
+                            if(search(_val_kep, val) !== false) {
+
+                                delete _aim[index];
+                            }
+                            _val_kep.push(val);
+                        }
+                        op_loop("end");
+                    }
+
+                    return _aim;
+                }
+
+            },
+            /* helper" bin */
+            "bin":
+            {
+                id: "bin",
+                eject: [],
+                chart: [ "hex2bin", "bin2hex" ],
+
+                hex2bin: function(data) {
+
+                    if(_s(data)) {
+                        data = s_split(data, 2);
+                    }
+
+                    var re = "";
+
+                    each(data, function(item) {
+
+                        re += parseInt("0x" + item);
+                    });
+
+                    return re;
+                },
+
+                /* bin2hex */
+                bin2hex: function(bin) {
+
+                    var data = "";
+
+                    var z = 0;
+                    while(z < bin.length) {
+
+                        var val = bin.charCodeAt(z);
+
+                        val = val.toString(16);
+
+                        data += val;
+                        z++;
+                    }
+
+                    return data;
+                }
+            },
+            "com":
+            {
+                id: "com",
+                wish: ["upgrade"],
+                chart: ["upgrade"],
+
+                upgrade: function(COMName, src) {
+
+                    if(mock(COM[COMName])) {
+                        COM[COMName] = new Object();
+                    }
+
+                    return copy(src, COM[COMName]);
+                }
+            },
+            /*
+            helper: web
+             */
+            "web":
+            {
+                id: "web",
+                wish:   "sacrifice",
+                chart:  [ "request", "http" ],
+
+                /*
+                n:  request;
+                 */
+                request:   function(url, data, success_cb, _opts){
+
+                    var _method, _asycn;
+
+                    var opts =
+                    {
+                        method: "GET",
+                        asycn: true
+                    };
+
+                    _mover.setup(opts, _opts);
+
+                    //  crate Request Object
+                    var HTTP = new XMLHttpRequest();
+
+                    //  get string
+                    if(_o(data) && data != null) {
+                        data = _object.analyze(data, "&", true);
+                    }
+
+                    //  parse url
+
+                    var _seg = url.split("@");
+
+                    var place = _seg[1];
+
+                    place = _server._place_map[place] || "";
+
+                    url = place + _seg[0];
+
+                    //  replaced by localhost
+
+                    url = url.replace(_server._place_map.root, "http://localhost/");
+
+                    if(opts.method == "GET") {
+
+                        if(exist(data)) {
+                            data = "?" + data;
+                            url += data;
+                        }
+                        data = "";  //  reset data
+                    }
+
+                    HTTP.open(opts.method, url, opts.asycn);
+
+                    if(opts.method == "POST") {
+                        HTTP.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                    }
+
+                    if(_asycn == true) {
+                        HTTP.onreadystatechange = _http_callback;
+                    }
+
+                    HTTP.send(data);
+
+                    return HTTP;
+
+                    //
+                    function _http_callback() {
+
+                        var response;
+
+                        if(( HTTP.readyState == 4) && (xmlhttp.status == 404) ) {
+                            response = HTTP.responseText;
+
+                            //  server already sended data, now we process them
+                            if(success_cb) {
+                                success_cb(response, HTTP);
+                            }
+                        }
+                        else if(HTTP.status == 404) {
+
+                            //  unluckly, we got error
+                            if(options.error_cb) {
+                                options.error_cb(HTTP);
+                            }
+                        }
+                        else {
+
+                            //  we trace any!
+
+                            if(options.progress_cb) {
+                                options.progress_cb(HTTP);
+                            }
+                        }
+                    }
+                }
+                ,
+                /*
+                n:  http
+                 */
+                "http":  function(url, data, _method) {
+
+                    //  init option
+                    var _options =
+                    {
+                        asycn: false
+                    };
+
+                    if(exist(_method)) {
+                        _options.method = _method;
+                    }
+
+                    //  call http function
+                    var _HTTP = _web.request(url, data, null, _options);
+
+                    var response = _HTTP.responseText;
+                    //  parse json
+
+                    var re = cliff(decode, [ response ]);
+
+                    if(_X(re)) {
+                        re = response;
+                    }
+                    return re;
+                }
+            }
+            ,
+            /*
+            helper: type-convert
+             */
+            "converter":
+            {
+                id: "converter",
+                wish: "sacrifice",
+                chart: [ "obj2arr", "arr2obj", "arg2arr", "obj2str", "_2int"],
+
+                obj2arr:    function(src, mode) {
+
+                    mode = mode || "v";
+
+                    var re;
+                    if(_o(src)) {
+
+                        re = new Array();
+
+                        //  for
+                        var index;
+                        var val;
+
+                        var counter = 0;
+                        for(index in src) {
+
+                            if(mode == "v") {
+                                val = src[index];
+                            }
+                            else if(mode == "k"){
+                                val = index;
+                            }
+                            counter++;
+                            re[counter - 1] = val;
+                        }
+                    }
+
+                    return re;
+                },
+
+                /*
+                name:   arr2obj
+                 */
+                arr2obj:    function(src, opt1) {
+
+                    var index = 0;
+                    var val;
+                    var keyName;
+
+                    var re = new Object();
+
+                    for(; index < src.length; index++) {
+
+                        //
+                        val = src[index];
+
+                        if(opt1) {
+                            keyName = opt1 + index;
+                        }
+
+                        re[keyName] = val;
+                    }
+
+                    return re;
+                },
+
+                /*
+                name:   arg2arr
+                 */
+                arg2arr:    function(argument) {
+
+                    argument = argument || arg2arr.caller.arguments;
+
+                    var x = 0;
+
+                    var re = new Array();
+
+                    for(; x < argument.length; x++) {
+
+                        re.push(argument[x]);
+                    }
+
+                    return re;
+                },
+
+                /* obj2str */
+                obj2str: function(obj, _opts) {
+
+                    var opts = {
+                        key: true,
+                        val: true,
+                        num: false,
+                        deep: 3,
+                        join: " ",
+                        strip: true,
+                        method: true
+                    };
+
+                    setup(opts, _opts);
+
+
+                    if(_o(obj)) {
+                        var str = []; // save string
+
+                        each(obj, function(val, key) {
+
+                            if(! s_int(key) || opts.num) {
+                                str.push(key);
+                            }
+
+                            if(!opts.method && _f(val)) {
+                                val = obj.name;
+                            }
+                            else if(_o(val) || mock(val)) {
+                                return; // stop
+                            }
+                            else {
+                                val = val.toString();
+                            }
+
+                            str.push(val);
+
+                        }, null, opts.deep);
+
+                        str = str.join(opts.join);
+                    }
+                    else {
+
+                        // repeat
+                        if(!opts.method && _f(obj)) {
+                            str = obj.name;
+                        }
+                        else {
+                            str = obj.toString();
+                        }
+                    }
+
+                    if(opts.strip == true) {
+                        str = strip(str);
+                    }
+
+                    return str;
+                },
+                _2int:  function(src) {
+
+                    if(_o(src)) {
+
+                        src = _loop.map(src, function(val) {
+                            return parseInt(val);
+                        })
+                    }
+                    else {
+                        src = parseInt(src);
+                    }
+
+                    return src;
+                }
+            },
+            /*
+            helper: decider
+             */
+            "decider":
+            {
+                id: "decider",
+                wish: [],
+                chart:  []
+            }
+            ,
+            /*
+            helper: maker
+             */
+            "maker":
+            {
+                id: "maker",
+                wish: "sacrifice",
+                chart: [ "g_obj", "g_arr", "g_set", "g_unsh", "g_node" ],
+
+                init: function() {
+                    g_func = be;
+                },
+                /*
+                name:   g_obj
+                 */
+                g_obj: function(src, _opts) {
+
+                    var re;
+
+                    var opts =
+                    {
+                        "exist": true,
+                        "clone": false
+                    };
+
+                    setup(_opts, opts);
+
+                    if(_A(src)) {
+                        re = _converter.arr2obj(src);
+                    }
+                    else if(_s(src)) {
+                        re = _object.compose(src);
+                    }
+                    else {
+                        re = src;
+                    }
+
+                    if(opts.exist) {
+
+                        if(mock(src)) {
+
+                            src = {};
+                        }
+                    }
+
+                    if(opts.clone) {
+                        re = clone(re);
+                    }
+
+                    return re;
+                },
+
+                /*
+                name:   g_arr
+                 */
+                g_arr:  function(src, flag) {
+
+                    flag = flag || "direct";
+
+                    var re;
+                    switch(flag) {
+
+                        case "direct":
+                        case 1:
+                        {
+                            if(_A(src) !== true) {
+
+                                src = [ src ];
+                                re = src;
+                            }
+                        }
+                            break;
+                    }
+
+                    //
+                    return re;
+                },
+
+                g_set:    function(src) {
+
+                    var re = src;
+
+                    if(_s(src)) {
+                        //  may be array
+                        if(src.search("=") !== -1) {
+                            re = _object.compose(src);
+                        }
+                        else {
+                            re = src.split(",");
+                        }
+                    }
+                    else if(_n(src)) {
+                        re = a_loop(src, "");
+                    }
+
+                    return re;
+                },
+
+                /* g_unsh */
+                g_unsh: function(method) {
+
+                    return _unshiftAPI;
+                    /* normal _unshiftAPI */
+
+                    function _unshiftAPI() {
+
+                        var _arg = getArg();
+                        _arg.unshift(this);
+
+                        return method.apply(null, _arg);
+                    }
+                },
+
+                g_node: function(src) {
+
+                    if(_s(src)) {
+
+                        var _tag;
+                        var content;
+
+                        var exp1 = /^<([^>]+)>/g;
+                        _tag = submatch(src, exp1);
+
+                        if(is(_tag)) {
+                            var exp2 = new RegExp("</" + _tag + ">$");
+
+                            content = s_erase(src, [exp1, exp2]);
+
+                            src = tag(_tag, content);
+                        }
+                    }
+
+                    return src;
+                }
+            }
+            ,
+            /*
+            helper: regexp
+             */
+            "regexp":
+            {
+                id: "regexp",
+                wish: "sacrifice",
+                chart: [ "reg1", "submatch"],
+
+                reg1:   function(src, pattern, return_index) {
+
+                    var re = null;
+
+                    return_index = return_index || 0;
+
+                    re = src.match(pattern);
+
+                    if(_A(re)) {
+                        re = re[return_index];
+                    }
+
+                    return re;
+                },
+
+                submatch:   function(src, pattern, index) {
+
+                    var result = [];
+                    index = index || 1;
+
+                    var matches;
+                    while((matches = pattern.exec(src)) !== null) {
+
+                        result.push(matches[index]);
+                    }
+
+                    return result;
+                }
+            },
+            /*
+            helper: dom
+             */
+            "dom":
+            {
+                id: "dom",
+                wish:
+                    [
+                        "tag", "tags",  "Tag", "Name", "ID", "Class",
+                        "putImgs", "sheet", "choose",
+                        "select", "iframe", "ul", "ol",
+                        "_NS2"
+                    ],
+                chart:
+                    [
+                        "tag", "tags",  "choose",
+                        "Tag", "Name", "ID", "Class",
+                        "putImgs", "sheet", "select", "iframe", "ul", "ol",
+                        "extend", "_NS2", "heavyNode", "_create_COM"
+                    ],
+                map: {
+                    TagAttr:
+                    {
+                        a: [ "href", "target" ],
+                        audio: [ "src", "controls", "autoplay" ],
+                        canvas: [ "width", "height" ],
+                        form: [ "action", "name", "method" ],
+                        img: ["src"],
+                        input: [ "type", "name", "value"],
+                        link: [ "rel", "href" ],
+                        option: [ "value" ],
+                        optgroup: [ "label" ],
+                        progress: [ "value" , "max"],
+                        script: [ "src" ],
+                        table: [ "align" ],
+                        video: [ "src", "controls", "autoplay" ]
+                    },
+
+                    DOMAPIAlias: {
+
+//                    append: "appendChild",
+                        //insert: "insertBefore",
+                        replace: "replaceChild",
+                        remove: "removeChild",
+
+                        hasAttr: "hasAttribute",
+                        hasAttrs: "hasAttributes",
+                        getAttr: "getAttribute",
+                        setAttr: "setAttribute",
+                        delAttr: "removeAttribute",
+                        hasChild: "hasChildNodes",
+                        clone: "cloneNode",
+                        tagName: "getElementsByTagName"
+                    },
+
+                    DOMAttrAlias: {
+                        first: "firstElementChild",
+                        last: "lastElementChild",
+                        parent: "parentElement",
+                        pre: "previousElementSilbing",
+                        next: "nextElementSibling",
+                        child: "children",
+
+                        //text: "textContent",
+                        html: "innerHTML"
+                    }
+                },
+                list: {
+                    ExposeTag:
+                        [
+                            "a", "audio", "b", "br", "canvas", "div", "form", "h1", "h2", "h3", "h4", "h5", "h6",
+                            "hr", "i", "img", "input", "label", "li", "link", /*"ol", */"option", "optgroup", "p",
+                            "pre", "progress", "script", "section", /*"select",*/ "small", "span", "style", "table",
+                            "td", "textarea", "th", "time", "u", /*"ul"*/ "video"
+                        ],
+                    TagName:
+                        [
+                            "a", "abbr", "area", "b", "base", "blockquote", "body", "br", "button", "canvas",
+                            "code", "col", "colgroup", "datalist", "dd", "del", "div", "dl", "em", "embed",
+                            "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5",
+                            "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "label", "legend",
+                            "li", "link", "map", "mark", "menu", "meta", "nav", "ol", "optgroup", "option", "output",
+                            "p",  "pre", "progress", "q", "s", "script", "section", "select", "small", "source",
+                            "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "textarea",
+                            "tfoot", "th", "thead", "time", "title","tr", "track", , "u", "ul", "video"
+                        ]
+                },
+
+                api: {
+                    Creator: {},
+
+                    NodeExt: {
+                        coor:   function(node, top, left, position) {
+
+                            position = position || "absolute";
+
+                            css(node, "position", position);
+
+                            if(exist(top)) {
+                                top += "px";
+                                css(node, "top", top);
+                            }
+
+                            if(exist(left)) {
+                                left += "px";
+                                css(node, "left", left);
+                            }
+
+                            return node;
+                        },
+
+                        recode: function(node) {
+                            node.innerHTML = node.innerHTML;
+
+                            return node;
+                        },
+
+                        /* append */
+                        append: function(node, src) {
+                            //pause("node" + node + "\nsheet:" + src);
+                            src = g_node(src);
+
+                            if(is(src.length) && !_HE(src)) {
+
+                                each(src, function(child) {
+
+                                    node.appendChild(child);
+                                });
+                            }
+                            else {
+                                node.appendChild(src);
+                            }
+
+                            return node;
+                        },
+
+                        /* depend */
+                        depend: function(node, parent) {
+
+                            parent = parent || Body;
+                            append(parent, node);
+
+                            return node;
+                        },
+
+                        /* insert */
+                        insert: function(node, src, sib) {
+
+                            sib = _def(sib, 0);
+                            src = g_node(src);
+
+                            if(_n(sib)) {
+                                sib = node.children[sib];
+                            }
+
+                            node.insertBefore(src, sib);
+
+                            return node;
+                        },
+                        text: function(node) {
+
+                            var str = node.innerHTML;
+
+                            str = str.replace(/<[^>]+>/g, " ").replace(/\s{1,}/g, " ");
+
+                            return str;
+                        },
+
+                        /* attr */
+                        attr: function(node ,attrName, attrValue) {
+
+                            if(_o(attrName)) {
+
+                                var attrMap = attrName;
+
+                                // each
+                                each(attrMap, function(val, key) {
+
+                                    if(is(val)) {
+                                        node.setAttribute(key, val);
+                                    }
+                                });
+                            }
+                            else {
+                                // check attribute value
+                                if(mock(attrValue)) {
+                                    re = node.getAttribute(attrName);
+                                }
+                                else {
+                                    node.setAttrbute(attrName, attrValue);
+                                }
+                            }
+                        },
+
+                        elect: function(node, selectorText) {
+
+                            return choose(selectorText, node);
+                        }
+                    }
+                    ,
+                    NodeSet: {
+
+                        /* i */
+                        i: function(nodeset, callback, arg) {
+
+                            arg = _def(arg, []);
+
+                            // make callback
+                            callback = g_func(callback);
+
+                            var length = nodeset.length;
+
+                            for(var x = 0; x < length; x++) {
+
+                                if(op_loop("query") == true) {
+                                    break;
+                                }
+
+                                var node = nodeset[x];
+
+                                var _arg = [node, x].concat(arg);
+
+                                callback.apply(null, _arg);
+                            }
+                            op_loop("end");
+
+                            return nodeset;
+                        },
+
+                        rand: function(nodeset, count, selector) {
+
+                            if(is(selector)) {
+                                nodeset.back(selector);
+                            }
+
+                            nodeset = r_src(nodeset, count);
+                            _dom.heavyNode(nodeset);
+
+                            return nodeset;
+                        },
+
+                        hasNode: function(nodeset, node) {
+
+                            var finded = -1;
+
+                            nodeset.i(function(checkNode, index) {
+
+                                if(node.isSameNode(checkNode)) {
+                                    finded = index;
+                                    op_loop("stop");
+                                }
+                            });
+
+                            return finded;
+                        },
+
+                        back: function(nodeset, selector) {
+
+                            var compareSet = choose(selector);
+
+                            for(var z = 0; z < nodeset.length; z++) {
+
+                                var node = nodeset[z];
+
+                                var findIndex = compareSet.hasNode(node);
+
+                                if(findIndex == -1) {
+                                    nodeset.splice(z, 1);
+                                    z--;
+                                }
+                            }
+
+                            return nodeset;
+                        },
+
+                        elect: function(nodeset, selector) {
+
+                            var newset = [];
+
+                            nodeset.i(function(node) {
+
+                                var findset = node.find(selector);
+
+                                newset = newset.concat(findset);
+                            });
+
+                            unique(newset, true);
+                            _dom.heavyNode(newset);
+
+                            return newset;
+                        },
+
+                        has: function(nodeset, selector) {
+
+                            var compSet;
+                            if(_s(selector)) {
+                                compSet = choose(selector);
+                            }
+
+                            compSet = _2A(compSet);
+
+                            var finded = false;
+                            each(compSet, function(node) {
+
+                                if(has(nodeset, node)) {
+                                    finded = true;
+                                    op_loop("stop");
+                                }
+                            });
+
+                            return finded;
+                        },
+                        omit: function(nodeset, selector) {
+
+                            var compareSet = choose(selector);
+
+                            compareSet.i(function(node, index) {
+
+                                var findIndex = nodeset.hasNode(node);
+
+                                if(findIndex !== -1) {
+                                    nodeset.splice(findIndex, 1);
+                                }
+                            });
+
+                            return nodeset;
+                        },
+
+                        add: function(nodeset, selector) {
+
+                            var appendSet = choose(selector);
+
+                            // for
+                            for(var x = 0; x < appendSet.length; x++) {
+
+                                var curNode = appendSet[x];
+
+                                if(nodeset.hasNode(curNode) == -1) {
+                                    nodeset.push(curNode);
+                                }
+                            }
+
+                            return nodeset;
+                        },
+
+                        /* full */
+                        full: function(nodeset, addTag) {
+
+                            var contents = "";
+
+                            nodeset.i(function(node) {
+
+                                if(addTag == true) {
+                                    contents += html(node);
+                                }
+                                else {
+                                    contents += text(node);
+                                }
+                            });
+
+                            return contents;
+                        }
+                    }
+                },
+
+                init:   function() {
+                    // 1 alias
+
+                    // for in
+                    var _map = Map.DOMAPIAlias;
+
+                    for(var alias in _map) {
+
+                        var _apiName = _map[alias];
+
+                        API.Node[alias] = returnDOMAlias(_apiName);
+                    }
+
+
+                    // 2 attr
+
+                    _map = Map.DOMAttrAlias;
+
+                    for(var shortName in _map) {
+
+                        var attrName = _map[shortName];
+
+                        API.Node[shortName] = returnDOMAttr(attrName);
+                    }
+
+                    // 3 NodeExt
+                    copy(API.NodeExt, API.Node);
+
+                    upgrade("Node", API.Node);
+
+                    // 4 expose tag
+                    //
+                    var creators = API.Creator;
+
+                    var _list =  List.ExposeTag;
+
+                    var y = 0;
+                    var curTag;
+                    for(; y < _list.length; y++) {
+
+                        curTag = _list[y];
+                        //  add function
+                        creators[curTag] = returnTagCreator(curTag);
+                    }
+
+                    // expose
+                    expose(creators, window);
+
+                    // done!
+                    /* in: returnDOMAlias */
+                    function returnDOMAlias(apiName) {
+
+                        return _DOMAliasAPI;
+
+                        /* normal: _DOMAliasAPI */
+                        function _DOMAliasAPI() {
+                            var _arg = getArg();
+
+                            var _node = _arg.shift();
+
+                            // call DOM method
+                            return _node[apiName].apply(_node, _arg);
+                        }
+                    }
+
+                    /* in returnDOMAttr */
+                    function returnDOMAttr(attrName) {
+
+                        return _DOMAttrAPI;
+
+                        /* general _DOMAttrAPI */
+                        function _DOMAttrAPI(node, value) {
+
+                            var re;
+
+                            if(exist(value)) {
+                                node[attrName] = value;
+                                re = node;
+                            }
+                            else {
+                                re = node[attrName];
+                            }
+
+                            // upgrade
+                            if(_HE(re) || _HC(re)) {
+                                re = _dom.heavyNode(re);
+                            }
+
+                            return re;
+                        }
+                    }
+
+                    function returnTagCreator(tagName) {
+
+                        var _attr_map = Map.TagAttr[tagName] || [];
+
+                        return _tag_creator;
+                        /*
+                         clouser: _tag_creator
+                         */
+                        function _tag_creator() {
+
+                            var _element;
+
+                            _element = _dom.tag(tagName);
+
+                            var _order = [ "innerHTML", "className", "id"];
+
+                            _order = _attr_map.concat(_order);
+
+                            var attrName, attrVal;
+                            for(var iArg = 0; iArg < arguments.length; iArg++) {
+
+                                attrVal = arguments[iArg];
+
+                                if(mock(attrVal)) {
+                                    continue;
+                                }
+                                attrName = _order[iArg];
+
+                                //  set attribute value
+                                _element[attrName] = attrVal;
+                            }
+
+                            // up node
+                            _dom.heavyNode(_element);
+
+                            return _element;
+                        }
+                    }
+                },
+
+                tag:    function(tagName, option1, _maybe_class, _maybe_id) {
+
+                    var _node;
+
+                    _node = document.createElement(tagName);
+
+                    if(exist(option1)) {
+
+                        option1 = _maker.g_obj(option1);
+
+                        if(_o(option1)) {
+
+                            var attrObj = option1;
+
+                            //  copy value
+
+                            if(attrObj["mark"]) {
+
+                                delete attrObj["mark"];
+
+                                //  use setAttribute
+                                for(var attrName in attrObj) {
+
+                                    var attrVal = attrObj[attrName];
+
+                                    if(exist(attrVal)) {
+                                        _node.setAttribute(attrName, attrVal);
+                                    }
+                                }
+                            }
+                            else {
+                                clean(attrObj, "undefined&null");
+                                copy(attrObj, _node);
+                            }
+                        }
+                        else if(_s(option1)) {
+
+                            var _html;
+
+                            _html = option1;
+
+                            _node.innerHTML = _html;
+                        }
+                    }
+
+                    //  set className or id
+                    if(is(_maybe_class)) {
+                        _node.className = _maybe_class;
+                    }
+
+                    if(is(_maybe_id)) {
+                        _node.id = _maybe_id;
+                    }
+
+                    // upgrade
+                    _dom.heavyNode(_node);
+
+                    return _node;
+                }
+                ,
+                /* Tag */
+                Tag: function(tagName) {
+                    var _set = document.getElementsByTagName(tagName);
+
+                    return _dom.heavyNode(_set);
+                },
+
+                /* Name */
+                Name: function(name) {
+                    var _nodeset = document.getElementsByName(name);
+
+                    return _dom.heavyNode(_nodeset);
+                },
+
+                /* Class */
+                Class: function(className) {
+                    var _list = document.getElementsByClassName(className);
+
+                    return _dom.heavyNode(_list);
+                },
+
+                /* ID */
+                ID: function(id) {
+                    var _node = document.getElementById(id);
+
+                    return _dom.heavyNode(_node);
+                },
+
+                /*
+                name;   _create_COM
+                 */
+                _create_COM:    function(is_public) {
+
+                    var _com = {};
+
+                    var _nodeCOM = COM.Node;
+
+
+                    //  for in
+                    for(opName in _nodeCOM) {
+
+                        // if is_public == true, expose to window
+
+                        var name2 = opName;
+
+                        if(is_public == true) {
+
+                            if(is(window[opName])) {
+                                name2 = "_" + name2;
+                            }
+
+                            window[name2] = _nodeCOM[opName];
+                        }
+
+                        _nodeCOM[opName] = returnDOMOp("single", opName); //  node
+                        _com[opName] = returnDOMOp("multiple", opName);   //  for nodelist
+                    }
+
+
+                    // 3 add alias
+
+                    var NodeAlias = {
+                        "find": "elect",
+                        "$": "elect",
+
+                        ap: "append",
+                        de: "depend",
+                        ins: "insert",
+                        h: "html",
+                        t: "text",
+                        c: "css",
+                        co: "color",
+                        a: "attr",
+                        t: "toggle",
+                        f: "fly"
+                    };
+
+                    alias(_nodeCOM, NodeAlias);
+
+                    alias(_com, NodeAlias);
+
+                    // 4 extend nodeset Component
+
+                    each(API.NodeSet, function(api, apiName) {
+                        //
+                        _com[apiName] = g_unsh(api);
+                    });
+
+                    var SetAlias =
+                    {
+                        r: "rand",
+                        $: "elect",
+                        find: "elect"
+                    };
+
+                    alias(_com, SetAlias);
+
+                    ANT.COM.NodeSet = _com;
+
+                    //  COM created
+                    /*
+                     name:   _return_nodeset_operation
+                     */
+                    function returnDOMOp(mode, operationName) {
+
+                        var _mode_map =
+                        {
+                            single: node_modify,
+                            multiple: nodeset_operation
+                        };
+
+                        var _nodeCOM = COM.Node;
+
+                        var operation = _nodeCOM[operationName];
+
+                        return _mode_map[mode];
+
+                        /*  general     nodeset_modify  */
+                        function node_modify() {
+
+                            var _thisNode = this;
+
+                            return operation.apply(node_modify, _method.un_arg(_thisNode));
+                        }
+
+                        /*  general:    nodeset_operation   */
+
+                        function nodeset_operation() {
+
+                            var _thisSet = this;
+                            //  use do..while
+                            var count = _thisSet.length;
+                            var iterator = 0;
+
+                            var _node;
+                            do {
+                                if(iterator >= count) {
+                                    break;
+                                }
+
+                                _node = _thisSet[iterator++];
+                                //  call it.
+                                operation.apply(_node, arguments);
+                            }
+                            while(1 == 1);  //  good!
+
+                            return _thisSet;
+                        }
+                    }
+                },
+
+                heavyNode: function(src) {
+
+                    if(mock(src)) {
+                        return null;
+                    }
+
+                    var _com;
+
+                    var nodeCOM = COM.Node;
+                    var setCOM =  COM.NodeSet;
+
+                    if(_HE(src)) {
+                        _com = nodeCOM;
+                    }
+                    else if(_SET(src)) {
+                        _com = setCOM;
+
+                        src = _2A(src);
+                        src.nodeset = 1;
+                        // for every node
+                        each(src, _dom.heavyNode);
+                    }
+
+                    return copy(_com, src, null, true);
+                },
+
+                /* extend */
+                extend: function(api, _opts) {
+
+                    var opts =
+                    {
+                        global: true,
+                        node: true,
+                        nodeset: true,
+                        name: ""
+                    };
+
+                    setup(opts, _opts);
+
+                    // api name
+                    var apiName = opts.name || api.name;
+
+                    // 1 expose
+                    if(opts.global == true) {
+                        global(api, apiName);
+                    }
+
+                    var nodeCOM = COM.Node;
+                    var setCOM = ANT.COM.NodeSet;
+
+                    // 2 stronger COM
+                    if(opts.node == true) {
+                        nodeCOM[apiName] = _dom._return_dom_operation("single", api);
+                        setCOM[apiName] = _dom.return_dom_operation("multiple", api);
+                    }
+
+                    return true;
+                },
+                /*
+                name; putImgs
+                 */
+                putImgs:    function(src, parent) {
+
+                    parent = parent || Body;
+
+                    var imgNode;
+                    each(src, function(val) {
+                        imgNode = img(val);
+
+                        parent.appendChild(imgNode);
+                    })
+
+                    return parent;
+                },
+
+                /* name: _iframe */
+                iframe: function(id, name, src, add_html) {
+                    var _node;
+
+                    var _props =
+                    {
+                        id: id,
+                        name: name
+                    };
+
+                    var html = "";
+                    if(add_html == true) {
+                        html = src;
+                    }
+                    else {
+                        _props["src"] = src;
+                    }
+
+                    _node = tag("iframe", _props);
+
+                    // append
+                    append(Body, _node);
+
+                    _node.doc = _node.contentDocument;
+                    _node.win = _node.contentWindow;
+                    _node.head = _node.doc.getElementsByTagName("head")[0];
+                    _node.body = _node.doc.body;
+
+                    if(html !== "") {
+                        _node.body.innerHTML += html;
+                    }
+
+                    return _node;
+                },
+
+                /* select */
+                select: function(src, className, id) {
+
+
+
+                    var node = tag("select",
+                        {
+                            className: className,
+                            id: id
+                        });
+
+                    src = g_set(src);
+                    var isArray = _A(src);
+
+                    each(src, function(val, key) {
+
+                        if(isArray == true) {
+                            key = val;
+                        }
+
+                        var node2;
+
+                        // hack
+                        if(val[0] == "$") {
+
+                            val = val.replace(/^\$/, "");
+                            node2 = optgroup(val);
+                        }
+                        else {
+                            node2 = option(val, key);
+                        }
+
+                        append(node, node2);
+                    });
+
+                    return node;
+                },
+
+                /* ul */
+                ul: function(src, className, id) {
+
+                    var node = _dom.tags("li", src, null, "ul");
+
+                    var attrMap =
+                    {
+                        className: className,
+                        id: id
+                    };
+
+                    attr(node, attrMap);
+
+                    return node;
+                },
+
+                /* ol */
+                ol: function(src, className, id, type) {
+
+                    var OLNode = tags("li", src, null, "ol");
+
+                    var map =
+                    {
+                        type: type,
+                        className: className,
+                        id: id
+                    };
+
+                    attr(OLNode, map);
+
+                    return OLNode;
+                },
+                /* tags */
+                tags: function(_tagName, src, className, parentTag, keyAttr) {
+
+                    keyAttr = keyAttr || "id";
+
+                    src = g_set(src);
+
+                    var isArray = _A(src);
+
+                    var nodeset = [];
+
+                    // each
+                    each(src, function(val, key) {
+
+                        if(empty(val)) {
+                            val = key;
+                        }
+
+                        var child = tag(_tagName,
+                            {
+                                innerHTML: val,
+                                className: className
+                            });
+
+                        if(isArray == false) {
+                            child.setAttribute(keyAttr, key);
+                        }
+
+                        nodeset.push(child);
+                    });
+
+                    // create parent
+                    var _parent;
+
+                    if(empty(parentTag) == false) {
+                        _parent = tag(parentTag);
+
+                        _parent.append(nodeset);
+                        re = _parent;
+                    }
+                    else {
+                        _dom.heavyNode(nodeset);
+                        re = nodeset;
+                    }
+
+                    return re;
+                },
+
+                sheet: function(src, bStay) {
+
+                    var _link = tag("link",
+                        {
+                            rel: "stylesheet",
+                            href: src
+                        });
+
+                    if(! bStay) {
+                        append(Head, _link);
+                    }
+
+                    return _link;
+                },
+
+                /* choose */
+                choose: function(selector, node) {
+
+                    if(_f(selector)) {
+
+                        var loader = selector;
+                        spy(loader, "load", window);
+
+                        return window;
+                    }
+
+                    // general selector
+                    node = node || document;
+                    // no check
+                    var nodeset;
+
+                    if(_A(selector)) {
+                        nodeset = selector;
+                    }
+                    else {
+                        nodeset = node.querySelectorAll(selector);
+                    }
+                    // upgrade
+                    nodeset = _dom.heavyNode(nodeset);
+
+                    return nodeset;
+                },
+
+                /* _NS2 */
+                _NS2: function(src) {
+                    return is(src.nodeset);
+                }
+            },
+
+            /*
+            helper: css
+             */
+            "css":
+            {
+                id: "css",
+                wish: [],
+                chart:
+                    [
+                        "modifiers",
+                        "css","hasUnit", "_fly"
+                    ],
+                map: {
+
+                    StyleAlias:
+                    {
+                        bg: "background",
+                        opa: "opacity",
+                        font: "fontSize",
+                        family: "fontFamily",
+                        w: "width",
+                        h: "height",
+                        x: "left",
+                        x2: "right",
+                        y2: "bottom",
+                        pos: "position",
+                        pad: "padding",
+                        align: "textAlign",
+                        anim: "animation",
+                        line: "lineHeight",
+                        radius: "borderRadius"
+                    },
+
+                    Scheme: {
+                        black: {
+                            bg: "black",
+                            color: "white"
+                        },
+                        white: {
+                            bg: "white",
+                            color: "black"
+                        }
+                    }
+                },
+                list: {
+                    ExposeStyle:
+                        [
+                            "color","background","opacity",
+                            "fontSize", "lineHeight","fontFamily",
+                            "width", "height", "margin", "padding",
+                            "left", "top", "right", "bottom",
+
+                            "display", "position", "float", "textAlign",
+                            "animation", "border", "cursor","borderRadius",
+
+                            "bg", "opa", "font", "line",
+                            "w", "h", "x", "y", "x2", "y2",
+                            "pos", "pad", "align",
+                            "anim", "radius"
+                        ],
+                    UnitStyle:
+                        [
+                            "fontSize","lineHeight",
+                            "height", "width", "margin", "padding", "paddingLeft", "paddingRight", "paddingTop",
+                            "paddingBottom", "marginLeft", "marginRight", "marginTop", "marginBottom",
+                            "left", "right", "top", "bottom", "borderRadius"
+                        ]
+                },
+                api: {
+
+                    CSS: {},
+                    /* _extend_css */
+                    CSSExt:
+                    {
+                        // wide operation, i assue isShow is exposed
+                        show: function(node) {
+
+                            if(isShow(node) == false) {
+                                css(node, "display", "block");
+                            }
+
+                            return node;
+                        },
+
+                        hide: function(node) {
+
+                            if(isShow(node) == true) {
+                                css(node, "display", "none");
+                            }
+
+                            return node;
+                        },
+
+                        toggle: function(node) {
+
+                            if(isShow(node) == true) {
+                                hide(node);
+                            }
+                            else {
+                                show(node);
+                            }
+
+                            return node;
+                        },
+
+                        isShow: function(node) {
+                            return (css(node, "display") !== "none");
+                        },
+
+                        fly: function() {
+                            return un_apply(_css._fly, "fly", 1);
+                        },
+
+                        slow: function() {
+                            return un_apply(_css._fly, "slow", 1)
+                        }
+                        ,
+                        fast: function() {
+                            return un_apply(_css._fly, "fast", 1)
+                        },
+
+                        sway: function() {
+                            return un_apply(_css._fly, "sway", 1)
+                        },
+
+                        dye: function(node, mode) {
+
+                            mode = mode || "16";
+
+                            var map = Map.Scheme[mode];
+
+                            if(is(map)) {
+                                BG = map["bg"];
+                                Color = map["color"];
+                            }
+                            else {
+                                // switch
+                                switch(mode) {
+
+                                    case "16":
+                                    {
+                                        BG = _16();
+                                        Color = _16();
+                                    }
+                                        break;
+
+                                    case "139":
+                                    {
+                                        BG = _139();
+                                        Color = _139();
+                                    }
+                                        break;
+                                    default: {
+
+                                    }
+                                }
+                            }
+
+                            // ok, dye node
+                            node.bg(BG);
+                            node.color(Color);
+
+                            return node;
+                        }
+                    }
+                },
+
+                init: function(){
+
+                    var api = API.CSS;
+
+                    api.css = _css.css;  //  a basic api
+
+                    var _set = List.ExposeStyle;
+
+                    var _catcher = returnCSSAPI;  //  return css modifiers
+
+                    //  use while
+                    var z = 0;
+                    var cssName;
+
+                    while(z < _set.length) {
+                        cssName = _set[z++];
+                        api[cssName] = _catcher(cssName);
+                    }
+
+                    // extend
+                    copy(API.CSSExt, api);
+
+                    upgrade("Node", API.CSS);
+
+                    /*
+                     name;   returnCSSAPI
+                     */
+                    function returnCSSAPI(styleName) {
+
+                        styleName = Map.StyleAlias[styleName] || styleName;
+
+                        return _css_modifier;
+                        /* general: _css_modifier   */
+
+                        function _css_modifier(node, styleVal) {
+
+                            return _css.css(node, styleName, styleVal);
+                        }
+                    }
+                },
+                css: function(node, propName, propVal) {
+
+                    var comStyle;
+
+                    var re;
+                    if(_u(propVal)) {
+
+                        if(_o(propName)) {
+
+                            var map = propName;
+
+                            // for
+                            for(propName in map) {
+                                propVal = map[propName];
+
+                                node.style[propName] = propVal;
+                            }
+
+                            re = node;
+                        }
+                        else {
+                            comStyle = window.getComputedStyle(node);
+                            re = comStyle[propName];
+                        }
+                    }
+                    else {
+                        node.style[propName] = propVal;
+
+                        re = node;
+                    }
+
+                    return re;
+                },
+
+                /* hasUnit */
+                hasUnit: function(styleName) {
+                    var re = List.UnitStyle.indexOf(styleName);
+
+                    return (re !== -1);
+                },
+
+                /* _fly */
+                _fly: function(node, mode, targetCSS, duration, srcCSS, times) {
+
+                    times = _def(times, 128);
+                    // string to object
+                    if(_s(targetCSS)) {
+                        targetCSS = g_obj(targetCSS);
+                    }
+
+                    if(mock(srcCSS)) {
+
+                        srcCSS = new Object();
+                        // for in
+                        for(var key in targetCSS) {
+                            srcCSS[key] = css(node, key);
+                        }
+                    }
+                    else if(_s(srcCSS)) {
+                        srcCSS = g_obj(srcCSS);
+                    }
+
+                    // save CSS
+                    if(mock(node.srcCSS)) {
+                        node["srcCSS"] = srcCSS;
+                    }
+
+                    duration = _def(duration, 500);
+                    times = duration * times / 1000;
+
+                    // for in
+                    var stepCSS = new Object();
+
+                    for(key in targetCSS) {
+
+                        var dstVal = float(targetCSS[key])
+                        var srcVal = float(srcCSS[key]);
+
+                        stepCSS[key] = (dstVal - srcVal) / times;
+                    }
+
+                    // create timer
+                    var timer = every(_fly_timer, duration / times);
+                    expose(timer, node, "function");
+
+                    node.fall = fall;
+
+                    var counter = 0;
+
+                    return node;
+                    /* inner: _fly_timer */
+                    function _fly_timer() {
+
+                        for(key in targetCSS) {
+
+                            var step = stepCSS[key];
+
+                            if(isNaN(step)) {
+                                continue;
+                            }
+
+                            var curVal = float(srcCSS[key]) + step*counter;
+
+                            if(_css.hasUnit(key)) {
+                                curVal += "px";
+                            }
+
+                            css(node, key, curVal);
+                        }
+
+                        if(Sign.Fly == "stop") {
+                            fall();
+                        }
+                        else if(++counter >= times) {
+
+                            var nextMode = null;
+
+                            var saved = false;
+                            // the animation don't stop
+                            if(mode == "sway") {
+                                nextMode = "sway";
+                                mode = "slow";
+                            }
+
+                            if(mode == "fast") {
+                                css(node, srcCSS);
+                            }
+                            else if(mode == "slow") {
+                                timer.stop();
+                                _css._fly(node, nextMode, srcCSS, duration, targetCSS, times);
+                            }
+                            else if(mode == "fly") {
+                                css(node, targetCSS);
+                                saved = true;
+                            }
+
+                            if(mock(nextMode)) {
+                                fall(saved);
+                            }
+                        }
+                    }
+
+                    /* fall */
+                    function fall(saved) {
+
+                        timer.stop();
+                        counter = 0;
+                        delete timer;
+
+                        if(! saved) {
+                            css(node, node.srcCSS);
+                        }
+
+                        // clean
+                        del(node, [ "srcCSS", "fall" ]);
+                    }
+                }
+            }
+            ,
+            "sheet":
+            {
+                id: "sheet",
+                wish: [ "loadSheet" , "createSheet", "rule", "rules"],
+                chart: [ "initSheets", "loadSheet", "createSheet", "rule", "rules" ],
+
+                alias: {
+                    l_sheet: "loadSheet",
+                    g_sheet: "createSheet"
+                },
+                onload: function() {
+                    _sheet.initSheets();
+
+                    Data.MySheet =
+                    {
+                        sheet1: g_sheet("sheet1"),
+                        sheet2: g_sheet("sheet2")
+                    };
+
+                    expose(Data.MySheet);
+                },
+                api: {
+                  Sheet: {
+
+                  }
+                },
+                data: {
+                   MySheet: {
+
+                   }
+                },
+                method: {
+                    upSheet: function(s) {
+
+                        var rules = s.cssRules;
+                        alias(s, {
+                            r: "cssRules",
+                            add: "addRule",
+                            del: "deleteRule",
+                            cut: "removeRule",
+                            ins: "insertRule"
+                        });
+
+                        //
+                        each(rules, function(r) {
+                            s[r.selectorText] = r;
+                        });
+                    }
+                },
+
+                initSheets: function() {
+
+                    Map.Sheets = new Object();
+
+                    Sheets = Map.Sheets;
+
+                    var sheetlist = document.styleSheets;
+
+                    var up = Method.upSheet; // used for upgrade
+
+                    each(sheetlist, function(item, index) {
+
+                        Sheets[index] = item;
+
+                        up(item);
+                        var href = item.href;
+
+                        if(is(href)) {
+                            var m = reg1(href, /[^\/]+(?=\.css)/);
+
+                            if(is(m)) {
+                                Sheets[m] = item;
+                            }
+                        }
+                    });
+                },
+
+                loadSheet: function(key) {
+                    _sheet.initSheets();
+
+                    return Sheets[key];
+                },
+
+                createSheet: function(id, stayed) {
+                    var node = style("", null, id);
+
+                    if(! stayed) {
+                        append(Head, node);
+
+                        var s = node.sheet;
+                        Method.upSheet(s);
+
+                        re = s;
+                    }
+                    else {
+                        re = node;
+                    }
+
+                    return re;
+                },
+
+                rule: function(selector, text, s, forced) {
+                    forced = _def(forced, true);
+                    s = _def(s, sheet1);
+
+                    var rules;
+
+                    var rule = s[selector];
+                    if(mock(rule) || forced) {
+                        s.addRule(selector, text);
+
+                        rule = last(s.rules).style;
+                        s[selector] = rule;
+                    }
+
+                    return rule;
+                },
+
+                rules: function(map, s) {
+                    s = _def(s, sheet1);
+
+                    map = g_obj(map);
+
+                    each(map, function(text, selector) {
+                        rule(selector, text, s);
+                    });
+
+                    return s;
+                }
+            },
+            /*
+            helper: event
+             */
+            "event":
+            {
+                id: "event",
+                wish: [ ],
+                chart: [ "once", "tie", "deltie" ],
+
+                list: {
+                    EventName:
+                    [
+                        "focus", "blur", "change", "click", "dblclick",
+                        "mousedown", "mousemove", "mouseout", "mouseover", "mousewheel", "mouseup",
+                        "keydown", "keyup", "keypress"
+                    ]
+                },
+                map: {
+
+                },
+                api: {
+                    Binder: {}
+                },
+                init: function() {
+
+                    var _list = List.EventName;
+                    var binders = API.Binder;
+
+                    var i = _list.length - 1;
+                    var eventName;
+                    var _api;
+
+                    // i got a map
+                    do {
+                        eventName = _list[i];
+                        _api = returnEventBinder(eventName);
+
+                        // push
+                        binders[eventName] = _api;
+
+                    } while(i-- > 0)
+
+                    // other
+                    var _list = [ "once", "tie", "deltie" ];
+
+                    copy(_event, binders, _list);
+
+                    // upgrade
+                    upgrade("Node", binders);
+                     /*
+                     inner: returnEventBinder
+                     */
+                    function returnEventBinder(eventName) {
+
+//                        // replace '_'
+//                        eventName = eventName.replace("_", "");
+
+                        return _EventBinder;
+                        /*
+                         normal: _EventBinder
+                         */
+                        function _EventBinder(node, handler, onError, useCapture) {
+
+                            return spy(handler, eventName, node, onError, useCapture);
+                        }
+                    }
+                },
+
+                /* once */
+                once: function(node, eventName, processor, useCapture) {
+
+                    processor = g_func(processor);
+
+                    node.addEventListener(eventName, _once_processor, useCapture);
+
+                    return node;
+
+                    /* normal: _once_processor */
+                    function _once_processor() {
+
+                        var _sign = processor();
+
+                        // it's a little hack
+                        if(! _sign) {
+                            // cancel processor
+                            node.removeEventListener(eventName, _once_processor, useCapture);
+                        }
+                    }
+                },
+                /* tie */
+                tie: function(node, eventName, processor, useCapture) {
+
+                    processor = g_func(processor);
+                    node,addEventListener(eventName, processor, useCapture);
+
+                    return node;
+                },
+                /* deltie */
+                deltie: function(node, eventName, processor, useCapture) {
+
+                    processor = g_func(processor);
+                    node.removeEventListener(eventName, processor, useCapture);
+
+                    return node;
+                }
+            },
+
+            /* helper: keyboard */
+            "keyboard": {
+                id: "keyboard",
+                wish: [],
+                map: {
+                    Keys:
+                    {
+                        110: ".", 96: "0", 36: "Right", 40: "Down", 37: "Left", 17: "Ctrl", 93: "Menu", 18: "Alt",  32: "Space", 91: "Win",
+                        99: "3",  98: "2", 97:   "1",    38: "Up",   16: "Shift",191: "/",   190: ".",    188: ",",   77: "M",      78: "N",
+                        66: "B",  86: "V", 67:  "C",     88: "X",    90: "Z",     102: "6",   101: "5",    100: "4",   13: "Enter", 222: "'",
+                        186:";",  76: "L", 75:  "K",     74: "J",    72: "H",     71:  "G",   70:  "F",     68: "D",    83: "S",     65:  "A",
+                        20: "Caps",         107: "+",    106: "9",   108: "8",    107: "7",   220:  "\\",   221:"]",   219: "[",    80:  "P",
+                        79: "O",  73: "I",  85:  "U",    89:  "Y",   84:  "T",    82:  "R",   69:   "E",     87: "W",   81:  "Q",    9:  "Tab",
+                        109: "-", 106: "*", 111: "/",   144: "Num", 8:    "<-",  187:  "+",  189:   "-",    48: "0",   57:  "9",    56:  "8",
+                        55:  "7", 54:  "6",  53:  "5",   52:  "4",   51:   "3",   50:   "2",  49:    "1",    192: "`",  35:  "End",  34:  "PgDn",
+                        33:  "PgUp",          36:  "Home",            46:   "Del", "-1":   "PrtSC",             19:  "Pause",            123: "F12",
+                        122: "F11",121:"F10",120: "F9",  119:  "F8", 118:   "F7", 117:   "F6",              116: "F5",115:  "F4",   114: "F3",
+                        113:  "F2",112: "F1",  27: "Esc"
+                    }
+                },
+                list: {
+                    KeysEvent:[ "keydown", "keyup", "keypress", "click", "dblclick" ]
+                },
+
+                alias: {
+                    key: "listenKeys"
+                },
+
+                data: {
+                    KeysGroup: { }
+                },
+
+                init: function() {
+
+
+                    var events = List.KeysEvent;
+                    var group = Data.KeysGroup;
+                    var _map = Map.Keys;
+                    var curType;
+
+                    var iEvent = 0;
+                    for(;iEvent < events.length; iEvent++) {
+
+                        curType = events[iEvent];
+                        group[curType] = new Array();  //  add action kep
+
+                        spy(_keyboard_response, curType, window, true);
+                    }
+
+                    //  add keyup
+
+                    spy(_keyboard_keyup, "keyup");
+                    //  now, i am busy
+
+
+                    /* handler */
+                    function _keyboard_response() {
+
+                        //  search handprint
+
+                        var active_keys = [];
+
+                        if(event.ctrlKey) {
+                            active_keys.push("Ctrl");
+                        }
+
+                        if(event.altKey) {
+                            active_keys.push("Alt");
+                        }
+
+                        if(event.shiftKey) {
+                            active_keys.push("Shift");
+                        }
+
+                        var keyname = _map[event.keyCode];
+
+                        if(keyname && (keyname !== "Ctrl") && (keyname !== "Alt") && (keyname !== "Shift")) {
+                            active_keys.push(keyname);
+                        }
+
+                        //  save group
+
+                        _HOT_KEYS = active_keys;
+                        search_keys(active_keys, event.type);
+                    }
+
+                    /*  keyup:  _finger_onkeyup */
+                    function _keyboard_keyup() {
+
+                        //  delete hot keys
+
+                        _HOT_KEYS = [];
+                    }
+                    //  gear
+                    function search_keys(keyset, type) {
+
+                        type = type || "keydown";
+
+                        var print;
+                        var _prevent = false;
+                        var _stop_ = false;
+
+                        var hand_prints = group[type];
+
+                        for(var iPrint = 0; iPrint < hand_prints.length; iPrint++) {
+
+                            print = hand_prints[iPrint];
+
+                            if(compare_keys(print.keys, keyset)) {
+                                _calls(print.works);
+
+                                //  prevent default event procesor
+                                if(print.opt.prevent) {
+                                    _prevent = true;
+                                }
+
+                                //  stop
+                                if(print.opt.stop_) {
+                                    _stop_ = true;
+                                }
+
+                                if(print.opt.preventNext) {
+                                    break;
+                                }
+                            }
+                        }
+
+                        //  prevent default
+                        if(_prevent == true) {
+                            event.preventDefault();
+                        }
+
+                        //  stop propagation
+                        if(_stop_ == true) {
+                            event.stopPropagation();
+                        }
+                    }
+
+                    //  compare_keys
+                    function compare_keys(group1, group2) {
+
+                        var iKey;
+
+                        var isEqual = group1.length == group2.length;
+
+                        for(iKey = 0; iKey < group1.length && isEqual; iKey++)
+                        {
+                            var key = group1[iKey];
+
+                            if(search(group2, key) === false) {
+                                isEqual = false;
+                                break;
+                            }
+                        }
+
+                        return isEqual;
+                    }
+                },
+
+                listenKeys:  function(keygroup, callbacks, type, options) {
+
+                    //  set default type
+                    type = type || "keydown";
+                    //  new print
+
+                    var group = Data.KeysGroup;
+
+                    //  parse key
+
+                    if(_n(keygroup)) {
+                        keygroup = keygroup.toString;
+                    }
+
+                    if(_s(keygroup)) {
+                        keygroup = keygroup.split("+");
+                    }
+
+                    //  convert keycode to keyname
+
+                    for(var iKey = 0; iKey < keygroup.length; iKey++) {
+
+                        var key = keygroup[iKey];
+
+                        var n = key - 0;
+
+                        if(n == n && (n > 9 )) {
+                            keygroup[iKey] = key_maps[key];
+                        }
+                    }
+
+                    var new_print =
+                    {
+                        keys: keygroup,
+                        works: callbacks,
+                        opt: options || {}
+                    };
+
+                    group[type].push(new_print);
+                },
+
+                freeKeys: function(keygroup, callbacks) {
+
+                }
+            },
+            /*
+            helper: library
+             */
+            "library":
+            {
+                id: "library",
+                wish: [ "hasJQ" ],
+                chart: [ "hasJQ"],
+
+                /*
+                name;   hasJQ
+                 */
+                hasJQ:  function() {
+
+                    return _debug._hasvar([ "jQuery", "jQuery.fn"]);
+                }
+            },
+
+            /*
+            helper: debug
+             */
+            "debug":
+            {
+                id: "debug",
+                wish: "all",
+                chart: [ "_hasvar", "_eval", "_var", "output", "pause"],
+
+                /*
+                _hasvar
+                 */
+                _hasvar:    function(vars, mode) {
+
+                    if(_A(vars) == false) {
+                        vars = [ vars ];
+                    }
+
+                    //  use for
+
+                    mode = mode || "and";
+
+                    var hasUndefined;
+                    var hasDefined;
+
+                    var x = 0;
+
+                    for(;x < vars.length; x++) {
+
+                        //  use try...catch
+                        try {
+                            var val;
+
+                            //
+                            val = eval(vars[x]);
+
+                            if(exist(val) == false) {
+                                hasUndefined = true;
+                            }
+                            else {
+                                hasDefined = true;
+                            }
+                        }
+                        catch(error) {
+                            hasUndefined = true;
+                        }
+                    }
+
+                    var result = true;
+                    //  check mode
+                    if(mode == "and") {
+
+                        if(hasUndefined === true) {
+                            result = false;
+                        }
+                    }
+                    else if(mode == "or") {
+
+                        if(hasDefined === false) {
+                            result = false;
+                        }
+                    }
+
+                    //
+                    return result;
+                }
+                ,
+                /*
+                name:   _eval
+                 */
+                _eval:  function(code) {
+
+                    var result;
+                    try {
+                        result = eval(code);
+                    }
+                    catch(exception) {
+                        result = exception;
+                    }
+
+                    return result;
+                },
+                /*
+                name:   _var
+                 */
+                _var:   function(varName) {
+
+                    var _variation = null;
+
+                    try {
+                        _variation = eval(varName);
+                    }
+                    catch(e) {
+                        //  not doing
+                    }
+
+                    return _variation;
+                },
+
+                output: function(message) {
+                    console.log(message);
+                },
+
+                /* pause */
+                pause: function(arg0, mode) {
+                    mode = _def(mode, "alert");
+
+                    switch(mode) {
+
+                        case "alert":
+                        {
+                            var text = _def(arg0, "pause!");
+                            alert(text);
+                        }
+                            break;
+                    }
+                }
+            }
+            ,
+            /*
+            name:   mover
+             */
+            "mover":
+            {
+                id: "mover",
+                wish: [ "expose", "setup", "global"],
+                chart: [ "expose",  "setup", "global"],
+
+                expose: function(source, target, filters) {
+
+                    if(exist(filters)) {
+                        source = _loop.filter(source, filters);
+                    }
+
+                    target = target || window;
+                    //  copy member
+                    copy(source, target);
+
+                    return source;
+                }
+                ,
+
+                /*
+                name:   setup
+                 */
+                setup:  function(defopts, custom) {
+
+                    //  for options recover
+
+                    if(_s(custom)) {
+                        custom = _object.compose(custom);
+                    }
+
+                    if(mock(defopts)) {
+                        return true;
+                    }
+
+                    return copy(custom, defopts);
+                },
+
+                /* global */
+                global: function(method, methodName) {
+                    methodName = methodName || method.name;
+
+                    // expose
+                    window[methodName] = method;
+
+                    return window;
+                }
+            },
+
+            /* json */
+            "json": {
+
+                id: "json",
+                wish: [ "all" ],
+                chart: [  "encode", "decode" ],
+                init: function() {
+
+                    // the tool is mine.
+                    COM.JSON =
+                    {
+                        useHasOwn : ({}.hasOwnProperty ? true : false),
+
+                        pad : function(n) {
+                            return n < 10 ? "0" + n : n;
+                        },
+
+                        m : {
+                            "\b": '\\b',
+                            "\t": '\\t',
+                            "\n": '\\n',
+                            "\f": '\\f',
+                            "\r": '\\r',
+                            '"' : '\\"',
+                            "\\": '\\\\'
+                        },
+                        encodeString : function(s){
+                            if (/["\\\x00-\x1f]/.test(s)) {
+
+                                return '"' + s.replace(/([\x00-\x1f\\"])/g, function(a, b) {
+
+                                    var c = COM.JSON.m[b];
+                                    if(c){
+                                        return c;
+                                    }
+
+                                    c = b.charCodeAt();
+
+                                    return "\\u00" +
+                                        Math.floor(c / 16).toString(16) +
+                                        (c % 16).toString(16);
+                                }) + '"';
+                            }
+
+                            return '"' + s + '"';
+                        },
+
+                        encodeArray : function(o){
+                            var a = ["["], b, i, l = o.length, v;
+
+                            for (i = 0; i < l; i += 1) {
+                                v = o[i];
+
+                                switch (typeof v) {
+                                    case "undefined":
+                                    case "function":
+                                    case "unknown":
+
+                                        break;
+
+                                    default:
+
+                                        if (b) {
+                                            a.push(',');
+                                        }
+
+                                        a.push(v === null ? "null" : this.encode(v));
+                                        b = true;
+                                }
+                            }
+
+                            a.push("]");
+
+                            return a.join("");
+                        },
+
+                        encodeDate : function(o){
+
+                            return '"' + o.getFullYear() + "-" +
+
+                                pad(o.getMonth() + 1) + "-" +
+                                pad(o.getDate()) + "T" +
+                                pad(o.getHours()) + ":" +
+                                pad(o.getMinutes()) + ":" +
+                                pad(o.getSeconds()) + '"';
+                        },
+
+                        encode : function(o) {
+
+                            if(typeof o == "undefined" || o === null){
+                                return "null";
+                            }
+                            else if(o instanceof Array){
+                                return this.encodeArray(o);
+                            }
+                            else if(o instanceof Date){
+                                return this.encodeDate(o);
+                            }
+                            else if(typeof o == "string"){
+                                return this.encodeString(o);
+                            }
+                            else if(typeof o == "number"){
+                                return isFinite(o) ? String(o) : "null";
+                            }
+                            else if(typeof o == "boolean"){
+                                return String(o);
+                            }
+                            else {
+                                var self = this;
+                                var a = ["{"], b, i, v;
+
+                                for (i in o) {
+                                    if(!this.useHasOwn || o.hasOwnProperty(i)) {
+                                        v = o[i];
+                                        switch (typeof v) {
+                                            case "undefined":
+                                            case "function":
+                                            case "unknown":
+                                                break;
+                                            default:
+
+                                                if(b){
+                                                    a.push(',');
+                                                }
+
+                                                a.push(self.encode(i), ":",
+                                                    v === null ? "null" : self.encode(v));
+                                                b = true;
+                                        }
+                                    }
+                                }
+
+                                a.push("}");
+                                return a.join("");
+                            }
+                        },
+
+                        decode : function(json){
+                            return eval("(" + json + ')');
+                        }
+                    }
+                },
+
+                encode: function(src) {
+                    return COM.JSON.encode(src);
+                },
+
+                decode: function(json) {
+                    return COM.JSON.decode(json);
+                }
+            },
+            /*
+            name:   chart
+             */
+            "chart": {
+                id: "chart",
+                wish: [],
+                chart: [ "Math" ],
+
+                Math:
+                    [
+                        "abs", "acos", "asin", "atan2", "ceil", "cos", "exp", "floor", "log", "max",
+                        "min", "pow", "random","round", "sin", "sqrt", "tan"
+                    ]
+            },
+            /*
+            name:   hook
+             */
+            "hook": {
+                id: "hook",
+                wish: [ "fetch", "grab" ],
+                chart: [ "fetch", "makeText", "grab" ],
+
+                /*  fetch   */
+                fetch:  function(text, pattern) {
+
+                    var _mode;
+                    var pieces;  //  create new Array
+
+                    if(pattern instanceof RegExp) {
+                        _mode = "array";
+
+                        //
+                        pieces = text.match(pattern);
+                    }
+                    else {
+                        _mode = "json";
+
+                        pieces = new Array();
+
+                        //
+                        var segments = new Array();
+                        var _names = new Array();
+
+                        //  for..in
+                        var _exp;
+                        var _matchResult;
+
+
+                        var flags;  //  amazing!
+                        for(var name in pattern) {
+
+                            flags = name.split("^");
+
+                            _exp = pattern[name];
+                            name = flags[0];
+
+                            //  check match index
+                            if(flags[1]) {
+                                _matchResult = _regexp.submatch(text, _exp, 1);
+                            }
+                            else {
+                                _matchResult = text.match(_exp);
+                            }
+
+                            if(_null(_matchResult)) {
+                                continue;
+                            }
+
+                            //  slice result
+                            var sIndex, eIndex;
+                            var _result2;
+
+                            if(flags[2]) {
+                                _result2 = flags[2].split("|");
+
+                                if(_result2) {
+                                    sIndex = _result2[0];
+
+                                    eIndex = _result2[1];
+                                }
+
+                                //  slice
+                                _matchResult = _loop.map(_matchResult, function(r) {
+                                    return r.slice(sIndex, eIndex);
+                                });
+                            }
+
+                            segments.push(_matchResult);
+                            _names.push(name);
+                        }
+
+                        //  create json
+                        var count = _names.length;
+
+                        var x = 0;
+                        var _json;
+                        for(; x < count; x++) {
+
+                            _json =
+                            {
+                                name: _names[x],
+                                matches: segments[x]
+                            };
+
+                            pieces.push(_json);
+                        }
+                    }
+                    //
+                    return pieces;
+                },
+
+                /*
+                name:   makeText
+                 */
+                makeText:   function(src, _opts) {
+
+                    var opts =
+                    {
+                        addLabel: true,
+                        addLine: true,
+                        entry_sep: chr(10001),
+                        label_sep: chr(10000),
+                        txt_sep: chr(10005),
+                        addIntro: false
+                    };
+
+                    copy(opts, _opts);
+
+                    var my_text;
+
+                    var lineChar = "";
+
+                    if(opts.addLine == true) {
+                        lineChar = "\n";
+                    }
+                    //  start here
+
+                    var entryCount = src.length;
+
+                    var entry, label, results, txt;
+
+                    var y = 0;
+
+                    var entryText;
+
+                    var textlist = new Array();
+
+                    for(; y < entryCount; y++) {
+                        entry = src[y];
+
+                        //  add intro
+
+                        //
+                        label = opts.label_sep + entry.name + opts.label_sep  + lineChar;
+
+                        results = entry.matches;
+
+                        txt = results.join(opts.txt_sep + lineChar);
+
+                        entryText = label + txt;
+
+                        textlist.push(entryText);
+                    }
+
+                    my_text = textlist.join(opts.entry_sep + lineChar);
+
+                    return my_text;
+                }
+                ,
+                /*
+                name: grab
+                 */
+                grab:   function(src, filter, keymode) {
+
+                    var _list = [];
+
+                    var pattern_index;
+                    var pattern_value;
+                    var limit = 9999;
+                    var deep = 4;
+
+                    var counter = 0;
+
+                    var _val, _index;
+
+                    if(_s(filter)) {
+
+                        var _seg = filter.split("@");
+
+                        //  key
+                        if(_seg[0]) {
+                            pattern_index = new RegExp(_seg[0], "i");
+                        }
+
+                        //  value
+                        if(_seg[1]) {
+                            pattern_value = new RegExp(_seg[1], "i");
+                        }
+
+                        //  limit
+                        if(_seg[2]) {
+                            limit = _seg[2];
+                        }
+
+                        //  deep
+                        if(_seg[3]) {
+                            deep = _seg[3];
+                        }
+                    };
+                    _loop.each(src, function(val, index, _deep) {
+
+                        _val = val;
+
+                        if(mock(_val)) {
+                            return;
+                        }
+
+                        _index = index;
+
+                        if(_filter_helper() && (counter <= limit) && (_deep <= deep)) {
+
+                            if(keymode == true) {
+                                _list.push(index);
+                            }
+                            else {
+                                _list.push(val);
+                            }
+
+                            counter++;
+                        }
+                    }, null,  deep);
+
+                    return _list;
+
+                    function _filter_helper() {
+
+                        _val = _val.toString();
+                        _index = _index.toString();
+
+                        var _match = true;
+                        if(pattern_value && ! _val.match(pattern_value)) {
+                            _match = false;
+                        }
+
+                        if(pattern_index && ! _index.match(pattern_index)) {
+                            _match = false;
+                        }
+
+                        return _match;
+                    }
+                }
+            }
+            ,
+            /*
+            helper: server
+             */
+            "server":
+            {
+                id: "server",
+                wish: "all",
+                chart:
+                    [
+                        "exe", "echo", "php","query",
+                        "read", "write", "scan",
+                        "download", "upload",
+                        "_opts", "_init_server", "_place_map", "_modify_url"
+                    ],
+
+                _opts: {
+                    arg_prefix: "a"
+                },
+                _place_map: {
+                    anywhere: ""
+                },
+                _init_server:   function(opts, place_map) {
+
+                    copy(opts, _server._opts);
+
+                    copy(place_map, _server._place_map);
+                },
+                /*
+                 name:   exe
+                 */
+                exe:    function(command) {
+
+                    var _args =
+                    {
+                        "command": command
+                    };
+
+                    var x = 1;
+
+                    var _name = _server._opts.arg_prefix;
+
+                    for(; x < arguments.length; x++) {
+
+                        _args[_name + x] = arguments[x];
+                    }
+
+                    //
+                    return http(_server._opts.url, _args, "POST");
+                },
+
+                /*
+                name:   php
+                 */
+                php:    function() {
+
+                    var _arg = _method.un_arg("eval");
+
+                    return _server.exe.apply(null, _arg);
+                },
+                /*
+                name:   echo
+                 */
+                echo:   function() {
+
+                    return _server.exe("echo", arg2arr().join(","));
+                }
+                ,
+                /*
+                name:   read
+                 */
+                read:   function(url, place) {
+                    url = _server._modify_url(url, place);
+
+                    return _server.exe("read", url);
+                }
+                ,
+                /*
+                name:   write
+                 */
+                write:  function(url,data, mode, place) {
+
+                    url = _server._modify_url(url, place);
+
+                    mode = mode || "w";
+
+                    return _server.exe("write", url, data, mode);
+                }
+                ,
+                /*
+                name:   scan
+                 */
+                scan:   function(place, keyword, deepMode, limit) {
+
+                    var workDir = _server._place_map[place] || place;
+
+                    if(! deepMode) {
+                        deepMode = 0;
+                    }
+
+                    keyword = keyword || ".+";
+
+                   return  _server.exe("scan", workDir, keyword, deepMode);
+                },
+
+                query:  function(statement, database) {
+
+                    var _json = _server.exe("query", statement, database);
+
+                    return _json;
+                },
+
+                /*
+                name:   download
+                 */
+                download:   function(sources, place) {
+
+                    if(_A(sources)) {
+                        sources = sources.join(",");
+                    }
+
+                    place = _server._place_map[place] || place || "";
+                    return _server.exe("download", sources, place);
+                },
+                /*
+                _modify_url
+                 */
+                _modify_url:    function(url, place) {
+                    place = place || "anywhere";
+
+                    var _prefix = _server._place_map[place];
+
+                    url = _prefix + url;
+
+                    return url;
+                }
+            }
+            ,
+            /*
+             helper: mysql
+             */
+            mysql:  {
+                id: "mysql",
+                wish: [ "knit" ],
+                chart:
+                    [
+                        "_opts", "_parse_type", "go", "desc", "_insert_value","_update_value",
+                        "knit", "create", "drop", "show", "change", "truncate"
+                    ],
+
+                _opts: {
+                    flag_map: {
+                        t: "TABLE",
+                        tb: "TABLE",
+                        d: "DATABASE",
+                        db: "DATABASE"
+                    },
+                    type_map: {
+                        m: "INT PRIMARY KEY AUTO_INCREMENT",
+                        i: "INT",
+                        t: "TEXT",
+                        p: "PRIMARY KEY",
+                        u: "UNIQUE",
+                        a: "AUTO_INCREMENT",
+                        n: "NULL",
+                        z: "NOT NULL",
+                        d: "DATETIME",
+                        a: "AUTO_INCREMENT",
+                        v8: "VARCHAR(8)",
+                        v16: "VARCHAR(16)",
+                        v32: "VARCHAR(32)",
+                        v64: "VARCHAR(64)",
+                        v128: "VARCHAR(128)",
+                        v256: "VARCHAR(256)",
+                        v1024: "VARCHAR(1024)"
+                    },
+                    _value_filter:
+                        [
+                            "NOW()"
+                        ]
+                },
+                /*
+                 name:   knit
+                 */
+                knit:   function(tableName, databaseName, isSqlite) {
+
+                    var sql;
+
+                    var _database = databaseName || _mysql._opts.database;
+                    var _table = tableName;
+
+                    var _format = _string.format;
+
+                    return {
+
+                        migrate:    function(tableName, databaseName) {
+
+                            _table = tableName;
+                            _database = databaseName;
+                        },
+
+                        select: function(fields, clause) {
+
+                            fields = fields || "*";
+                            clause = clause || "";
+
+                            sql = _format("SELECT $1 FROM $2 $3", fields, tableName, clause);
+
+                            //return _server.query(sql, _database);
+                            return _mysql.go(sql, _database);
+                        },
+
+                        insert: function(values) {
+
+                            return _mysql._insert_value(values, tableName, _database, false);
+                        }
+                        ,
+                        del:    function(condition) {
+
+                            condition = condition || "";
+                            if(_n(condition)) {
+                                condition = [ condition ];
+                            }
+
+                            if(_A(condition)) {
+                                condition = "WHERE id in(" + condition.join(",") + ")";
+                            }
+                            else if(condition !== "") {
+                                condition = "WHERE " + condition;
+                            }
+                            //
+                            sql = _format("DELETE FROM $1 $2;", tableName, condition)
+
+                            return _server.query(sql, _database);
+                        }
+                        ,
+                        update: function(vals, clause) {
+
+                            return _mysql._update_value(vals, clause, _database, false);
+                        }
+                    }
+                }
+                ,
+                go: function(sql, databaseName, isSqlite) {
+
+                    databaseName = databaseName || _mysql._opts.database;
+
+                    var result;
+
+                    if(isSqlite == true) {
+                        result = sqlite.lite(sql, databaseName);
+                    }
+                    else {
+                        result = _server.query(sql, databaseName);
+                    }
+
+                    return result;
+                },
+                /*
+                 name:   create
+                 */
+                create: function(may1, may2, clause, _db) {
+
+                    var sql;
+                    if(_u(may2)) {
+                        //  create a database
+
+                        var databaseName = may1;
+
+                        sql = "CREATE DATABASE " + databaseName + ";";
+                    }
+                    else {
+                        //  create a table
+
+                        var tableName = may1;
+
+                        var field_map = may2;
+
+                        clause = clause || "";
+
+                        var field_map2 = _maker.g_obj(field_map, "clone=1");
+
+                        field_map = { "id": "m" };
+                        copy(field_map2, field_map);
+
+                        field_map = _loop.map(field_map, _mysql._parse_type);
+
+                        var field_define = _string.montage( " !,", field_map);
+
+                        sql = _string.format("CREATE TABLE $1($2) $3;", tableName, field_define, clause);
+                    }
+
+                    return _mysql.go(sql, _db);
+                },
+
+                drop:   function(_target, flag) {
+
+                    var sql;
+
+                    _target = _target || _mysql._opts.database;
+
+                    flag = _mysql._opts.flag_map[flag] || flag || "TABLE";
+
+                    if(flag == "TABLE") {
+                        sql = "DROP TABLE " + _target;
+                    }
+                    else if(flag == "DATABASE") {
+                        sql = "DROP DATABASE " + _target;
+                    }
+
+                    //  use confirm! it's risk
+
+                    if(confirm(sql + "\n execute?")) {
+                        return _mysql.go(sql);
+                    }
+                }
+                ,
+                /*
+                 name:   desc
+                 */
+                desc:   function(tableName, _db) {
+
+                    var sql = "DESCRIBE " + tableName + ";";
+
+                    return _mysql.go(sql, _db);
+                },
+                /*
+                 name:   show
+                 */
+                show:   function(flag) {
+
+                    flag = _mysql._opts.flag_map[flag] || flag || "TABLE";
+
+                    if(flag !== "TABLE" && flag !== "DATABASE") {
+
+                        var _db = flag;
+                        flag = "TABLE";
+                    }
+
+                    var sql = "SHOW " + flag + "S;";
+
+                    return _mysql.go(sql, _db);
+                },
+
+                /*
+                 name:   change
+                 */
+                change: function(_dbname) {
+
+                    _mysql._opts.database = _dbname;
+                },
+
+                truncate: function(tableName, _dbname) {
+
+                    var sql = "TRUNCATE " + tableName + ";";
+
+                    return _mysql.go(sql, _dbname);
+                },
+
+                _parse_type:    function(str) {
+
+                    var _map, flag, val;
+
+                    _map = _mysql._opts.type_map;
+
+                    var counter = 0;
+                    var valkep = [];
+                    for(flag in _map) {
+
+                        val = _map[flag];
+
+                        if(str.search(flag) !== -1) {
+                            str = str.replace(flag, "$" + counter);
+
+                            counter++;
+                            valkep.push(val);
+                        }
+                    }
+
+                    //
+                    str = _string.format(str, valkep);
+
+                    return str;
+                },
+
+                _insert_value:	function(values, tableName, dbName, isSqlite, callback) {
+                    var val;
+                    var result;
+
+                    sql = "";
+
+                    if(_A(values) && _A(values[0])) {
+
+                        //  check first value
+
+                        var suc_counter = 0;
+                        var failure_counter = 0;
+
+                        var z = 0;
+                        for(; z < values.length; z++) {
+
+                            val = values[z];
+
+                            result = _insert_sql(val);
+
+                            result == "success" ? suc_counter++ : failure_counter++;
+                        }
+
+                        result = format("success: $1, failure: $2", suc_counter, failure_counter);
+
+                    }
+                    else {
+                        result = _insert_sql(values);
+                    }
+
+                    return result;
+                    /*
+                     name:   _insert_sql
+                     */
+                    function _insert_sql(src) {
+
+                        var _valstr = [];
+                        var _column_str = [];
+
+                        //  a record
+
+                        _parse_values();
+
+                        var sql1 = format("INSERT INTO $1$2 VALUES(NULL,$3);", tableName, _column_str,  _valstr);
+
+                        var result;
+
+                        if(isSqlite == true) {
+                            result = _sqlite.lite(sql1, callback, dbName);
+                        }
+                        else {
+                            result = _server.query(sql1, dbName);
+                        }
+
+                        return result;
+
+                        /*
+                         name:   _parse_values
+                         */
+                        function _parse_values() {
+
+                            if(_A(src)) {
+                                var z = 0;
+
+                                for(; z < src.length; z++) {
+
+                                    val = src[z];
+
+                                    if(_A(val)) {
+                                        val = val.join(",");
+                                    }
+                                    else if(mock(val)) {
+                                        val = "";
+                                    }
+
+                                    if(_s(val)) {
+
+                                        //  may be function
+
+                                        if(search(_mysql._opts._value_filter, val) === false && (val[0] != "@")) {
+                                            val = "\"" + val + "\"";
+                                        }
+
+                                        if(val[0] == "@") {
+                                            val = val.slice(1);
+                                        }
+                                    }
+
+                                    _valstr.push(val);
+                                }
+                            }
+                            else if(_o(src)) {
+
+                                var field_name;
+
+                                _column_str.push("id");
+
+                                for(field_name in src) {
+
+                                    val = src[field_name];
+                                    if(_s(val)) {
+                                        val = "\"" + val + "\"";
+                                    }
+
+                                    _valstr.push(val);
+
+                                    _column_str.push("`" + field_name + "`");
+                                }
+                            }
+
+                            _valstr = _valstr.join(",");
+
+                            _column_str = _column_str.join(",");
+
+                            if(_column_str.length > 0 ) {
+                                _column_str = "(" + _column_str + ")";
+                            }
+                        }
+                    }
+                },
+
+                _update_value:  function(vals, clause, _table, dbName, isSqlite, callback) {
+
+                    if(empty(clause)) {
+                        clause = "";
+                    }
+                    else {
+                        clause = "WHERE " + clause;
+                    }
+
+                    var vals_kep = [];
+                    var val;
+                    for(var field in vals) {
+
+                        val = vals[field];
+
+                        if(_s(val)) {
+
+                            vals = _string.quote(val);
+                        }
+                        val = format("`$1`=$2", field, vals);
+                        vals_kep.push(val);
+                    }
+
+                    vals = vals_kep.join(",");
+                    sql = format("UPDATE `$1` SET $2 $3", _table, vals, clause);
+
+                    var result;
+
+                    if(isSqlite == true) {
+                        result = _sqlite.lite(sql, callback, dbName);
+                    }
+                    else {
+                        result = _mysql.go(sql, dbName);
+                    }
+
+                    return result;
+                }
+            },
+
+
+            "sqlite":
+            {
+                id: "sqlite",
+                wish: [ "lite", "marry" ],
+                chart:["open", "lite", "create", "drop", "marry", "db"],
+                init:   function() {
+                    //_sqlite.open("books");
+                },
+                db:	null,	//	used for transcate
+                open:	function(dbName, size, displayName) {
+
+                    //	set default parameter value
+                    displayName = displayName || dbName;
+                    size = size || 512*1024;
+
+                    //	call openDatabase
+                    _sqlite.db = window.openDatabase(dbName, "1.0", displayName, size);
+                    _sqlite.db.name = dbName;
+
+                    return _sqlite.db;
+                },
+                lite:	function(sql, callback, dbName) {
+
+                    var db;
+
+                    if(exist(dbName)) {
+
+                        //	maybe Database
+                        if(_o(dbName)) {
+                            db = dbName;
+                        }
+                        else {
+                            db = _sqlite.open(dbName);
+                        }
+                    }
+                    else {
+                        db = _sqlite.db;
+                    }
+
+                    db.transaction(function(tx) {
+
+                        tx.executeSql(sql, [], _exe_success_cb, _exe_error_cb);
+                    }, _tx_error_cb, _tx_success_cb);
+
+                    return "success";
+
+                    /*
+                     * _tx_success_cb
+                     */
+                    function _tx_success_cb(tx, result) {
+                        console.log("transcation successed");
+                    }
+
+                    /*
+                     * _tx_error_cb
+                     */
+                    function _tx_error_cb() {
+                        console.log("transcation failed");
+                    }
+
+                    /*
+                     * _exe_success_cb
+                     */
+                    function _exe_success_cb(tx, result) {
+
+                        if(callback) {
+
+                            var set = new Array();
+                            var rows = result.rows;
+
+                            for(var x = 0; x < rows.length; x++) {
+                                set.push(rows.item(x));
+                            }
+
+                            callback(set, "ok", tx);
+                        }
+                    }
+
+                    /*
+                     * _exe_error_cb
+                     */
+                    function _exe_error_cb(tx, error) {
+                        if(callback) {
+                            callback(error, "error");
+                        }
+
+                        console.log(error.message);
+                    }
+                },
+
+                create:	function(tableName, fields, dbName) {
+
+                    var sql;
+
+                    sql = format("CREATE TABLE $1 (id INTEGER PRIMARY KEY, $2);", tableName, fields.join(","));
+
+                    _sqlite.lite(sql, null, dbName);
+
+                    //  it's variation
+                    return _sqlite.marry(tableName);
+                },
+
+                drop:	function(tableName, dbName) {
+
+                    var sql;
+
+                    sql = "DROP TABLE " + tableName + ";";
+
+                    return _sqlite.lite(sql, null, dbName);
+                },
+                /*
+                 * name:	marry
+                 */
+                marry:	function(tableName, dbName) {
+
+                    dbName = dbName || _sqlite.db.name;
+
+                    var sql;
+
+                    return {
+
+                        select:	function(callback, fields, clause) {
+
+                            clause = clause || "";
+                            fields = fields || "*";
+
+                            sql = format("SELECT $1 FROM $2 $3", fields, tableName, clause);
+
+                            return _sqlite.lite(sql, callback, dbName);
+                        },
+
+                        insert: function(values, callback) {
+
+                            return _mysql._insert_value(values, tableName, dbName, true, callback);
+                        },
+
+                        update: function(vals, clause, callback) {
+                            return _mysql._update_value(vals, clause, tableName, dbName, true, callback);
+                        },
+
+                        del:    function(clause, callback) {
+
+                            if(_n(clause)) {
+                                clause = "id=" + clause;
+                            }
+                            else if(_A(clause)) {
+                                clause = "id in (" + clause.join(",") + ")";
+                            }
+                            sql = format("DELETE FROM $1 WHERE $2;", tableName, clause);
+
+                            return _sqlite.lite(sql, null, dbName);
+                        }
+                    }
+                }
+            },
+            /*
+            helper: clock
+             */
+            "clock":
+            {
+                id: "clock",
+                wish: "all",
+                chart: [ "now", "reckon", "stamp", "descTime" ],
+
+                /*
+                name:   now
+                 */
+                now:    function(vary) {
+
+                    var weekMap =
+                    {
+                        0: "Sunday",
+                        1: "Monday",
+                        2: "Tuesday",
+                        3: "Wednesday",
+                        4: "Thursday",
+                        5: "Friday",
+                        6: "Saturday"
+                    };
+
+                    var Now = new Date();
+
+                    var msecond = Now.getMilliseconds();
+                    var second = Now.getSeconds();
+                    var minute = Now.getMinutes();
+                    var hour = Now.getHours();
+
+                    var week = Now.getDay();
+                    var weekName = weekMap[week];
+                    var day = Now.getDate();
+                    var month = Now.getMonth();
+                    var year = Now.getFullYear();
+
+                    var time = Now.getTime();
+
+                    var bMap = true;
+                    var re;
+
+                    var _map =
+                    {
+                        ms: msecond,
+                        s: second,
+                        m: minute,
+                        h: hour,
+                        w: week,
+                        w2: weekName,
+                        d: day,
+                        m: month,
+                        y: year,
+                        t: time,
+
+                        msecond: msecond,
+                        second: second,
+                        minute: minute,
+                        hour: hour,
+                        week: week,
+                        weekName: weekName,
+                        day: day,
+                        month: month,
+                        year: year,
+                        time: time
+                    };
+
+
+                    if(vary === 0 || vary == "full") {
+                        re = _string.format("$1:$2:$3 $4-$5 $6", hour, minute, second, month, day, year);
+                    }
+                    else if(vary === true || vary == 1) {
+                        re = _map;
+                    }
+                    else if(mock(vary)) {
+                        re = _string.format("$1:$2:$3", hour, minute, second);
+                    }
+                    else if(_s(vary)) {
+
+                        //
+
+                        var _list = [];
+                        var _signs = vary.split(/\s/);
+
+                        var y = 0;
+                        var val;
+                        for(; y < _signs.length; y++) {
+
+                            val = _signs[y];
+                            val = _map[val];
+
+                            val = _bee._def(val, _signs[y]);    //  get value
+
+                            _list.push(val);
+                        }
+
+                        //  number better
+                        if(_list.length == 1) {
+                            re = _list - 0;
+
+                            if(isNaN(re)) {
+                                re = _list.toString();
+                            }
+                        }
+                        else {
+                            re = _list.join(" ");
+                        }
+                    }
+
+                    return re;
+                }
+                ,
+                /*
+                name:   reckon
+                 */
+                reckok:  function() {
+
+                    var startTime = _time.stamp();
+                    var _duration = 0;
+
+                    var status = "started";
+
+                    return {
+
+                        stop:   function() {
+
+                            var re;
+
+                            if(status !== "stoped") {
+                                status = "stoped";
+                                re = _time.stamp() - startTime + _duration;
+                            }
+                            else {
+                                re = false;
+                            }
+
+                            return re;
+                        },
+
+                        pause:  function() {
+
+                            var re;
+                            if(status == "started") {
+                                _duration += _time.stamp() - startTime;
+                                startTime = 0;
+
+                                status = "paused";
+                                re = _duration;
+                            }
+                            else {
+                                re = false;
+                            }
+
+                        },
+
+                        resume: function() {
+                            var re;
+                            if(status == "paused") {
+                                startTime = _time.stamp();
+
+                                status = "started";
+                                re = _duration;
+                            }
+                            else {
+                                re = false;
+                            }
+
+                            return re;
+                        }
+                    };
+                },
+
+                /*
+                name:   stamp
+                 */
+                stamp:  function() {
+
+                    var Now = new Date();
+
+                    return Now.getTime();
+                },
+
+                /*
+                name:   descTime
+                 */
+                descTime:   function(milliseconds, reversed_ms) {
+
+                    var ms, seconds, minutes, hour;
+
+                    ms = milliseconds % 1000;
+
+                    seconds = milliseconds / 1000 % 60;
+
+                    minutes = milliseconds / (1000*60) % 60;
+                    hour = milliseconds / (1000*60*60);
+
+                    var desc = "";
+
+                    if(hour) {
+                        desc +=  floor(hour) + "h ";
+                    }
+
+                    if(minutes) {
+                        desc += floor(minutes) + "m ";
+                    }
+
+                    if(seconds) {
+                        desc += floor(seconds) + "s ";
+                    }
+
+                    if(reversed_ms) {
+                        desc += ms + "ms";
+                    }
+
+                    return desc;
+                }
+            },
+
+            /*
+            helper: timer
+             */
+            "timer": {
+                id: "timer",
+                wish: "all",
+                chart: [ "every" ],
+
+                every:  function(code, interval, limit, args) {
+
+                    limit = limit || 1024*1024;
+                    interval = interval || 100; //  100ms
+
+                    code = g_func(code);
+
+                    var _counter = 0;
+                    var handle = setInterval(_internal_every, interval);
+
+                    var _status = "started";
+
+                    var _this = {
+
+                        handle: handle,
+
+                        pause:  function(duration) {
+
+                            var re;
+                            if(_status == "started") {
+                                clearInterval(handle);
+
+                                re = _counter;
+                            }
+                            else {
+                                re = false;
+                            }
+
+                            if(exist(duration)) {
+                                _this.resume();
+                            }
+                            return re;
+                        },
+
+                        resume: function() {
+
+                            if(_status !== "stoped") {
+                                handle = setInterval(_internal_every, interval);
+                            }
+
+                            return _counter;
+                        },
+
+                        stop:   function() {
+                            _counter = 0;
+                            _status = "stoped";
+                            return clearInterval(handle);
+                        },
+
+                        restart:    function() {
+                            _counter = 0;
+                            _status = "started";
+                            return _this.resume();
+                        }/*,
+
+                        renew: function(src) {
+
+                            this.stop();
+
+                            if(_o(src)) {
+                                this.handle = handle.handle;
+                            }
+                            else {
+                                this.handle = src;
+                            }
+
+                            return this;
+                        }*/
+                    };
+
+                    return _this;
+                    /*
+                    _internal_every
+                     */
+                    function _internal_every() {
+
+                        args = args || [];
+                        args.unshift(_counter);
+
+                        if(limit !== -1 && _counter < limit) {
+                            code.apply(null, args);
+                        }
+
+                        _counter++;
+                    }
+                }
+            },
+
+            /*
+            helper: canvas
+             */
+            "canvas":
+            {
+                id: "canvas",
+                wish: ["create"],
+                chart: [ "create"],
+
+                create: function(dimens, _opts) {
+
+                    var opts =
+                    {
+                        radius: 4,
+                        border: 1,
+                        parent: Body,
+                        id: "",
+                        Class: "Canvas",
+                        render: true
+                    };
+
+                    setup(_opts, opts);
+
+                    dimens = dimens || "480, 360, 0, 0";
+
+                    if(_s(dimens)) {
+                        dimens = dimens.split(",");
+                    }
+
+                    var width, height, top, left;
+
+                    width = dimens[0];
+                    height = dimens[1];
+                    top = dimens[2];
+                    left = dimens[3];
+
+
+                    var _dom = canvas(width, height, "", opts.Class, opts.id);
+
+                    if(opts.render == true) {
+                        opts.parent.append(_dom);
+                    }
+
+                    if(opts.border) {
+                        css(_dom, "border", "solid silver " + opts.border + "px");
+                    }
+
+                    //  set, x,y
+                    if(exist(left) || exist(top)) {
+
+                        css(_dom, "position", "absolute");
+
+                        if(exist(left)) {
+                            css(_dom, "left", left + "px");
+                        }
+
+                        if(exist(top)) {
+                            css(_dom, "top", top + "px");
+                        }
+                    }
+                    if(opts.radius) {
+                        css(_dom, "border-radius", opts.radius + "px");
+                    }
+
+                    var context = _dom.getContext('2d');
+
+                    var _this =
+                    {
+
+                        node: _dom,
+
+                        pixel:  function(x, y, RGBA) {
+
+                            RGBA = RGBA || [0, 0, 0, 0];
+                            var width, height;
+
+                            width = _dom.width;
+                            height = _dom.height;
+
+                            var imageData = context.getImageData(0,0,width,height);
+
+                            var pos = width * 4 * y + x*4;
+
+                            if(_s(RGBA)) {
+                                RGBA = RGBA.split(",");
+                            }
+
+                            R = RGBA[0] || 0;
+                            G = RGBA[1] || 0;
+                            B = RGBA[2] || 0;
+                            A = RGBA[3] || 255;
+
+                            imageData.data[pos] = R;
+                            imageData.data[pos+1] = G;
+                            imageData.data[pos+2] = B;
+                            imageData.data[pos+3] = A;
+
+                            context.putImageData(imageData, 0, 0);
+                        },
+
+                        f:  function(exp, range) {
+
+                            range = range || "0,1000,1";
+                            range = range.split(",");
+
+                            var x1 = range[0] - 0;
+                            var x2 = (range[1] - 0) || 1000;
+                            var step = (range[2] - 0) || 1;
+
+                            var x = x1;
+                            var firstPoint = true;
+                            for(; x < x2; x+=step) {
+
+                                y = eval(exp);
+
+                                if(firstPoint) {
+                                    context.moveTo(x, y);
+                                    firstPoint = false;
+                                }
+                                else {
+                                    context.lineTo(x, y);
+                                }
+                            }
+
+                            context.stroke();
+                        },
+
+                        linear: function(rect, stops, added) {
+
+                            rect = _math.g_num(rect, "0,0,100,100");
+                            return _this._gradient_canvas("linear", rect, stops, added);
+                        },
+
+                        radial: function(circle1, circle2, stops, added) {
+
+                            circle1 = _math.g_num(circle1, "50,50,10");
+                            circle2 = _math.g_num(circle2, "50,50,50");
+
+                            return _this._gradient_canvas("radial", circle1.concat(circle2), stops, added);
+                        },
+
+                        _gradient_canvas:   function(type, coordinates, stops, added) {
+
+                            var gradient
+
+                            if(type == "linear") {
+                                gradient = context.createLinearGradient.apply(context, coordinates);
+                            }
+                            else if(type == "radial") {
+                                gradient = context.createRadialGradient.apply(context, coordinates);
+                            }
+
+                            gradient.stop = gradient.addColorStop;
+
+                            stops = stops || "black,white";
+
+                            stops = g_set(stops);
+
+                            var n, color;
+                            var z;
+                            if(_A(stops)) {
+
+                                var length = stops.length;
+
+                                var step = 1 / (length-1);
+
+                                for(z = 0;z < length; z++) {
+                                    n = step*z;
+                                    color = stops[z];
+                                    gradient.stop(n, color)
+                                }
+                            }
+                            else if(_o(stops)) {
+
+                                for(z in stops) {
+
+                                    color = stops[z];
+                                    gradient.stop(z, color);
+                                }
+                            }
+
+                            if(added == true) {
+                                context.fillStyle = gradient;
+                            }
+                            return gradient;
+                        }
+                    };
+
+                    copy(_this, context);
+
+                    return context
+                }
+            },
+
+            "svg":
+            {
+                id: "svg",
+                wish: ["svg"],
+                chart: ["svg"],
+
+                onload: function() {
+                    var node = div("","","svg-box");
+
+                    Body.appendChild(node);
+                },
+
+                svg: function(id, coor, _opts) {
+
+                    //  initial opts
+                    var opts =
+                    {
+                        parent: $("#svg-box"),
+                        border: 1,
+                        radius: 4,
+                        pad: 4
+                    };
+
+                    copy(opts, _opts);
+
+                    coor = _math.g_num(coor, "480,360,100,100");
+
+                    var top = coor[2];
+                    var left = coor[3];
+
+                    var divNode = div("","", id + "_div");
+                    opts.parent.append(divNode);
+                    //var node = _dom.tag("svg", _props);
+
+                    //opts.parent.append(node);
+                    //node.setAttribute("xmlns");
+                    var _htmlcode = format("<svg id=$1 width=$2 height=$3></svg>", id, coor[0],  coor[1]);
+
+                    divNode.innerHTML = _htmlcode;
+
+                    var _pack =
+                    {
+                        node:   $("svg#" + id),
+
+                        rect:   function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("rect"));
+                        },
+
+                        circle: function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("circle"));
+                        },
+
+                        "line": function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("line"));
+                        },
+
+                        "ellipse": function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("ellipse"));
+                        },
+
+                        "polyline": function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("polyline"));
+                        },
+
+                        "polygon":  function() {
+                            return _pack.svgtag.apply(null, _method.un_arg("polygon"));
+                        },
+                        "text": function(string) {
+
+                            var _str = string || "svg";
+
+                            var _args = getArg();
+                            _args.shift();
+                            _args.unshift("text");
+
+                            var _node = _pack.svgtag.apply(null, _args);
+
+                            _node.textContent = string;
+
+                            return _node;
+                        },
+                        svgtag:   function(tagName, coordinates, basicStyle, otherProps) {
+
+                            var _coor;
+
+
+                            var style_map =
+                            {
+                                "text": "black"
+                            };
+
+                            basicStyle = basicStyle || style_map[tagName] || "gray,black,1";
+
+                            basicStyle = basicStyle.split(",");
+
+                            tagName = tagName || "rect";
+
+                            var _style =
+                            {
+                                fill: basicStyle[0] || "gray",
+                                stroke: basicStyle[1] || "black",
+                                "stroke-width": basicStyle[2] || "1"
+                            };
+
+                            //  propertys
+                            var props = g_obj(otherProps) || {};
+
+                            props.style = analyze(_style, ";key:");
+
+                            var coor_map =
+                            {
+                                rect: "100,100,0,0",    // width, height, top, left
+                                ellipse: "50,25,50,50",
+                                circle: "50,50,50",
+                                line: "0,0,50,50",
+                                polyline: "0,0,20,0,20,20,40,20",
+                                polygon: "50,0,0,50,100,100",
+                                text: "24,24"
+                            };
+
+                            _coor = g_num(coordinates, coor_map[tagName]);
+
+                            switch(tagName) {
+
+                                case "rect":
+                                {
+                                    _coor =
+                                    {
+                                        x: _coor[2],
+                                        y: _coor[3],
+                                        width: _coor[0],
+                                        height: _coor[1]
+                                    };
+                                }
+                                    break;
+
+                                case "circle":
+                                {
+                                    _coor =
+                                    {
+                                        cx: _coor[1],
+                                        cy: _coor[2],
+                                        r: _coor[0]
+                                    };
+                                }
+                                    break;
+
+                                case "line":
+                                {
+                                    _coor =
+                                    {
+                                        x1: _coor[0],
+                                        y1: _coor[1],
+                                        x2: _coor[2],
+                                        y2: _coor[3]
+                                    }
+                                }
+                                    break;
+
+                                case "ellipse":
+                                {
+                                    _coor =
+                                    {
+                                        rx: _coor[0],
+                                        ry: _coor[1],
+                                        cx: _coor[2],
+                                        cy: _coor[3]
+                                    }
+                                }
+                                    break;
+
+                                case "polyline":
+                                {
+                                    _coor =
+                                    {
+                                        points: _coor.join(",")
+                                    };
+                                }
+                                    break;
+
+                                case "polygon":
+                                {
+                                    _coor =
+                                    {
+                                        points: _coor.join(",")
+                                    };
+                                }
+                                    break;
+
+                                case "text":
+                                {
+                                    _coor =
+                                    {
+                                        x: _coor[0],
+                                        y: _coor[1]
+                                    };
+                                }
+                                    break;
+                            }
+
+                            copy(_coor, props);
+
+                            props.mark = 1; //  use mark
+                            props.id = "current_shape";
+                            var node = _dom.tag(tagName, props);
+
+                            _pack.node.append(node);
+
+                            recode(divNode);
+                            _pack.node = $("svg#" + id);
+
+                            node = paw("#" + props.id);
+                            node.removeAttribute("id");
+
+                            return node;
+                        }
+                    }
+
+                    window.coor(divNode, top, left, "absolute");
+
+                    if(opts.border) {
+                        css(divNode, "border", "solid silver " + opts.border + "px");
+                    }
+
+                    if(opts.radius) {
+                        css(divNode, "border-radius", opts.radius + "px");
+                    }
+
+                    if(opts.pad) {
+                        css(divNode, "padding", opts.pad + "px");
+                    }
+
+                    return _pack;
+                }
+            },
+
+            "geometry":
+            {
+                id: "geo",
+                wish: [],
+                chart: []
+
+                /*
+                name:
+                 */
+            },
+
+            /* pit */
+            pit: {
+                id: "pit",
+                wish: [],
+                alias: {
+                    dig: "get",
+                    fill: "set"
+                },
+                chart: ["get", "set", "_path"],
+
+                init: function() {
+                  local = localStorage;
+                },
+                set: function(keyName, keyValue) {
+
+                    var needDel = false;
+
+                    if(mock(keyValue)) {
+                        needDel = true;
+                    }
+
+                    return _pit._path(keyName, keyValue, needDel);
+                },
+
+                get: function(keyName) {
+                    var keyValue = _pit._path(keyName);
+
+                    return keyValue;
+                }
+                ,
+
+                _path: function(exp, keyValue, needDel) {
+
+                    var iPath, obj;
+                    var re;
+
+                    var paths = exp.split("/");
+                    var keyName = paths[0];
+
+                    var str = local.getItem(keyName);
+
+                    var notFind = false;
+
+                    if(_s(str) && (str[0] == "{")) {
+                        root = decode(str);
+                    }
+
+                    if(_o(keyValue)) {
+                        keyValue = encode(keyValue);
+                    }
+
+                    if(paths.length < 2) {
+
+                    }
+                    else {
+
+                        //  continue
+                        var root_name = paths[0];
+
+                        var root;
+
+                        root = root || {};
+
+                        var obj = root;
+                        iPath = 1;
+                        var path;
+
+                        var last_index = paths.length - 1;
+
+                        for(;iPath < paths.length - 1; iPath++) {
+
+                            path = paths[iPath];
+
+                            if(! _o(obj[path])) {
+
+                                if(! _u(keyValue)) {
+                                    obj[path] = new Object();
+                                }
+                                else {
+                                    notFind = true;
+                                    break;
+                                }
+                            }
+
+                            if(iPath < paths.length-1) {
+                                obj = obj[path];
+                            }
+                        }
+
+                        //  set key
+                        var subKey = paths[last_index];
+
+                        if(needDel == true) {
+                            delete obj[subKey];
+
+                            needDel = false;
+                            keyValue = encode(root);
+                        }
+                        else if(_u(keyValue)) {
+                            re = obj[subKey];
+
+                            if(mock(re)) {
+                                notFind = true;
+                            }
+                        }
+                        else {
+                            obj[subKey] = keyValue;
+                            keyValue = encode(root);
+
+                            re = root;
+                        }
+                    }
+
+                    // sub
+                    if(needDel == true) {
+                        local.removeItem(keyName);
+                    }
+                    else if(is(keyValue)) {
+                        local.setItem(keyName, keyValue)
+                        re = root;
+                    }
+                    else if(notFind == true) {
+                        re = null;
+                    }
+                    else {
+                        re = re || root || str;
+                    }
+
+                    return re;
+                }
+            }
+        }
+
+        return {
+            shake: function(gifts) {
+                //  get all gifts
+                if(_u(gifts) || gifts == "any!") {
+                    gifts = my_treasures;
+                }
+
+                //  for
+                var iGift = 0;
+
+                for(; iGift < gifts.length; iGift++) {
+                    var gift = _XX[gifts[iGift]];
+
+                    var list;
+
+                    //  create member
+                    var member = new Object();
+                    window["_" + gift.id] = member;
+
+                    copy(gift.chart, member, gift);
+
+                    //  no wish
+                    if(gift.wish == "isolation") {
+                        continue;
+                    }
+
+                    var needClean = false;
+
+                    if(is(gift.eject)) {
+                        needClean = true;
+                        list = gift.chart;
+                    }
+                    else if(gift.wish == "sacrifice" || gift.wish == "all") {
+
+                        //  will to max
+                        list = gift.chart;
+                    }
+                    else {
+                        list = gift.wish;
+                    }
+
+                    //  copy
+                    copy(list, window, gift);
+
+                    // clean
+                    if(needClean == true) {
+                        del(window, gift.eject);
+                    }
+
+
+                    // has alias
+                    if(is(gift.alias)) {
+                        copy(gift.alias, window, gift);
+                    }
+
+                    // copy!
+                    copy(gift.map, ANT.Map);
+                    copy(gift.list, ANT.List);
+                    copy(gift.api, ANT.API);
+                    copy(gift.data, ANT.Data);
+                    copy(gift.method, ANT.Method);
+
+                    //  init
+                    if(gift.init) {
+                        gift.init();
+                    }
+                    //  set onload
+                    if(gift.onload) {
+                        spy(gift.onload);
+                    }
+                }
+            }
+        };
+    }
+};
