@@ -1,0 +1,156 @@
+
+/* ant-part3.less */
+
+.InBl {
+	display: inline-block;
+}
+.Tab {
+
+	.InBl;
+
+		min-width: 480px;
+	border: 1px silver solid;
+}
+
+.Tab-Nav {
+	padding:  4px;
+	.InBl;
+}
+
+.Tab-Nav span {
+	border: solid gainsboro 1px;
+
+	.InBl;
+
+	font-size: large;
+	margin: 1px 8px;
+	cursor: pointer;
+
+	padding: 1px 4px;
+}
+
+.Tab-Nav span:hover {
+
+	font-weight: bold;
+}
+
+span.Focus {
+	font-weight: bold;
+}
+
+.Tab-Content {
+
+	margin: 12px 4px;
+	padding: 4px;
+	border-top: 1px solid silver;
+}
+
+/* UI: Wizard */
+
+
+.Border(@radius: 4px, @color: silver, @width: 1px, @style: solid) {
+
+	border: @color @width @style;
+	border-radius: @radius;
+}
+
+.InBl(@pad: auto, @margin: auto) {
+	display: inline-block;
+	padding: @pad;
+	margin: @margin;
+}
+
+.Hover (@color: inherit, @bg: inherit, @cursor: pointer) {
+
+	color: @color;
+	background: @bg;
+
+	cursor: @cursor;
+}
+
+.Gradient(@value: white,gray;) {
+
+	background: -webkit-linear-gradient(@value);
+}
+
+.align(@value: center) {
+	text-align: @value;
+}
+
+.HIDE {
+	display: none;
+}
+
+.WH(@width: auto, @height: auto) {
+
+	width: @width;
+	height: @height;
+}
+
+.MWH(@width: auto, @height: auto) {
+
+	min-width: @width;
+	min-height: @height;
+}
+
+.ERROR(@color: red) {
+	color: @color;
+}
+
+.OK(@color: green) {
+	color: @color;
+}
+
+.wizard {
+	.Border(8px);
+	.InBl();
+
+	.MWH(480px, 320px);
+}
+
+.wizard-title {
+	padding: 4px;
+	.align;
+	.Gradient(left top,silver,white;);
+}
+
+.wizard-face {
+	padding: 8px;
+
+	min-height: 280px;
+}
+
+.wizard-step {
+	color: black;
+	font-weight: bold;
+}
+
+.wizard-status p.error {
+	.ERROR;
+}
+
+.wizard-status p.success {
+	.OK(forestGreen);
+}
+
+.wizard-nav {
+	text-align: right;
+	margin-right: 20px;
+}
+
+.line-button {
+	.InBl;
+
+	padding: 2px 4px;
+	color: #333;
+	text-decoration: underline;
+}
+
+.line-button:hover {
+
+	.Hover(#111);
+}
+
+.wizard.active .line-button {
+	.HIDE;
+}

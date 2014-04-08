@@ -1,0 +1,90 @@
+/* ant-part3.less */
+.InBl {
+  display: inline-block;
+}
+.Tab {
+  display: inline-block;
+  padding: auto;
+  margin: auto;
+  min-width: 480px;
+  border: 1px silver solid;
+}
+.Tab-Nav {
+  padding: 4px;
+  display: inline-block;
+  padding: auto;
+  margin: auto;
+}
+.Tab-Nav span {
+  border: solid gainsboro 1px;
+  display: inline-block;
+  padding: auto;
+  margin: auto;
+  font-size: large;
+  margin: 1px 8px;
+  cursor: pointer;
+  padding: 1px 4px;
+}
+.Tab-Nav span:hover {
+  font-weight: bold;
+}
+span.Focus {
+  font-weight: bold;
+}
+.Tab-Content {
+  margin: 12px 4px;
+  padding: 4px;
+  border-top: 1px solid silver;
+}
+/* UI: Wizard */
+.HIDE {
+  display: none;
+}
+.wizard {
+  border: #c0c0c0 1px solid;
+  border-radius: 8px;
+  display: inline-block;
+  padding: auto;
+  margin: auto;
+  min-width: 480px;
+  min-height: 320px;
+}
+.wizard-title {
+  padding: 4px;
+  text-align: center;
+  background: -webkit-linear-gradient(left top, #c0c0c0, #ffffff);
+}
+.wizard-face {
+  padding: 8px;
+  min-height: 280px;
+}
+.wizard-step {
+  color: black;
+  font-weight: bold;
+}
+.wizard-status p.error {
+  color: #ff0000;
+}
+.wizard-status p.success {
+  color: forestGreen;
+}
+.wizard-nav {
+  text-align: right;
+  margin-right: 20px;
+}
+.line-button {
+  display: inline-block;
+  padding: auto;
+  margin: auto;
+  padding: 2px 4px;
+  color: #333;
+  text-decoration: underline;
+}
+.line-button:hover {
+  color: #111111;
+  background: inherit;
+  cursor: pointer;
+}
+.wizard.active .line-button {
+  display: none;
+}

@@ -1,0 +1,146 @@
+/* 12/27/13 */
+.disable {
+  opacity: 0.7;
+}
+.Resize {
+  resize: both;
+  overflow: auto;
+}
+button {
+  outline: none;
+}
+.button {
+  display: inline-block;
+  color: dimgray;
+  background: ghostwhite;
+  border: solid 1px silver;
+  border-radius: 4px;
+  padding: 4px 3px;
+  margin: 2px;
+  cursor: pointer;
+}
+.button:not(.disable):hover {
+  background: white;
+}
+button.small-button {
+  padding: 0px;
+  margin: 0px;
+  font-size: small;
+}
+button.big-button {
+  padding: 6px 12px;
+  margin: 4px;
+  font-size: large;
+}
+button.large-button {
+  padding: 8px 12px;
+  margin: 6px;
+  font-size: x-large;
+}
+.red-button {
+  background: #c40000;
+  border-color: red;
+  color: white;
+}
+.red-button:not(.disable):hover {
+  background: red;
+}
+/* forest */
+.green-button {
+  background: green;
+  color: white;
+  border-color: forestgreen;
+}
+.green-button:not(.disable):hover {
+  background: forestgreen;
+}
+/* form */
+.form {
+  border: silver solid 1px;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 8px;
+  margin: 4px;
+}
+.form h3 {
+  text-align: center;
+  font-size: x-large;
+}
+.form .line-box {
+  margin: 6px 4px;
+}
+.form label {
+  display: inline-block;
+  min-width: 80px;
+}
+.form .radio-label {
+  min-width: 0px;
+}
+.form input.radio,
+.form input.checkbox {
+  margin: auto 20px auto 12px;
+}
+.form input {
+  margin: 1px 6px;
+  outline: none;
+}
+input.text,
+input.password,
+textarea.text {
+  padding: 4px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  outline: none;
+}
+.form .correct {
+  border-color: #1eec1e;
+}
+.form .wrong {
+  border-color: red;
+}
+.form .Error {
+  color: red;
+}
+.form .OK {
+  color: green;
+}
+.form .note {
+  margin: auto 0px auto 21px;
+  font-size: 13px;
+  font-style: italic;
+  color: gray;
+}
+.downlist {
+  display: inline-block;
+}
+span.downlist-title {
+  text-decoration: underline;
+  color: #111;
+  display: inline-block;
+  margin: 2px 8px;
+  cursor: pointer;
+}
+.downlist-box {
+  position: absolute;
+}
+.downlist ul {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid gray;
+  position: relative;
+  list-style: none;
+  background: white;
+  font-family: "batang";
+  color: gray;
+  line-height: 18px;
+}
+.downlist li {
+  padding-left: 0px;
+}
+.downlist ul {
+  top: 2px;
+}
+.downlist li:hover {
+  background: #FFF;
+  color: #222;
+}

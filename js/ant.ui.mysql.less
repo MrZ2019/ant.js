@@ -1,0 +1,63 @@
+/* 12/30/13 */
+
+.Radius(@color: gray, @width: 1px, @radius:4px) {
+	border: @color solid @width;
+	border-radius: @radius;
+}
+
+.MySQL-panel {
+
+	.Radius();
+
+	padding: 8px 24px;
+	display: inline-block;
+}
+
+.ui-mysql-label {
+
+	display: inline-block;
+
+	font-family: "MS gothic";
+	color: dimgray;
+
+	margin: auto 24px;
+}
+
+.MySQL-panel select {
+
+	.Radius(olive);
+
+	background: white;
+}
+
+
+.ui-mysql-sqlinp {
+
+	color: olive;
+	font-size: large;
+	font-family: "arial";
+
+	padding: 4px 12px;
+	min-width: 256px;
+
+	outline: 1px solid gray;
+}
+
+.ui-mysql-report {
+	font-size: x-small;
+}
+
+.ui-mysql-ok {
+	color: darkgreen;
+}
+
+.ui-mysql-error {
+	color: maroon;
+}
+
+button.ui-mysql-querybtn {
+	display: inline-block;
+	margin: 8px 24px;
+	
+	vertical-align: top;
+}
