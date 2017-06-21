@@ -26,10 +26,6 @@ function _SHELL_ANT() {
         //return;
     }
 
-    /*	ant.js	4.Nov
-     *
-     *	A swarm of ants are moving busily.
-     */
 
     welcome();
 
