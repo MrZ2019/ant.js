@@ -11,15 +11,7 @@ function _init_ant() {
 
     var _Map =
     {
-        gate: "E:/Nature/Gate",
-        tower: "E:/Nature/Tower",
-        studio: "E:/Nature/Studio",
-        mirror: "E:/Nature/Mirror",
-        air: "E:/Nature/air",
 
-        data: "E:/City/Warehouse/Data/ServerData/",
-        paradise: "E:/Paradise/",
-        music: "E:/Paradise/"
     };
 
     copy(_Map, Map.Place);
