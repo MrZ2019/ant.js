@@ -1,6 +1,6 @@
 
 /*  add shell...    */
-var god = "shadow";
+var god = "arthur";
 
 _SHELL_ANT();
 
