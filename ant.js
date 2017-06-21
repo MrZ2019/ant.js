@@ -23,7 +23,6 @@ function _init_ant() {
 function _SHELL_ANT() {
 
     if(window.ANT) {
-        //return;
     }
 
 
@@ -32,13 +31,6 @@ function _SHELL_ANT() {
     me.modifyRule(["add-member", "init", "whenLoad"]);
     me.create([ "Stage" ]);
     me.do(GET_SACK().shakes());
-
-
-
-    /*#apilist#
-     *
-     *
-     */
 
     function spy(task, when, prey, on_error, capture) {
 
