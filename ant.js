@@ -139,7 +139,7 @@ function _SHELL_ANT() {
 
     function __enter() {
 
-        the_Creation();
+        the_creation();
 
         me.assign_space();
         me.programming();   
@@ -247,21 +247,19 @@ function _SHELL_ANT() {
                     continue;
                 }
             }
-            
+
             return true;
         }
 
-        /*get_anything*/
+
         function get_anything(ele_name) {
 
             return me.get_tool(ele_name);
         }
 
-        /*me*/
 
-        function the_Creation() {
+        function the_creation() {
 
-            //	blaspheme!
             me = new Object();
 
             if(typeof(pick_bag) == "function") {
@@ -270,14 +268,14 @@ function _SHELL_ANT() {
 
             me.do = function(plan) {
 
-                re = 7;
-                //  god's behavior
+                var re;
                 if(_s(plan)) {
                     re = cliff(plan);
                 }
 
                 return re;
             }
+
             me.be_strong = function(element, ele_name) {
 
                 if(typeof(ele_name) == "undefined") {
@@ -287,15 +285,12 @@ function _SHELL_ANT() {
                 me[ele_name] = element;
             }
 
+            // 添加类型判断
             me.assign_space = function() {
 
-                //	bestow
 
                 SPACE = window;
 
-                //	basic atom
-
-                //	global var
                 TYPELIST = [ "boolean", "number", "string", "function", "object", "undefined"];
 
                 var atomName, hermetistName;
@@ -309,7 +304,6 @@ function _SHELL_ANT() {
                     window[hermetistName] = get_element_lab(atomName, "hermetist");
                 }
 
-                //	Class tester
 
                 var CLASSMAP =
                     {
