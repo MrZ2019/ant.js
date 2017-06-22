@@ -225,6 +225,7 @@ function _SHELL_ANT() {
             }
         }
 
+        // 构建工具
         function build_thing(things,material) {
 
             if(_s(things)) {
@@ -246,7 +247,8 @@ function _SHELL_ANT() {
                     continue;
                 }
             }
-            return "ok";
+            
+            return true;
         }
 
         /*get_anything*/
