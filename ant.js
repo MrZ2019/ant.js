@@ -7,7 +7,7 @@ ANT.version = 0.1;
 
 function _SHELL_ANT() {
 
-    welcome();
+    __enter();
 
     me.modifyRule(["add-member", "init", "whenLoad"]);
     me.create([ "Stage" ]);
@@ -137,7 +137,7 @@ function _SHELL_ANT() {
 
     // 初始化函数
 
-    function welcome() {
+    function __enter() {
 
         the_Creation();
 
@@ -150,6 +150,7 @@ function _SHELL_ANT() {
         me.be_strong(build_thing, "create");
         me.be_strong(get_anything, "summon");
 
+        // 添加基本规则
         function modifyRule(area) {
 
             area = _2A(area);
@@ -161,38 +162,22 @@ function _SHELL_ANT() {
                 switch(cur) {
 
                     case "add-member":
-                    {
                         Book = document;
                         Doc = Document;
                         View = window;
 
-                        xx = null; // :)
+                        xx = null; 
                         TRUE = true;
                         FALSE = false;
                         und = undefined;
-
-                        //E = event;
-
-                        // add globar variation
+                        
                         copy(ANT, window);
-                    }
                         break;
 
-                    case "init": {
-                        COM.Node =
-                        {
-
-                        };
-                        
+                    case "init": 
+                        COM.Node = {};   
                         API.Node = {};
 
-                        Time.AllDid = function() {
-
-                            if(! Env.CRExt) {
-                                //console.log("ANT loaded!\t\t" + now("full"));
-                            }
-                        }
-                    }
                         break;
 
                     case "whenLoad":
@@ -200,27 +185,22 @@ function _SHELL_ANT() {
                         Head = document.getElementsByTagName("head")[0];
                         H = Head;
 
-                        //  $ is important
+                        // 解决 $ 冲突
                         if(_u(window.jQuery) && !window.keep$) {
 
                             if(is(window.$)) {
                                 ANT.last$ = $;
                             }
-
-                            //$ = paw;
                         }
 
-                        //  spy onload
+                        //  添加 onload 处理程序
                         spy(function() {
 
                             upnode(Head);
-
                             Body = document.body;
                             upnode(Body);
                             B = Body;
 
-
-                            //  $ is important
                             if(window["Ant_hold$"] == true ) {
 
                                 $ = choose;
@@ -229,15 +209,11 @@ function _SHELL_ANT() {
                                 if(is(window.jQuery)) {
                                     $ = window.jQuery;
                                 }
-                                else {
-                                    //$ = choose;
-                                }
+                                
                             }
-
                             z = choose;
 
                             Sign.Loaded = true;
-
                             window["$_pageLoaded"] = true;
 
                             // :)
