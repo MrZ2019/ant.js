@@ -13,32 +13,14 @@ function _SHELL_ANT() {
     me.create([ "Stage" ]);
     me.do(GET_SACK().shakes());
 
+    // 事件侦听函数
     function spy(task, when, prey, on_error, capture) {
 
-        //	no prey?
-
         prey = prey || window;
-
-        //	spy works at all things appear
-
         when = when || "load";
-
-        if(when == "load" && window["$_pageLoaded"]== true) {
-
-            setTimeout(task, 3000);
-
-            return;
-        }
-        //	let him wait
-
         task = be(task);
 
-        // set processor
-
         var processor = task;
-
-        // convert to array
-
         processor = _2A(processor);
         var thisProcessor;
 
@@ -54,8 +36,6 @@ function _SHELL_ANT() {
         }
 
         return task;
-
-        /* _Processor */
 
         function _Processor() {
             cliff(task, null, on_error);
