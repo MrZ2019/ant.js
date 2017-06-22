@@ -115,19 +115,17 @@ function _SHELL_ANT() {
         return re;
     }
 
-    /* be */
+    // 函数生成器
     function be(code, argDef, methodName, scope) {
-        // default parameter
         scope = scope || null;
         methodName = methodName || "";
         argDef = argDef || "a0, a1, a2, a3, a4";
         if(code == 1) {
-            code = "alert('wow!');";
+            code = "return a0;";
         }
 
         if(_s(code)) {
             code = format("(function $1($2) { $3 });", methodName, argDef, code);
-
             re = eval.call(scope, code);
         }
         else {
@@ -136,6 +134,7 @@ function _SHELL_ANT() {
 
         return re;
     }
+    
     /*	here invisible	*/
 
     function welcome() {
