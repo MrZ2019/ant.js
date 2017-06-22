@@ -42,12 +42,11 @@ function _SHELL_ANT() {
         }
     }
 
+    // 选择器函数
     function paw(chit) {
 
         var re;
         var nodeset;
-
-
         var headword, _remain;
 
         headword = chit[0];
@@ -57,53 +56,37 @@ function _SHELL_ANT() {
 
         var noSelect = false;
 
-            //  decide
-
         switch(headword) {
-
             case "!":
-            {
-                //  evaluate xpath express
                 nodeset = _villain.eval_xpath(words[0]);
 
                 re = nodeset;
-            }
                 break;
 
             case "$":
-            {
-                //  use Jquery Selector
                 if(hasJQ()) {
                     nodeset = $(_remain);
 
-                    //  keep css
                     nodeset.css2 = nodeset.css;
                     nodeset.html2 =nodeset.html;
                 }
                 else {
                     nodeset = document.querySelector(_remain);
                 }
-            }
                 break;
 
             default:
-            {
                 noSelect = true;
-            }
         }
 
 
         if(noSelect == true)
         {
-
-            //	basic html selector
-
             switch(headword) {
 
             case "#":
                 {
                     var id = _remain;
-
                     nodeset = document.getElementById(id);
                 }
                 break;
@@ -111,7 +94,6 @@ function _SHELL_ANT() {
             case ".":
                 {
                     var className = _remain;
-
                     nodeset = document.getElementsByClassName(className);
                 }
                 break;
@@ -120,7 +102,6 @@ function _SHELL_ANT() {
                 {
 
                     var tagName = chit;
-
                     nodeset = document.getElementsByTagName(tagName);
                 }
             }
@@ -129,7 +110,6 @@ function _SHELL_ANT() {
         if(mock(nodeset)) {
             return;
         }
-
         re = _dom.heavyNode(nodeset);
 
         return re;
