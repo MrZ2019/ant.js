@@ -1,30 +1,11 @@
 
-/*  add shell...    */
-var god = "arthur";
-
 _SHELL_ANT();
 
-_init_ant();
+ANT._active();
 
-function _init_ant() {
-    //  if _server can work, follow code it's important
+ANT.version = 0.1;
 
-    var _Map =
-    {
-
-    };
-
-    copy(_Map, Map.Place);
-
-    ANT._active();
-}
-
-//  you sussess!
 function _SHELL_ANT() {
-
-    if(window.ANT) {
-    }
-
 
     welcome();
 
