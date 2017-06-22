@@ -134,25 +134,21 @@ function _SHELL_ANT() {
 
         return re;
     }
-    
-    /*	here invisible	*/
+
+    // 初始化函数
 
     function welcome() {
-
-        //
 
         the_Creation();
 
         me.assign_space();
-        me.programming();   //  i love programming
+        me.programming();   
         me.nofiction();
-        me.pickBag(true).release();	//	let me pick the bag!
-
+        me.pickBag(true).release();	
 
         me.be_strong(modifyRule);
         me.be_strong(build_thing, "create");
         me.be_strong(get_anything, "summon");
-        /*element*/
 
         function modifyRule(area) {
 
