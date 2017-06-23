@@ -430,25 +430,20 @@ function _SHELL_ANT() {
                     }
                 }
 
-                /*
-                name:   clone
-                desc: ...
-                 */
+
+                // 克隆函数
 
                 function clone(src, deepMode) {
 
                     var _new;
                     var cur;
                     if(_A(src)) {
-
-                        //  copy array
                         _new = new Array();
 
                         for(var iVal = 0; iVal < src.length; iVal++) {
 
                             cur = src[iVal];
 
-                            //  deepMode
                             if(deepMode && _o(cur)) {
                                 _new[iVal] = clone(cur, deepMode);
                             }
@@ -459,7 +454,6 @@ function _SHELL_ANT() {
                     }
                     else if(_o(src)) {
 
-                        //  copy object
                         _new = new Object();
 
                         var key;
