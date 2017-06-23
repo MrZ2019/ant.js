@@ -327,7 +327,7 @@ function _SHELL_ANT() {
                     window[testerName] = get_element_lab(CLASS, "scientist");
                 }
 
-                /*motion*/
+                // 基本辅助函数
                 var space_tool = [ copy, del, clone, search, cliff, _2A, shake ];
                 var shell_toy = [ spy, paw, be];
 
@@ -338,7 +338,7 @@ function _SHELL_ANT() {
 
                 copy(test_helper);
 
-                // add alias
+                // 函数别名
                 var _alias = 
                 {
                     is: exist
@@ -347,13 +347,12 @@ function _SHELL_ANT() {
                 };
                 
                 copy(_alias);
-                /* api */
                 
+
                 function copy(source, target, opt3, reversed) {
 
                     target = target || SPACE;
 
-                    //  if source is undefined, direct return
                     if(_u(source)) {
                         return target;
                     }
@@ -366,7 +365,6 @@ function _SHELL_ANT() {
                         for(var iSrc = 0; iSrc < source.length; iSrc++) {
 
                             member = source[iSrc];
-                            //  same upon
                             if(opt3 && _s(member)) {
 
                                 //  copy object's member
