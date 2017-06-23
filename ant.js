@@ -515,6 +515,7 @@ function _SHELL_ANT() {
                     }
                 }
 
+                // 搜索函数
                 function search(space, aim, option) {
 
                     var re = false;
@@ -543,7 +544,6 @@ function _SHELL_ANT() {
                                 break;
                             }
 
-                            //  search keyname
                             if(option == "key") {
 
                                 if(aim == key) {
