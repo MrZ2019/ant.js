@@ -477,7 +477,7 @@ function _SHELL_ANT() {
                     return _new;
                 }
 
-                /* del */
+                // 成员删除函数
                 function del(target, src, mode) {
 
                     mode = mode || "normal";
@@ -485,7 +485,6 @@ function _SHELL_ANT() {
                     var index, val;
                     if(_A(src)) {
 
-                        //  array
                         index = 0;
 
                         for(; index < src.length; index++) {
@@ -493,15 +492,12 @@ function _SHELL_ANT() {
                             val = src[index];
 
                             if(mode == "normal") {
-
-                                //  val == name
                                 delete target[val];
                             }
                         }
                     }
                     else if(_o(target)) {
 
-                        //  object used
                         for(index in target) {
 
                             val = target[index];
@@ -509,9 +505,8 @@ function _SHELL_ANT() {
                             if(mode == "normal") {
                                 delete target[val];
                             }
-                            else if(mode == "map") {    //  map mode
+                            else if(mode == "map") {    
 
-                                //  src == map
                                 if(src[index] === false) {
                                     delete target[index];
                                 }
