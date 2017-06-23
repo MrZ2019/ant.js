@@ -349,6 +349,7 @@ function _SHELL_ANT() {
                 copy(_alias);
                 
 
+                // 复制函数
                 function copy(source, target, opt3, reversed) {
 
                     target = target || SPACE;
@@ -367,7 +368,6 @@ function _SHELL_ANT() {
                             member = source[iSrc];
                             if(opt3 && _s(member)) {
 
-                                //  copy object's member
                                 memberName = member;
                                 member = opt3[memberName];
                             }
@@ -384,12 +384,9 @@ function _SHELL_ANT() {
 
                             member = source[memberName];
 
-                            //  same upon
                             if(opt3) {
 
-                                //  copy object's member
                                 if(_s(member)) {
-                                   // memberName = member;
                                     member = opt3[member];
                                 }
                             }
@@ -404,7 +401,7 @@ function _SHELL_ANT() {
 
                     return target;
 
-                    /* _copy_part1 */
+                    //---
                     function _copy_part1() {
 
                         if(!reversed || _u(target[memberName])) {
@@ -412,12 +409,10 @@ function _SHELL_ANT() {
                         }
                         else {
 
-                            // it's important
                             if(ANT.List.Babys.indexOf(memberName) !== -1) {
                                 return;
                             }
 
-                            // if equal
                             if(target[memberName] === member) {
                                 return;
                             }
@@ -427,7 +422,6 @@ function _SHELL_ANT() {
                                 target["_" + memberName] = target[memberName];
                                 target[memberName] = member;
 
-                                //LOG(member);
                             }
                             else if(reversed === true) {
                                 target["_$" + memberName] = member;
