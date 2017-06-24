@@ -740,7 +740,6 @@ function _SHELL_ANT() {
                     return re;
                 }
 
-                /* has */
                 function has(src, aim, mode) {
                     var re = search(src, aim, mode);
 
@@ -748,6 +747,7 @@ function _SHELL_ANT() {
                 }
             }
 
+            // ??
             me.nofiction = function() {
 
                 var believerList = [ "pick_bag" ];
