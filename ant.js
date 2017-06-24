@@ -619,19 +619,17 @@ function _SHELL_ANT() {
                     return re;
                 }
 
-                /* shake! */
+                // 拆解对象
                 function shake(gift) {
 
                     var list;
 
                     var Chrome = Env.CRExt;
-                    //  create member
                     var member = new Object();
                     window["_" + gift.id] = member;
 
                     copy(gift.chart, member, gift);
 
-                    //  no wish
                     if(gift.wish == "isolation") {
                         return;
                     }
@@ -643,29 +641,22 @@ function _SHELL_ANT() {
                         list = gift.chart;
                     }
                     else if(gift.wish == "sacrifice" || gift.wish == "all") {
-
-                        //  will to max
                         list = gift.chart;
                     }
                     else {
                         list = gift.wish;
                     }
 
-                    //  copy
                     copy(list, window, gift);
 
-                    // clean
                     if(needClean == true) {
                         del(window, gift.eject);
                     }
 
-
-                    // has alias
                     if(is(gift.alias)) {
                         copy(gift.alias, window, gift);
                     }
 
-                    // copy!
                     copy(gift.map, ANT.Map);
                     copy(gift.list, ANT.List);
                     copy(gift.api, ANT.API);
@@ -676,7 +667,6 @@ function _SHELL_ANT() {
                         ANT.Opt[gift.id] = gift.opt;
                     }
 
-                    //  init
                     if(gift.init) {
                         gift.init();
                     }
@@ -684,8 +674,7 @@ function _SHELL_ANT() {
                     if(gift.init_W && !Chrome) {
                         gift.init_W();
                     }
-                    //  set onload
-                    // notice, when script runs in Chrome extension, ignore spy
+
                     if(gift.onload && !Chrome) {
                         spy(gift.onload);
                     }
