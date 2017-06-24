@@ -698,9 +698,8 @@ function _SHELL_ANT() {
                         return object instanceof grain;
                     }
                 }
-                /*
-                 n:  _null
-                 */
+
+                //---
                 function _null(obj) {
                     return obj == null;
                 }
