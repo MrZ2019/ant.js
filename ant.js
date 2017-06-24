@@ -704,16 +704,11 @@ function _SHELL_ANT() {
                     return obj == null;
                 }
 
-                /*
-                n:  exist
-                 */
                 function exist(obj) {
                     return (obj !== undefined) && (obj !== null);
                 }
 
-                /*
-                n:  empty
-                 */
+
                 function empty(obj) {
 
                     var empty_obj = false;
@@ -729,13 +724,12 @@ function _SHELL_ANT() {
                     return ( (obj == undefined) || (obj == null) || (obj == "") || (obj == []) || (empty_obj));
                 }
 
-                /* rich */
                 function rich(obj) {
 
                     return ! empty(obj);
                 }
 
-                /* _SET */
+                // 集合判断函数
                 function _SET(obj) {
                     var re = false;
 
