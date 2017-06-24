@@ -597,9 +597,7 @@ function _SHELL_ANT() {
                     return re;
                 }
 
-                /*
-                name:   _2A
-                 */
+                // 转换为数组
                 function _2A(src) {
 
                     var re;
@@ -610,8 +608,6 @@ function _SHELL_ANT() {
                     else if(_SET(src)) {
 
                         re = new Array();
-
-                        // set
                         for(var i = 0; i < src.length; i++) {
                             re.push(src[i]);
                         }
