@@ -680,15 +680,14 @@ function _SHELL_ANT() {
                     }
 
                 }
-                /*spannar*/
 
+                // 类型检测 helper
                 function get_element_lab(grain, job) {
 
                     job = eval(job);
 
                     return job;
 
-                    //	two job
                     function hermetist(object) {
 
                         return typeof(object) == grain;
