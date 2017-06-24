@@ -556,14 +556,11 @@ function _SHELL_ANT() {
 
                     return re;
                 }
-                /*
-                 name: cliff
-                 */
+
+                // try.catch 执行函数
                 function cliff(code, arg, catch_error, win, scope) {
 
-                    //  i think i will safe
                     var re;
-
                     try {
                         if(_s(code)) {
                             re = eval(code);
@@ -587,7 +584,6 @@ function _SHELL_ANT() {
                                 disable_error = true;
                             }
                             else {
-                                // be!
                                 catch_error = be(catch_error);
                                 catch_error.call(null, error);
                             }
