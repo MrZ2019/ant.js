@@ -765,9 +765,8 @@ function _SHELL_ANT() {
                 }
             }
 
-            /*
-            name: programming
-             */
+
+            // 构建 ANT 对象
             me.programming = function() {
 
                 ANT = {};
@@ -814,7 +813,6 @@ function _SHELL_ANT() {
 
                 copy(baseMap, ANT);
 
-                // 2
                 var NodeTable = [];
                 var ProcTable = [];
 
@@ -832,17 +830,13 @@ function _SHELL_ANT() {
                                 ProcTable.push(proc);
                             }
 
-                            // get Processor
                             proc = proc || ProcTable[nodeIndex]
 
                             if(mock(proc[eventName])) {
                                 proc[eventName] = [];
                             }
 
-                            // push callback
                             proc[eventName] = proc[eventName].concat(callbacks);
-
-                            // if eventType is in the general set
 
                             if(a_in(List.EventName, eventName)) {
 
@@ -857,7 +851,6 @@ function _SHELL_ANT() {
                             var proc, Arg;
                             if(iNode !== -1) {
 
-                                // get callback
                                 proc = ProcTable[iNode];
 
                                 Arg = [node].concat(args);
