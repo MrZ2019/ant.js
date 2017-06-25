@@ -930,14 +930,11 @@ function _SHELL_ANT() {
                 arrange:    function(conf) {
 
                     var _conf = ANT.Config;
-
                     _this.init_config(conf);
 
                     Method.CreateNodeCOM(true);
 
-
                     copy(_chart.Math, window, Math);
-
 
                     var _api =
                     {
@@ -949,11 +946,9 @@ function _SHELL_ANT() {
                         uriCOM: encodeURIComponent,
                         sel: getSelection
                     };
-
                     copy(_api, window);
                 },
                 init_config:    function(conf) {
-                    // def
                     var _def = {
                         event: true,
                         css: true,
@@ -961,32 +956,26 @@ function _SHELL_ANT() {
                     };
 
                     copy(_def, ANT.Config);
-
                     copy(conf, ANT.Config);
                 }
             };
 
-            //  free code
             ANT._active = _this.arrange;
 
             return _this;
         }
-        /*  There are many good backpack!   */
 
+        // 背包？
         function Bag() {
 
             this.release = function(target) {
 
-                var goods = [ _7 ];
+                var goods = [ _class ];
 
                 copy(goods, target);
             }
-            //  list start..
 
-            /*
-            name:   _7
-             */
-            function _7(className) {
+            function _class(className) {
 
                 var Class = cliff(className);
 
