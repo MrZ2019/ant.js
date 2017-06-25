@@ -923,49 +923,26 @@ function _SHELL_ANT() {
             }
         }
 
-        /*
-        role:   Stage
-         */
+        // 舞台
         function Stage() {
 
             var _this = {
-
-                /*
-                name:   arrange
-                 */
                 arrange:    function(conf) {
 
                     var _conf = ANT.Config;
 
                     _this.init_config(conf);
 
-                    //  now, com is weight
-
                     Method.CreateNodeCOM(true);
 
-                    //delete nodeCOM["background"];
 
-                    //  3:  free Math
-                    //_mover.expose(Math, window, "f");
                     copy(_chart.Math, window, Math);
 
-                    //  4:  init server
-
-                    //  5:  mysql
-                    var _mysql_opts =
-                    {
-                        database: "gray7"
-                    };
-
-                    copy(_mysql_opts, _mysql._opts);
-
-                    //  6:  some api, expose on window
 
                     var _api =
                     {
-                        json: JSON.parse,
                         _upgrage: GET_SACK().shake,
-
+                        json: JSON.parse,
                         int: parseInt,
                         float: parseFloat,
                         uri: encodeURI,
@@ -974,16 +951,7 @@ function _SHELL_ANT() {
                     };
 
                     copy(_api, window);
-
-                    //  7:  jQuery extend
-
-
-                    //  8:
-                }
-                ,
-                /*
-                name:   init_config
-                 */
+                },
                 init_config:    function(conf) {
                     // def
                     var _def = {
