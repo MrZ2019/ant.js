@@ -866,17 +866,13 @@ function _SHELL_ANT() {
         }
     }
 
-    /*	give gift to god	*/
-
+    // 有趣的？
     function give_god(gift, giftName) {
-
-        //	no evil, no pollute
 
         var believer = give_god.caller.name;
 
         if(Jesus.judge(believer) === false) {
 
-            //	it's demon!
             return;
         }
 
@@ -889,8 +885,6 @@ function _SHELL_ANT() {
 
         return gift;
     }
-
-    /*	Jesus	*/
 
 
     /*	god's bag	*/
