@@ -887,7 +887,7 @@ function _SHELL_ANT() {
     }
 
 
-    /*	god's bag	*/
+    // ??
 
     function pick_bag(wanted) {
 
@@ -896,34 +896,26 @@ function _SHELL_ANT() {
             instance: [  Stage ]
         };
 
-        /*tool*/
-
         give_god(get_tool);
 
         if(wanted) {
             return new Bag();
         }
 
-        /*get_tool*/
         function get_tool(tool_name) {
 
             var tool = cliff(_get_tool, [tool_name]);
 
-            //  tool not exist
             if(_X(tool)) {
                 tool = null;
             }
 
             if(_n(search(tool_desc.instance, tool) )) {
 
-                //  create instance
                 tool = new tool()
             }
-            return tool;
 
-            /*
-            name:   _get_tool
-             */
+            return tool;
 
             function _get_tool(tool_name) {
 
