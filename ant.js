@@ -1010,10 +1010,7 @@ function _SHELL_ANT() {
                 wish:   "sacrifice",
                 chart: [ "_to2", "_to8", "_to16", "isNaN" ],
 
-                /*
-                n:  _to2
-                d:  convert a number to binary fotmat
-                 */
+                // 二进制转化
                 _to2: function(number) {
                     return number.toString(2);
                 },
