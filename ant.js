@@ -409,7 +409,7 @@ function _SHELL_ANT() {
                         }
                         else {
 
-                            if(ANT.List.Babys.indexOf(memberName) !== -1) {
+                            if(ANT.List.Tools.indexOf(memberName) !== -1) {
                                 return;
                             }
 
@@ -988,23 +988,22 @@ function _SHELL_ANT() {
     function GET_SACK()
     {
 
-        var my_treasures =
+        var _tools =
             [
                 "number", "string", "maker", "array", "object", "method", "bee", "mover","loop", "bin", "com", 
                 "json", "clock", "timer", "editor", "actor", "villain", "math", "painter",
-                "calc", "headman",  "web", /*"stream",*/ "decider",
+                "calc", "headman",  "web",  "decider",
                 "regexp", "dom", "css", "sheet", "event", "keyboard", "converter", "library", "debug",
                 "chart", "hook", "server", "mysql", "canvas", "svg", "geometry", "sqlite", "pit", "player",
                 "page", "doc"
             ];
 
-        ANT.List.Babys = my_treasures;
+        ANT.List.Tools = _tools;
 
 
         Proto.Cosmos = {
-            /*
-            set:    number functions
-             */
+
+            // 数字操作
             "number":
             {
                 id: "number",
@@ -1987,7 +1986,7 @@ function _SHELL_ANT() {
 
                     var wordkep = new Array();
 
-                    var places = ANT.List.Babys;
+                    var places = ANT.List.Tools;
 
                     // use settimeout
 
@@ -9211,7 +9210,7 @@ function _SHELL_ANT() {
             shakes: function(gifts) {
                 //  get all gifts
                 if(_u(gifts) || gifts == "any!") {
-                    gifts = my_treasures;
+                    gifts = _tools;
                 }
 
                 //  for
