@@ -984,13 +984,7 @@ function _SHELL_ANT() {
         }
     }
 
-    /*
-    setname:    sack
-     */
-
-    /*
-    name:   GET_SACK
-     */
+    // 工具集合
     function GET_SACK()
     {
 
