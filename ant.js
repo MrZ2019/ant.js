@@ -1015,9 +1015,7 @@ function _SHELL_ANT() {
                     return number.toString(2);
                 },
 
-                /*
-                n:  _to8
-                 */
+                // 八进制转化
                 _to8: function(number) {
                     return number.toString(8);
                 },
