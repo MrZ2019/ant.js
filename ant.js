@@ -1020,9 +1020,7 @@ function _SHELL_ANT() {
                     return number.toString(8);
                 },
 
-                /*
-                n:  _to16
-                 */
+                // 十六进制转化
                 _to16:  function(number) {
                     return number.toString(16);
                 },
