@@ -1059,8 +1059,9 @@ function _SHELL_ANT() {
                 // 获得char字符
                 chr:    function(code) {
                     return String.fromCharCode(code);
-                }
-                ,
+                },
+
+                // 格式化字符串
                 format: function(text, may_array) {
 
                     var x;
@@ -1089,8 +1090,8 @@ function _SHELL_ANT() {
                     }
 
                     return text;
-                }
-                ,
+                },
+
                 quote:  function(text, flag) {
 
                     flag = flag || "\"";
