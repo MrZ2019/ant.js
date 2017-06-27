@@ -1056,10 +1056,7 @@ function _SHELL_ANT() {
                     return string.charCodeAt(0);
                 },
 
-                /*
-                n:  chr
-                d:  return a char from ascii code
-                 */
+                // 获得char字符
                 chr:    function(code) {
                     return String.fromCharCode(code);
                 }
