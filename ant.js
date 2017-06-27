@@ -1092,6 +1092,7 @@ function _SHELL_ANT() {
                     return text;
                 },
 
+                // 引号转义
                 quote:  function(text, flag) {
 
                     flag = flag || "\"";
