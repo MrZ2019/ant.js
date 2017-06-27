@@ -1025,9 +1025,7 @@ function _SHELL_ANT() {
                     return number.toString(16);
                 },
 
-                /*
-                n:  isNaN
-                 */
+                // NaN 判断
                 isNaN:  function(number) {
 
                     return number !== number;
