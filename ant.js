@@ -1031,9 +1031,7 @@ function _SHELL_ANT() {
                     return number !== number;
                 }
             },
-            /*
-            set: string
-             */
+
             "string": {
                 id: "string",
                 wish:  "sacrifice",
@@ -1052,10 +1050,8 @@ function _SHELL_ANT() {
                     Code0 = ascii("0");
                     Code9 = ascii("9");
                 },
-                /*
-                n:  ascii
-                d:  get asicc code of a char
-                 */
+
+                // 获得asicc码
                 ascii:  function(string) {
                     return string.charCodeAt(0);
                 },
