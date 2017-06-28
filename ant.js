@@ -1121,9 +1121,7 @@ function _SHELL_ANT() {
                     return text;
                 },
 
-                /*
-                name:   montage
-                 */
+                // 对象转字符串
                 montage:    function(separator, src1) {
 
                     separator = separator || "=!,";
@@ -1141,8 +1139,6 @@ function _SHELL_ANT() {
 
                     }
                     else if(_o(src1)) {
-
-                        //  object
 
                         for(key in src1) {
                             val = src1[key];
