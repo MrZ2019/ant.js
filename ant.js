@@ -1191,12 +1191,12 @@ function _SHELL_ANT() {
                     return str.toString().toUpperCase();
                 },
 
-                /* low */
+                // 小写转换
                 low: function(str) {
                     return str.toString().toLowerCase();
                 },
 
-                /* s_int */
+                // 自然数判断
                 s_int: function(str) {
 
                     var num = str - 0;
