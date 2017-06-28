@@ -1186,7 +1186,7 @@ function _SHELL_ANT() {
                     return _retext;
                 },
 
-                /* up */
+                // 大写转换
                 up: function(str) {
                     return str.toString().toUpperCase();
                 },
