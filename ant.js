@@ -1204,7 +1204,7 @@ function _SHELL_ANT() {
                     return ( !isNaN(num) && (num % 1 == 0) && rich(str) || (str===0) );
                 },
 
-                /* s_erase */
+                // 字符串清除
                 s_erase: function(str, exp) {
 
                     exp = _2A(exp);
