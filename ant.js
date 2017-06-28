@@ -1152,7 +1152,7 @@ function _SHELL_ANT() {
 
                     return restr;
                 },
-
+                // 字符模式
                 chars:  function(pattern, opt, mode) {
 
                     mode = mode || "repeat";
