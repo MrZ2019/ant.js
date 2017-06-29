@@ -1258,16 +1258,14 @@ function _SHELL_ANT() {
                     return stirng[0].toLowerCase() + stirng.slice(1);
                 }
             },
-            /*
-            helper: array
-             */
+
             "array":
             {
                 id: "array",
                 wish: "sacrifice",
                 chart: [ "last", "reverse", "shuffle", "swap", "infix", "a_loop", "and", "or", "xor", "a_in", "sort" ],
 
-                /* last */
+                // 获取数组最后一个元素
                 last: function(src) {
                     if(is(src) && is(src.length)) {
                         re = src[src.length - 1];
