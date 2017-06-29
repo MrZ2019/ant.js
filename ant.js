@@ -1216,12 +1216,12 @@ function _SHELL_ANT() {
                     return str;
                 },
 
+                // 字符串分割
                 s_split: function(str, sign, limit) {
 
                     sign = _def(sign, 1);
                     var re;
                     if(_n(sign)) {
-                        // if sign is number, that's every sub's length
                         re = [];
                         for(var z = 0; z < str.length; z+=sign) {
 
@@ -1233,7 +1233,6 @@ function _SHELL_ANT() {
                         re = str.split(sign);
                     }
 
-                    // limit
                     if(is(limit)) {
                         re = re.slice(0, limit);
                     }
