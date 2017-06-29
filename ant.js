@@ -1252,7 +1252,7 @@ function _SHELL_ANT() {
                     return string[0].toUpperCase() + string.slice(1);
                 },
 
-                /* lowchar */
+                // 首字母小写
                 lowchar: function(string) {
 
                     return stirng[0].toLowerCase() + stirng.slice(1);
