@@ -1240,7 +1240,7 @@ function _SHELL_ANT() {
                     return re;
                 },
 
-                /* cutWhite */
+                // 字符串清除首尾空白
                 cutWhite: function(string) {
 
                     return string.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s+/, " ");
