@@ -1246,7 +1246,7 @@ function _SHELL_ANT() {
                     return string.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s+/, " ");
                 },
 
-                /* upchar */
+                // 首字母大写
                 upchar: function(string) {
 
                     return string[0].toUpperCase() + string.slice(1);
