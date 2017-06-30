@@ -1357,7 +1357,6 @@ function _SHELL_ANT() {
                 // 插入多个元素
                 infix: function(array, src, start) {
                     src = _2A(src);
-
                     var length = src.length;
 
                     for(var x = 0; x < length; x++) {
@@ -1368,8 +1367,7 @@ function _SHELL_ANT() {
 
                     return array;
                 },
-
-
+                // 循环生成值
                 a_loop: function(count, value, sign, arg3) {
                     sign = _def(sign, "repeat");
                     value = _def(value, "");
@@ -1411,7 +1409,6 @@ function _SHELL_ANT() {
                         re.push(cur);
                     }
 
-                    // done!
                     return re;
                 },
 
