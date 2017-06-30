@@ -1300,27 +1300,20 @@ function _SHELL_ANT() {
                         }
                     }
                     return re;
-                }
-                ,
-                /*
-                n:  shuffle
-                d:  let any get new position
-                 */
+                },
+                // 打乱数组
                 shuffle:    function(src, power) {
-
                     power = power || 2;
-
                     var srcIsStr = false;
 
                     if(_s(src)) {
-                        //  if src is string, to array
                         src = src.split("");
                         srcIsStr = true;
                     }
 
                     var length = src.length;
-
                     var _arg = [ src, -1, -1 ];
+                    
                     loop(_array.swap, power*length, _arg);
 
                     if(srcIsStr == true) {
