@@ -1353,17 +1353,14 @@ function _SHELL_ANT() {
                     }
 
                     return re;
-                }
-                ,
-
+                },
+                // 插入多个元素
                 infix: function(array, src, start) {
-
                     src = _2A(src);
 
                     var length = src.length;
 
                     for(var x = 0; x < length; x++) {
-
                         var val = src[x];
 
                         array.splice(start+x, 0, val);
