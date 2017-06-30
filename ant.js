@@ -1276,19 +1276,16 @@ function _SHELL_ANT() {
 
                     return re;
                 },
-                /*
-                 n:  reverse
-                 d: reverse a string or an array
-                 */
-                reverse:    function reverse(src) {
 
+                // 翻转数组
+                reverse: function reverse(src) {
                     var re;
 
                     if(_A(src)) {
-                        re = new Array();   //  new Array
+                        re = new Array(); 
                     }
                     else {
-                        re = new String();  //  new String
+                        re = new String();
                     }
 
                     var index = src.length - 1;
@@ -1302,7 +1299,6 @@ function _SHELL_ANT() {
                             re += val;
                         }
                     }
-
                     return re;
                 }
                 ,
