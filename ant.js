@@ -1313,7 +1313,7 @@ function _SHELL_ANT() {
 
                     var length = src.length;
                     var _arg = [ src, -1, -1 ];
-                    
+
                     loop(_array.swap, power*length, _arg);
 
                     if(srcIsStr == true) {
@@ -1322,15 +1322,9 @@ function _SHELL_ANT() {
 
                     return src;
                 },
-                /*
-                n:  swap
-                d:  swap two value
-                 */
+                // 交互数组元素
                 swap:   function(src, index1, index2) {
-
                     var re;
-
-                    //  if index == -1, get a random integer
                     if(_u(index1)) {
                         index1 = 0;
                     }
@@ -1347,7 +1341,6 @@ function _SHELL_ANT() {
                     var var3 = src[index1];
                     var var4;
 
-                    //  two type, string or Array
                     if(_A(src)) {
                         src[index1] = src[index2];
                         src[index2] = var3;
@@ -1355,9 +1348,7 @@ function _SHELL_ANT() {
                         re = src;
                     }
                     else if(_s(src)) {
-
                         var4 = src[index2];
-
                         re = src.slice(0, index1) + var4 + src.slice(index1+1, index2-1) + var3 + src.slice(index2+1);
                     }
 
