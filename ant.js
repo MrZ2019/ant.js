@@ -1389,46 +1389,36 @@ function _SHELL_ANT() {
                         var _step = step*z;
 
                         switch(sign) {
-
                             case "repeat":
-                            {
                                 cur = value;
-                            }
                                 break;
-
                             default:
-                            {
                                 cur = startVal + _step;
 
                                 if(likeChr == true) {
                                     cur = chr(cur);
                                 }
-                            }
                         }
-
                         re.push(cur);
                     }
 
                     return re;
                 },
-
+                // 数组与操作
                 and: function() {
 
                     var a = arguments;
 
-                    var a1 = a[0]; // frist array
+                    var a1 = a[0]; 
 
                     var andset = clone(a1);
 
                     for(var x = 0; x < andset.length; x++) {
 
                         var cur = andset[x];
-                        // compare here
                         for(var y = 1; y < a.length; y++) {
 
                             if(a[y].indexOf(cur) == -1) {
-
-                                // current value isn;t in here
                                 andset.splice(x--, 1);
                                 break;
                             }
