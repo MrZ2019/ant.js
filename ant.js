@@ -1427,7 +1427,7 @@ function _SHELL_ANT() {
 
                     return andset;
                 },
-
+                // 数组 或 操作
                 or: function() {
 
                     var ar = arguments;
@@ -1438,7 +1438,6 @@ function _SHELL_ANT() {
 
                         var curset = ar[x];
 
-                        // iterate current array
                         for(var y = 0; y < curset.length; y++) {
 
                             var curval = curset[y];
