@@ -1523,27 +1523,21 @@ function _SHELL_ANT() {
                     }
             },
 
-            /*
-            helper: object
-             */
             "object":
             {
                 id: "object",
                 wish:   "sacrifice",
                 chart: [ "flip",  "analyze", "compose", "c_map", "clean", "of", "who", "what", "steal", "rob"],
 
-                /*
-                n:  flip
-                d:  1 key = value, 2 value = key
-                 */
-                "flip":    function(object, is_reversed) {
+                // 翻转对象的key与value
+                flip:    function(object, is_reversed) {
 
                     var val;
 
                     var reobj;
 
                     if(is_reversed) {
-                        reobj = new Object();   //  create new Object, not modify source
+                        reobj = new Object(); 
                     }
                     else {
                         reobj = object;
