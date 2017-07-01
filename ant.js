@@ -1450,21 +1450,15 @@ function _SHELL_ANT() {
 
                     return orset;
                 },
-
+                // 数组 异或 操作
                 xor: function() {
 
                     var arg = arguments;
-
                     var xorset = clone(arg[0]);
 
                     for(var y = 0; y < xorset.length; y++) {
-
                         var curval = xorset[y];
-                        // compare set
                         for(var z = 1; z < arg.length; z++) {
-
-                            // if current set has indicate value, delete it
-
                             if(arg[z].indexOf(curval) !== -1) {
                                 xorset.splice(y--, 1);
                             }
@@ -1473,9 +1467,8 @@ function _SHELL_ANT() {
 
                     return xorset;
                 },
-
+                // 判断元素是否存在
                 a_in: function(src, val) {
-
                     return (src.indexOf(val) !== -1);
                 },
 
