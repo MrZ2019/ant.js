@@ -1471,13 +1471,12 @@ function _SHELL_ANT() {
                 a_in: function(src, val) {
                     return (src.indexOf(val) !== -1);
                 },
-
+                // 数组排序
                 sort: function(arg1, arg2, arg3) {
 
                         var arr;
                         var asc, sort_cb;
 
-                        // create array
                         if((arg1 instanceof Array) == false) {
 
                             arr = [];
@@ -1508,8 +1507,6 @@ function _SHELL_ANT() {
                         sort_cb = sort_cb ||
                             (function(a, b) {
                                 var result;
-
-                                // if asc = true, use 1,2,3
                                 if(! asc) {
                                     result = a < b;
                                 }
