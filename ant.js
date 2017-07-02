@@ -1778,8 +1778,7 @@ function _SHELL_ANT() {
                         return _clean;
                     }
                 },
-
-                /* of */
+                // 检测对象
                 of: function(object, Class) {
                     return (object instanceof Class);
                 }
