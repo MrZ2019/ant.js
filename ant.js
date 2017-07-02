@@ -1730,7 +1730,7 @@ function _SHELL_ANT() {
                         return re;
                     }
                 },
-
+                // 清理对象
                 clean:  function(src, opts, is_replace, deep) {
 
                     deep = _def(deep, 4);
@@ -1754,9 +1754,7 @@ function _SHELL_ANT() {
 
                     return src;
 
-                    /*
-                    _clean_filter
-                     */
+                    //
                     function _clean_filter(val) {
 
                         var _clean = true;
