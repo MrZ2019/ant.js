@@ -1667,17 +1667,15 @@ function _SHELL_ANT() {
 
                     return re;
                 },
-
-
+                // 生成map对象
                 c_map:  function(src, value, opt1) {
 
                     var index, val, key;
 
-                    var reMap = new Object();   //  object
-
+                    var reMap = new Object();  
                     value = _bee._def(value, true);
 
-                    var index_counter = 0;  //  for start index
+                    var index_counter = 0; 
 
                     if(value == "index" && _n(opt1)) {
 
@@ -1690,7 +1688,6 @@ function _SHELL_ANT() {
 
                     if(_A(src) == true) {
 
-                        //  _Array
                         index = 0;
 
                         for(;index < src.length; index++) {
@@ -1702,7 +1699,6 @@ function _SHELL_ANT() {
                     }
                     else if(_o(src) == true) {
 
-                        //
                         index = 0;
 
                         for(key in src) {
@@ -1716,9 +1712,7 @@ function _SHELL_ANT() {
 
                     return reMap;
 
-                    /*
-                    name:   _getValue_c_map
-                     */
+                    //
                     function _getValue_c_map() {
 
                         var re;
