@@ -1621,12 +1621,10 @@ function _SHELL_ANT() {
                         val_kep.push(val);
                     }
                 },
-                /*
-                 name:   compose
-                 */
+                // 字符串转对象
                 compose:    function(src, mode, option1) {
 
-                    mode = mode || "&"; //  set default mode
+                    mode = mode || "&"; 
 
                     var re;
 
@@ -1653,12 +1651,10 @@ function _SHELL_ANT() {
                                 var pattern = /\w+/;
                                 key = _regexp.reg1(item, pattern);
 
-                                //  if not match, return source
                                 if(_null(key)) {
                                     continue;
                                 }
 
-                                //  if option1 is defined
                                 if(option1) {
                                     key = option1 + key ;
                                 }
