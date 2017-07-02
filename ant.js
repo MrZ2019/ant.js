@@ -1551,20 +1551,15 @@ function _SHELL_ANT() {
 
                     return reobj;
                 },
-                /*
-                n:  analyze
-                 */
+                // 对象转字符串
                 analyze:    function(src, mode, option1, option2) {
 
-                    //  multi mode?
                     var re;
                     var id, val;
 
                     mode = mode || "&";
 
                     var _symbol = mode[0];
-
-                    //  generate a=1&b=1
                     var val_kep = new Array();
 
                     var isArr, isObj;
@@ -1591,14 +1586,11 @@ function _SHELL_ANT() {
                         }
                     }
 
-                    //  join string
                     re = val_kep.join(_symbol);
 
                     return re;
 
-                    /*
-                    name:   _parse_analyze
-                     */
+                    //
                     function _parse_analyze() {
 
                         var _id2 = id;
