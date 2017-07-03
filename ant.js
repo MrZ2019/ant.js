@@ -1791,11 +1791,9 @@ function _SHELL_ANT() {
                     return typeof(object);
                 }
                 ,
-                /* steal */
+                // 分割对象
                 steal: function(obj, wanted) {
-
                     wanted = _2A(wanted);
-
                     var reobj = new Object();
 
                     for(var z = 0; z < wanted.length; z++) {
@@ -1803,7 +1801,6 @@ function _SHELL_ANT() {
                         var curName = wanted[z];
                         reobj[curName] = obj[curName];
 
-                        // delete
                         delete obj[curName];
                     }
 
