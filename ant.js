@@ -1781,14 +1781,12 @@ function _SHELL_ANT() {
                 // 检测对象
                 of: function(object, Class) {
                     return (object instanceof Class);
-                }
-                ,
+                },
                 // 检测构造对象
                 who: function(object) {
                     return object.constructor.name;
                 },
-
-                /* what */
+                // 检测对象类型
                 what: function(object) {
                     return typeof(object);
                 }
