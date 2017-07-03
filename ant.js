@@ -1789,8 +1789,7 @@ function _SHELL_ANT() {
                 // 检测对象类型
                 what: function(object) {
                     return typeof(object);
-                }
-                ,
+                },
                 // 分割对象
                 steal: function(obj, wanted) {
                     wanted = _2A(wanted);
@@ -1806,8 +1805,7 @@ function _SHELL_ANT() {
 
                     return reobj;
                 },
-
-                /* rob */
+                // 批量删除对象成员
                 rob: function(source, keyname) {
 
                     var coin = source[keyname];
