@@ -1816,18 +1816,13 @@ function _SHELL_ANT() {
                 }
             },
 
-            /*
-            helper: function
-             */
             "method":
             {
                 id: "method",
                 wish:   "sacrifice",
                 chart:  [ "getArg", "un_arg", "un_apply", "applyMe"],
 
-                /*
-                name:   getArg
-                 */
+                // 获得调用参数
                 getArg: function(arg, return_arg) {
 
                     arg = arg || _method.getArg.caller.arguments;
