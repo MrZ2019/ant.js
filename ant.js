@@ -1783,7 +1783,7 @@ function _SHELL_ANT() {
                     return (object instanceof Class);
                 }
                 ,
-                /* who */
+                // 检测构造对象
                 who: function(object) {
                     return object.constructor.name;
                 },
