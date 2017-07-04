@@ -1853,17 +1853,12 @@ function _SHELL_ANT() {
 
                     return method.apply(scope, un_arg(src, start, un_apply.caller));
                 },
-
-                /* name: applyMe */
-
+                // 调用方法
                 applyMe: function(method, scope) {
 
                     return method.apply(scope, applyMe.caller.arguments);
                 }
             },
-            /*
-            helper: manupla
-             */
             "editor":
             {
                 id: "editor",
@@ -1872,20 +1867,16 @@ function _SHELL_ANT() {
 
                 onload: function() {
 
-                    // get word
-
+                    // 收集 Tools 对象的词汇
                     var wordkep = new Array();
 
                     var places = ANT.List.Tools;
 
-                    // use settimeout
-
                     var z = 0;
 
-                    // use 0, as soon as possible
                     setTimeout(_collectWord, 0);
 
-                    /* in: _collectWord */
+                    //--
                     function _collectWord() {
 
                         var scope = window["_" + places[z++]];
@@ -1905,9 +1896,7 @@ function _SHELL_ANT() {
                         }
                     }
                 },
-                /*
-                 name:   compress javascritp code
-                 */
+                // 消除注释
                 impact: function(source, noQuote) {
 
                     if(_f(source)) {
