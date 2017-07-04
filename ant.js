@@ -1834,9 +1834,7 @@ function _SHELL_ANT() {
 
                     return arg;
                 },
-                /*
-                name:   un_arg
-                 */
+                // 插入参数值
                 un_arg:    function(src, start, caller) {
 
                     start = _def(start, 0);
@@ -1844,7 +1842,7 @@ function _SHELL_ANT() {
                     src = g_arr(src, "direct");
 
                     caller = caller || un_arg.caller;
-                    //  get arguments
+
                     var arg = arg2arr(caller.arguments);
                     infix(arg, src, start);
 
