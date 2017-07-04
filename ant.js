@@ -1876,7 +1876,7 @@ function _SHELL_ANT() {
 
                     setTimeout(_collectWord, 0);
 
-                    //--
+                    //-- 
                     function _collectWord() {
 
                         var scope = window["_" + places[z++]];
