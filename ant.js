@@ -1848,8 +1848,7 @@ function _SHELL_ANT() {
 
                     return arg;
                 },
-
-                /* name: un_apply */
+                // 插入参数并调用函数
                 un_apply: function(method, src, start, scope) {
 
                     return method.apply(scope, un_arg(src, start, un_apply.caller));
