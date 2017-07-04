@@ -1896,7 +1896,7 @@ function _SHELL_ANT() {
                         }
                     }
                 },
-                // 消除注释
+                // 消除注释 
                 impact: function(source, noQuote) {
 
                     if(_f(source)) {
