@@ -2087,8 +2087,7 @@ function _SHELL_ANT() {
 
                     return _sel.getRangeAt(index);
                 },
-
-                /* word */
+                // 获取单词
                 word: function(src, limit, loveStr, start, isUnique) {
 
                     isUnique = _def(isUnique, true);
@@ -2113,7 +2112,6 @@ function _SHELL_ANT() {
 
                         result = result.splice(start, limit);
 
-                        // unique
                         if(isUnique == true) {
                             result = unique(result);
                         }
