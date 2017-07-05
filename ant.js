@@ -2076,9 +2076,8 @@ function _SHELL_ANT() {
                 // 调用console
                 loglook:    function(src, opts) {
                     return console.log(_editor.look(src, opts));
-                }
-                ,
-                /* range */
+                },
+                // 获取range
                 range: function(index) {
                     if(mock(index)) {
                         index = 0;
