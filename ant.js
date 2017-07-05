@@ -2064,7 +2064,6 @@ function _SHELL_ANT() {
                     _text = valkep.join(opts.line);
 
                     if(opts.border) {
-                        //  long concat
                         indent = _string.chars("\t", deepCounter-1);
 
                         _text = indent + start_border + "\n" + _text + "\n";
@@ -2074,10 +2073,7 @@ function _SHELL_ANT() {
 
                     return _text;
                 },
-
-                /*
-                loglook
-                 */
+                // 调用console
                 loglook:    function(src, opts) {
                     return console.log(_editor.look(src, opts));
                 }
