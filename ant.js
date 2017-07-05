@@ -1908,9 +1908,7 @@ function _SHELL_ANT() {
                     }
                     return source.replace(/\n|\t|\r|\/\/.*|\/\*.+(?!\*\/)\*\/| +/g, " ");
                 },
-                /*
-                name: crowdhtml
-                */
+                // 压缩html
                 crowd: function (code, bQuote) {
 
 
