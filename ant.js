@@ -1926,11 +1926,8 @@ function _SHELL_ANT() {
                     }
 
                     return code;
-                }
-                ,
-                /*
-                name:   look
-                 */
+                },
+                // 检查对象
                 look:   function(src, _opts, deepCounter) {
 
                     var _this = _editor.look;
