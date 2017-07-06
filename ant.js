@@ -2201,9 +2201,8 @@ function _SHELL_ANT() {
                             break;
                         }
                     }
-                }
-                ,
-                /* name: stopLoop */
+                },
+                // 循环控制
                 op_loop: function(op) {
 
                     var sign = ANT.Sign;
