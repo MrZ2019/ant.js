@@ -2184,18 +2184,13 @@ function _SHELL_ANT() {
                     time = time || 1;   //  1 s
 
                     return setTimeout(code, time * 1000);
-                }
-                ,
-                /*
-                name:   _sleep
-                 */
+                },
+                // 挂起线程
                 _sleep: function(duration) {
 
                     duration = duration || 1;
 
                     duration *= 1000;
-                    //
-
                     var time1 = new Date();
 
                     for(;;) {
@@ -2206,7 +2201,6 @@ function _SHELL_ANT() {
                             break;
                         }
                     }
-                    //  continue time...
                 }
                 ,
                 /* name: stopLoop */
