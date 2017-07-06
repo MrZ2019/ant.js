@@ -2131,18 +2131,12 @@ function _SHELL_ANT() {
 
                     return str.replace(/\s+/g, replaced);
                 }
-            }
-            ,
-            /*
-            name:   actor
-             */
+            },
             actor: {
                 id: "actor",
                 wish:   "sacrifice",
                 chart: [ "_calls",  "_delay", "_sleep", "op_loop", "op_fly" ],
-                /*
-                 name: _calls
-                 */
+                // 批量调用
                 _calls: function _calls(codes, arg, _this, resultMode) {
 
                     resultMode = _def(resultMode, "and");
@@ -2163,7 +2157,6 @@ function _SHELL_ANT() {
                         myCallResult = TRUE;
                     }
 
-                    //  execute!
                     var iCode = 0;
                     var code;
 
@@ -2174,7 +2167,6 @@ function _SHELL_ANT() {
 
                         curRe = code.apply(_this, arg);
 
-                        // operator
                         if(resultMode == "and") {
 
                             myCallResult = myCallResult && curRe;
