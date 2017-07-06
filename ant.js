@@ -2178,10 +2178,7 @@ function _SHELL_ANT() {
 
                     return myCallResult;
                 },
-
-                /*
-                name:   _delay
-                 */
+                // 延迟执行
                 _delay: function(code, time) {
 
                     time = time || 1;   //  1 s
