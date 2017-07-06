@@ -2029,7 +2029,6 @@ function _SHELL_ANT() {
                             val = src[key];
 
                             if(_f(val)) {
-                                //  function
                                 val = "&lt;function&gt;";
                             }
 
@@ -2126,8 +2125,7 @@ function _SHELL_ANT() {
 
                     return result;
                 },
-
-                /* strip */
+                // 缩减空格
                 strip: function(str, replaced) {
                     replaced = _def(replaced, " ");
 
