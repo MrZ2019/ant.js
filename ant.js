@@ -2356,11 +2356,8 @@ function _SHELL_ANT() {
                 r_int:   function(max, min) {
 
                     return Math.round(r_float(max, min));
-                }
-                ,
-                /*
-                name:   r_float
-                 */
+                },
+                // 随机小数
                 r_float:  function(max, min) {
                     if(mock(min)) {
                         min = 0;
