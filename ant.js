@@ -2284,12 +2284,7 @@ function _SHELL_ANT() {
 
                     return nodeset;
                 }
-            }
-            ,
-            /*
-            name:   mathematician
-            desc:   compute number
-             */
+            },
             math: {
 
                 id: "math",
@@ -2306,10 +2301,9 @@ function _SHELL_ANT() {
 
                 init: function() {
 
-
                     TINY = Math.pow(0.1, 6);
 
-                    // 1 create multiple function
+                    // 创建批量函数
                     var _apilist =
                         [
                         "r_int", "r_float", "r_nature", "r_hell", "r_ascii", "r_letter", "r_letters", "r_num",
@@ -2325,14 +2319,13 @@ function _SHELL_ANT() {
                         window[_newName] = _newAPI;
 
                         return _newAPI;
-
-                        /* inner: returnMathMultiple */
+                        //
                         function returnMathMultiple(apiName) {
 
                             var _api = _math[apiName];
 
                             return _MathMultipleAPI;
-                            /* normal: _MathMultipleAPI */
+                            //
                             function _MathMultipleAPI() {
 
                                 var _arg = getArg();
@@ -2344,7 +2337,6 @@ function _SHELL_ANT() {
                                 var times = r_int(maxLength, minLength);
 
                                 var result = [];
-                                // for
                                 for(var i = 0; i < times; i++) {
 
                                     var value = _api.apply(null, _arg);
