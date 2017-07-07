@@ -2240,7 +2240,7 @@ function _SHELL_ANT() {
                     return re;
                 },
 
-                /* op _fly */
+                // fly 控制
                 op_fly: function(sign) {
 
                     sign = sign || "stop";
