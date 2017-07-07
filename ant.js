@@ -2352,9 +2352,7 @@ function _SHELL_ANT() {
                         }
                     });
                 },
-                /*
-                name:   rand
-                 */
+                // 随机整数
                 r_int:   function(max, min) {
 
                     return Math.round(r_float(max, min));
