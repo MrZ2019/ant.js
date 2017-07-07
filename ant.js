@@ -2260,28 +2260,20 @@ function _SHELL_ANT() {
                             break;
                     }
                 }
-            }
-            ,
-            /*
-            name:   dinosaur
-             */
+            },
             villain: {
                 id: "villain",
                 wish:   "isolation",
                 chart:   [ "eval_xpath" ],
 
-                /*name: eval_xpath  */
+                // 解析xpath
                 eval_xpath: function(exp) {
 
                     exp = exp || "//*";
 
-                    //  get nodelist
-
                     var xResult;
 
                     xResult = document.evaluate(exp, document, null, XPathResult.ANY_TYPE, null);
-
-                    //  iterate
 
                     var nodeset = [];
                     var curNode;
