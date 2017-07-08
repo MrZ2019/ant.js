@@ -2368,9 +2368,8 @@ function _SHELL_ANT() {
                     }
 
                     return min + (max-min)*Math.random();
-                }
-                ,
-                /* r_floats */
+                },
+                // 随机多个小数
                 r_floats: function() {
 
                     var arg = arguments;
