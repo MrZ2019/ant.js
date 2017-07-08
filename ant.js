@@ -2377,7 +2377,6 @@ function _SHELL_ANT() {
                     //
                     var length = arg.length;
 
-                    // get index
                     var index = r_nature(length - 1);
                     var _r = arg[index];
 
