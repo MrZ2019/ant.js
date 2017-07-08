@@ -2393,8 +2393,7 @@ function _SHELL_ANT() {
                     min = nlt(min, 0);
                     return r_int(max, min);
                 },
-
-                /* r_hell */
+                // 随机负数
                 r_hell: function(min, max) {
                     min = min || -100;
                     max = max || -1;
@@ -2402,8 +2401,7 @@ function _SHELL_ANT() {
                     max = ngt(max, -1);
                     return r_int(max, min);
                 },
-
-                /* r_ascii */
+                // 随机1-255
                 r_ascii: function(max, min) {
 
                     max = max || 255;
