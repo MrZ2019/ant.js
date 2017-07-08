@@ -2401,7 +2401,7 @@ function _SHELL_ANT() {
                     max = ngt(max, -1);
                     return r_int(max, min);
                 },
-                // 随机1-255
+                // 随机1-255 
                 r_ascii: function(max, min) {
 
                     max = max || 255;
