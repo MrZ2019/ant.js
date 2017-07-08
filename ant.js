@@ -2385,7 +2385,7 @@ function _SHELL_ANT() {
 
                     return r_float(max, min);
                 },
-                /* r_nature */
+                // 随机自然数
                 r_nature: function(max, min) {
                     min = min || 0;
                     max = max || 100;
