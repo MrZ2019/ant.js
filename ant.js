@@ -2473,7 +2473,7 @@ function _SHELL_ANT() {
 
                     return letter;
                 },
-
+                // 随机多个字母
                 r_letters: function(max, min) {
 
                     max = max || 8;
