@@ -2421,7 +2421,6 @@ function _SHELL_ANT() {
                     max = ascii(max);
                     min = ascii(min);
 
-                    // limit
                     max = limit(max, ZCode);
                     min = limit(min, ACode);
 
@@ -2434,7 +2433,7 @@ function _SHELL_ANT() {
                     return code;
                 },
 
-                /* r_low */
+                // 随机小写字母
                 r_low: function(max, min, bCode) {
 
                     max = max || "z";
@@ -2443,7 +2442,6 @@ function _SHELL_ANT() {
                     max = ascii(max);
                     min = ascii(min);
 
-                    // limit
                     max = limit(max, zCode);
                     min = limit(min, aCode);
 
