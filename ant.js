@@ -2413,7 +2413,7 @@ function _SHELL_ANT() {
                     return r_int(max, min);
                 },
 
-                /* r_up */
+                // 随机大写字母
                 r_up: function(max, min, bCode) {
 
                     max = max || "Z";
