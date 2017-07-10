@@ -2454,7 +2454,7 @@ function _SHELL_ANT() {
                     return code;
                 },
 
-                /* r_letter */
+                // 随机字母
                 r_letter: function(max, min) {
 
                     max = max || "z";
