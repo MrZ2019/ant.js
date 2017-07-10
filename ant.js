@@ -2489,7 +2489,7 @@ function _SHELL_ANT() {
 
                     return letters;
                 },
-
+                // 随机整数
                 r_num: function(min, max, bCode) {
 
                     max = max || 9;
