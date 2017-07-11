@@ -2519,7 +2519,7 @@ function _SHELL_ANT() {
                     return limit(number, null, compare - TINY);
                 },
 
-                /* ngt */
+                // 不大于
                 ngt: function(number, compare) {
                     return limit(number, null, compare);
                 },
