@@ -2507,7 +2507,7 @@ function _SHELL_ANT() {
                     return code;
                 },
 
-                /* gt */
+                // 大于
                 gt: function(number, compare) {
 
                     return limit(number, compare + TINY);
