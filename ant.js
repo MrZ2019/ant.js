@@ -2529,7 +2529,7 @@ function _SHELL_ANT() {
                     return limit(number, compare, null);
                 },
 
-                /* eq */
+                // 等于
                 eq: function(number, compare) {
 
                     if(number !== compare) {
