@@ -2513,7 +2513,7 @@ function _SHELL_ANT() {
                     return limit(number, compare + TINY);
                 },
 
-                /* lt */
+                // 小于
                 lt: function(number, compare) {
 
                     return limit(number, null, compare - TINY);
