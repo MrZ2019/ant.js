@@ -2524,7 +2524,7 @@ function _SHELL_ANT() {
                     return limit(number, null, compare);
                 },
 
-                /* lgt */
+                // 不小于
                 nlt: function(number, compare) {
                     return limit(number, compare, null);
                 },
