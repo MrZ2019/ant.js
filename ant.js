@@ -2539,7 +2539,7 @@ function _SHELL_ANT() {
                     return number;
                 },
 
-                /* neq */
+                // 不等于
                 neq: function(number, compare, def) {
 
                     def = def || 0;
