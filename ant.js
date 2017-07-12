@@ -2590,7 +2590,7 @@ function _SHELL_ANT() {
                     return re;
                 },
 
-                /* r_word */
+                // 随机单词
                 r_word: function(kep) {
 
                     if(mock(kep)) {
