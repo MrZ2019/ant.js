@@ -2563,7 +2563,7 @@ function _SHELL_ANT() {
                     return number;
                 },
 
-                /* name: r_src */
+                // 随机取值
                 r_src: function(src, count, option) {
 
                     count = _def(count, 1);
