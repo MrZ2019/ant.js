@@ -2605,7 +2605,7 @@ function _SHELL_ANT() {
                     return kep[index];
                 },
 
-                /* r_node */
+                // 随机节点
                 r_node: function(generators, tagName) {
 
                     if(_s(tagName)) {
@@ -2620,7 +2620,6 @@ function _SHELL_ANT() {
 
                         generators = r_src(generators, 1);
 
-                        // get method
                         generators = window[generators];
                     }
 
