@@ -2550,14 +2550,9 @@ function _SHELL_ANT() {
 
                     return number;
                 },
-                /* limit */
+                // 限制
                 limit: function(number, min, max) {
 
-                    // notice: use default
-/*                    max = max || 9999*9999;
-                    min = min || -9999*9999;*/
-
-                    // compare
                     if(is(max) && (number > max) ) {
                         number = max;
                     }
