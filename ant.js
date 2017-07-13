@@ -2644,9 +2644,7 @@ function _SHELL_ANT() {
                     return ! Boolean(rand(total));
                 },
 
-                /*
-                name:   g_num
-                 */
+                // 
                 g_num:   function(src, defvals) {
 
 
