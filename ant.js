@@ -2722,11 +2722,8 @@ function _SHELL_ANT() {
                     var B = rand(255);
 
                     return "RGB(" + R + "," + G + "," + B + ")";
-                }
-                ,
-                /*
-                name:   get16Color
-                 */
+                },
+                // 获取颜色 16个
                 get16Color: function() {
                     return List.Color16[rand(16 - 1)];
                 },
