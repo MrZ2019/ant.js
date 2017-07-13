@@ -2727,10 +2727,7 @@ function _SHELL_ANT() {
                 get16Color: function() {
                     return List.Color16[rand(16 - 1)];
                 },
-
-                /*
-                name:   get139Color
-                 */
+                // 获取颜色 139个
                 get139Color: function() {
                     return List.Color139[rand(139-1)];
                 }
