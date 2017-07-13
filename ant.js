@@ -2637,9 +2637,7 @@ function _SHELL_ANT() {
 
                     return node;
                 },
-                /*
-                name:   decide
-                 */
+                // 概率
                 decide: function(total) {
                     total = total || 2;
 
