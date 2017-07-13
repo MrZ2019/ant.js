@@ -2644,7 +2644,7 @@ function _SHELL_ANT() {
                     return ! Boolean(rand(total));
                 },
 
-                // 
+                //?
                 g_num:   function(src, defvals) {
 
 
@@ -2680,11 +2680,7 @@ function _SHELL_ANT() {
 
                     return src;
                 }
-            }
-            ,
-            /*
-            name:   painter
-             */
+            },
             painter: {
 
                 id: "painter",
@@ -2719,9 +2715,7 @@ function _SHELL_ANT() {
                         "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"
                     ]
                 },
-                /*
-                name:   getColor
-                 */
+                // 获取随机颜色
                 getColor:   function() {
                     var R = rand(255);
                     var G = rand(255);
