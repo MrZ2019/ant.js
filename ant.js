@@ -2731,24 +2731,13 @@ function _SHELL_ANT() {
                 get139Color: function() {
                     return List.Color139[rand(139-1)];
                 }
-            }
-            ,
-            /*
-            helper：accounter
-            d:
-             */
+            },
         "calc":
             {
                 id: "calc",
                 wish:   [ "countOf" ],
                 chart: [ "countOf"],
-
-                /*
-                n:  countOf
-                desc:   get total count of an object, arg2 may be stirng, or a function
-                string used type limit, function is filter
-                if arg2 not empty, arg3 may be true, then filter for key, not value
-                 */
+                // 统计函数
                 countOf: function(object, filter, loveKey, deep) {
 
                     var _size = 0;
