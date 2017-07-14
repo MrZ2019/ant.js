@@ -2821,8 +2821,7 @@ function _SHELL_ANT() {
 
                     return re;
                 },
-
-                /* _fo */
+                // 函数和对象判断
                 _fo: function(src) {
                     var _type = typeof(src);
 
