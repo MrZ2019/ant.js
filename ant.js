@@ -2811,10 +2811,7 @@ function _SHELL_ANT() {
                 mock:    function(value) {
                     return (value == null) || (value == undefined);
                 },
-
-                /*
-                name:   _def
-                 */
+                // 获取默认值
                 _def:   function(_var, defValue) {
 
                     var re = _var;
