@@ -2806,12 +2806,8 @@ function _SHELL_ANT() {
                     }
 
                     return value;
-                }
-                ,
-
-                /*
-                name:   mock
-                 */
+                },
+                // 空值判断
                 mock:    function(value) {
                     return (value == null) || (value == undefined);
                 },
