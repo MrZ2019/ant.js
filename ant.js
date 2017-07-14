@@ -2746,66 +2746,16 @@ function _SHELL_ANT() {
                     each(object, _countOf_check, null, deep);
 
                     return _size;
-                    /*var be_arg2 = false;
-                    //  serious argument2
-                    if(_s(arg2) || _f(arg2)) {
-                        be_arg2 = true;
-                    }
-
-                    var index, val;
-
-                    if(_A(object)) {
-
-                        var array = object; //  assign
-                        //  object is an array
-                        if(be_arg2 == true) {
-
-                            //  through array
-                            index = 0;
-
-                            for(;index < array.length;index++) {
-                                val = array[index];
-
-                                if(_countOf_check()) {
-                                    _size++;
-                                }
-                            }
-
-                        }
-                        else {
-                            _size = array.length;
-                        }
-                    }
-                    else if(_o(object)) {
-
-                        for(index in object) {
-
-                            val = object[index];
-
-                            if(be_arg2 && _countOf_check()) {
-                                _size++;
-                            }
-                            else {
-                                _size++;
-                            }
-                        }
-                    }
-
-                    return _size;
-                    *//*
-                    sub：    _countOf_check
-                     */
+            
                     function _countOf_check(val, key) {
 
                         var _result = true;
 
                         if(_s(filter)) {
-                            _result = ( typeof(val) == filter ); // filter is typename
+                            _result = ( typeof(val) == filter ); 
                         }
                         else if(_f(filter)) {
-                            //  function
 
-                            //  if loveKey == true, change value to key
                             if(loveKey == true) {
                                 val = key;
                             }
@@ -2818,20 +2768,13 @@ function _SHELL_ANT() {
                         }
                     }
                 }
-            }
-            ,
-            /*
-            helper: headman
-             */
+            },
             "headman":
             {
                 id: "headman",
                 wish: "sacrifice",
                 chart: []
             },
-            /*
-            helper: bee
-             */
             "bee":
             {
                 id: "bee",
@@ -2851,8 +2794,7 @@ function _SHELL_ANT() {
                         u: "undefined"
                     }
                 },
-
-
+                // 设置函数
                 _set:   function(value, defaultValue) {
 
                     if(_s(value)) {
