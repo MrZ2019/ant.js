@@ -2828,7 +2828,7 @@ function _SHELL_ANT() {
                     return (_type == "object" || _type == "function");
                 }
                 ,
-                /* alias */
+                // 别名
                 alias: function(obj, nameMap) {
 
                     nameMap = g_obj(nameMap);
