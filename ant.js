@@ -2871,17 +2871,13 @@ function _SHELL_ANT() {
                     expose(loopApi);
                 },
                 method: {
-                  
+                    // 循环
                     i_loop: function(value, callback, args, _this) {
 
                         if(_A(value)) {
                             args.splice(0,3);   //  [val, key, deep]
                             args = value.concat(args);
                         }
-                        /*                    else {
-                         args.shift();   //  value is unused
-                         args.unshift(value)
-                         }*/
 
                         callback = g_func(callback);
 
