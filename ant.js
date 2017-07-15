@@ -2926,12 +2926,10 @@ function _SHELL_ANT() {
                     count = count || 1;
                     for(; counter < count; counter++) {
 
-                        //  executed
                         _actor._calls(codes, arg, _this);
                     }
-                },               /*
-                 n:  each
-                 */
+                },             
+                // each
                 each:   function(src, callback, args, deep, _this) {
 
                     if(mock(deep)) {
@@ -2947,14 +2945,12 @@ function _SHELL_ANT() {
                     args = args || [];
 
                     src = g_set(src);
-                    //  for
                     var index, val;
 
                     args = [1,2,3].concat(args);
 
                     if(_SET(src) == true) {
 
-                        //  it's array
 
                         for(index = 0; index < src.length; index++) {
 
@@ -2973,8 +2969,6 @@ function _SHELL_ANT() {
                         op_loop("end");
                     }
                     else if(_o(src) == true) {
-
-                        //  type == "object"
 
                         for(index in src) {
 
