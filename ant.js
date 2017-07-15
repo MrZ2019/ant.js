@@ -2919,9 +2919,7 @@ function _SHELL_ANT() {
                         }
                     }
                 },
-                /*
-                 name:   _loop
-                 */
+                // loop
                 loop:  function(codes, count, arg, _this) {
 
                     var counter = 0;
