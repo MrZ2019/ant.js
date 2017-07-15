@@ -2883,7 +2883,7 @@ function _SHELL_ANT() {
 
                         return callback.apply(_this, args);
                     },
-
+                    // map_loop
                     map_loop: function(mode, src, callback, _opt) {
 
                         var opt =
@@ -2893,12 +2893,13 @@ function _SHELL_ANT() {
 
                         setup(opt, _opt);
 
-                        var testResult = (mode == "and"); // hack :)
+                        var testResult = (mode == "and"); 
 
                         each(src, __map_loop_each);
 
                         return testResult;
-                        /* in: __map_loop_each */
+
+                        //
                         function __map_loop_each(val) {
 
                             if(mode == "or" && callback(val)) {
