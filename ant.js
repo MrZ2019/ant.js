@@ -2989,11 +2989,8 @@ function _SHELL_ANT() {
 
 
                     return src;
-                }
-                ,
-                /*
-                 n:  map
-                 */
+                },
+                // map
                 map:   function(src, callback, is_replace, args, deep, _host) {
 
                     var _this = _loop.map;
