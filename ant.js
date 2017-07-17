@@ -3006,7 +3006,6 @@ function _SHELL_ANT() {
 
                     src = g_set(src);
                     callback = g_func(callback);
-                    //  for
                     var index, val;
                     var _target;
 
@@ -3020,8 +3019,6 @@ function _SHELL_ANT() {
                     args = [1, 2, 3].concat(args);
 
                     if(_SET(src) == true) {
-
-                        //  it's array
 
                         for(index = 0; index < src.length; index++) {
 
@@ -3040,8 +3037,6 @@ function _SHELL_ANT() {
                     }
                     else if(_o(src) == true) {
 
-                        //  type == "object"
-
                         for(index in src) {
 
                             if(op_loop("query") == true) {
@@ -3059,11 +3054,8 @@ function _SHELL_ANT() {
                     }
 
                     return _target;
-                }
-                ,
-                /*
-                 name:   filter
-                 */
+                },
+                // filter
                 filter:    function(src, filters, is_replace, args, deep, _host) {
 
                     var _this = _loop.filter;
@@ -3090,9 +3082,6 @@ function _SHELL_ANT() {
                         _target = clone(src);
                     }
 
-                    //  args
-                    //  set filters
-
                     var _callback;
                     var _type;
                     var _limit;
@@ -3108,16 +3097,13 @@ function _SHELL_ANT() {
                     }
                     else if(_o(filters)) {
 
-                        //  it's object!
 
                         _callback = filters.callback;
                         _limit = filters.limit;
                         _type = filters.type;
 
-                        args = filters.args || args;    //  replace arguments
+                        args = filters.args || args;    
                     }
-
-                    //  type maybe short
 
                     var _type2 = Map.ShortType[_type];
 
@@ -3125,17 +3111,13 @@ function _SHELL_ANT() {
                         _type = _type2;
                     }
 
-                    //  check bool
                     var bool_cb = true;
                     var bool_limit = true;
                     var bool_type = true;
 
-                    //
                     args = [1, 2, 3].concat(args);
 
                     if(_SET(src) == true) {
-
-                        //  it's array
 
                         for(index = 0; index < _target.length; index++) {
 
@@ -3164,8 +3146,7 @@ function _SHELL_ANT() {
                     }
                     else if(_o(_target) == true) {
 
-                        //  type == "object"
-                        index = 0;  //  used for counter
+                        index = 0;  
 
                         var _target_map = _object.c_map(_target, false);
 
@@ -3200,7 +3181,7 @@ function _SHELL_ANT() {
 
                     return _target;
 
-                    /*  _sub_filter */
+                    //--
                     function _sub_filter() {
 
                         if(_callback) {
@@ -3214,10 +3195,7 @@ function _SHELL_ANT() {
                         return bool_cb && bool_type;
                     }
                 },
-                /*
-                 n:  unique
-                 d:  unique remove repeat value
-                 */
+                // unique
                 unique:    function(src, is_replace, keymode) {
 
                     var _aim;
